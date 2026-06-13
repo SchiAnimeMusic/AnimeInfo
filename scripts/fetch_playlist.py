@@ -135,44 +135,24 @@ class PlaylistFetcher:
 
         return videos
 
-    def load_existing_data(self):
-        """既存のCSVファイルを読み込む"""
-        if not os.path.exists(self.output_csv):
-            return pd.DataFrame()
-
-        try:
-            return pd.read_csv(self.output_csv)
-        except Exception as e:
-            logger.warning(f'既存CSVの読み込みに失敗しました: {e}')
-            return pd.DataFrame()
-
     def save_to_csv(self, videos_data):
-        """データをCSVに保存"""
-        # 新規取得したデータをデータフレーム化
-        new_df = pd.DataFrame(videos_data)
-        
-        # 既存データを読み込む
-        existing_df = self.load_existing_data()
+        """データをCSVに保存（既存データを読み込まず、完全に上書き）"""
+        # 新規取得したデータのみでデータフレームを作成
+        result_df = pd.DataFrame(videos_data)
 
-        if not existing_df.empty:
-            # 既存データと新規データを結合
-            result_df = pd.concat([existing_df, new_df], ignore_index=True)
-        else:
-            result_df = new_df
-
-        # 最後に video_id を基準に重複を完全に排除する（新しく取得した側を優先）
+        # 再生リスト内に万が一重複があってもここで確実に排除
         if 'video_id' in result_df.columns:
-            result_df = result_df.drop_duplicates(subset=['video_id'], keep='last')
+            result_df = result_df.drop_duplicates(subset=['video_id'], keep='first')
         else:
-            result_df = result_df.drop_duplicates(subset=['title', 'channel_name'], keep='last')
+            result_df = result_df.drop_duplicates(subset=['title', 'channel_name'], keep='first')
 
-        # ディレクトリを作成
+        # 保存先ディレクトリを作成
         os.makedirs(os.path.dirname(self.output_csv) or '.', exist_ok=True)
 
-        # CSVに保存
+        # 既存ファイルを完全に上書き保存 (index=False)
         result_df.to_csv(self.output_csv, index=False, encoding='utf-8')
 
-        logger.info(f'CSVデータを更新しました (総動画数: {len(result_df)} 件)')
+        logger.info(f'CSVファイルを最新データで上書きしました (総動画数: {len(result_df)} 件)')
 
     def run(self):
         """メイン処理"""
@@ -186,7 +166,7 @@ class PlaylistFetcher:
             logger.info('動画の詳細情報を取得中...')
             videos_data = self.fetch_video_details(video_ids)
 
-            # CSVに保存（重複排除ロジック内蔵）
+            # CSVに新規上書き保存
             self.save_to_csv(videos_data)
 
             logger.info('処理が完了しました')
