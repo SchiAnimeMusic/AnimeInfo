@@ -24,30 +24,25 @@ GitHub Actionsを利用して、毎日自動で最新データに更新されま
 ```
 
 ## 機能
-
-- YouTubeの再生リストから動画情報を自動取得(GitHub Actions)
-- 動画ID(ハイパーリンク)、タイトル、公開日時、チャンネル名、再生回数をCSV形式で保存
-- チャンネルの統計データをCSV/HTML/PNG形式でそれぞれ保存
+- **YouTube動画情報の自動取得 (GitHub Actions)**
+  - 公開中の再生リストから動画のメタデータや指標を定期的に自動取得します。
+  - 対象の再生リストは [サッチー🎧アニソン総合チャンネル](https://www.youtube.com/@SachiAnimeMusic) にて公開の[【アニソン】公式アニメOP/EDまとめ【人気順】](https://www.youtube.com/playlist?list=PLarZd9ydotojcNKocdU95YFqooKnF-w_p)です。
+- **統計レポートの自動生成とWeb公開**
+  - 収集したデータを集計し、自動でHTMLレポートを出力します。
+  - 最新のレポートは [GitHub Pages 統計レポート](https://SchiAnimeMusic.github.io/AnimeInfo/data/statistics_report.html) からブラウザでいつでも確認できます。
 
 #### 出力ファイル一覧
 
 | ファイル | 説明 |
 |---------|------|
+| `anime_op_ed.csv` | 再生リストから取得した生データ |
 | `channel_statistics.png` | チャンネル別の動画数・再生回数グラフ |
 | `statistics_report.html` | インタラクティブなHTMLレポート（グラフ+テーブル） |
 | `channel_statistics.csv` | 全チャンネルの統計データ |
 
-## 📊 統計レポート
-
-[![View Report](https://img.shields.io/badge/Report-HTML%20View-blue?style=for-the-badge&logo=github)](https://SchiAnimeMusic.github.io/AnimeInfo/data/statistics_report.html)
-
-> 💡 上記のバッジをクリックすると、最新のデータ統計レポート（GitHub Pages）がブラウザで開きます。
-
 #### 実行スケジュール
 
 **毎日午前10時（UTC午前1時）** に自動実行されます。
-
----
 
 ## ライセンス
 
