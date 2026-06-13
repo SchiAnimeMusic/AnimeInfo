@@ -172,14 +172,6 @@ class PlaylistFetcher:
 
     def save_to_csv(self, videos_data):
         """データをCSVに保存"""
-        # チャンネル名を取得
-        channel_ids = [v['channel_id'] for v in videos_data]
-        channel_names = self.fetch_channel_names(channel_ids)
-
-        # チャンネル名を追加
-        for video in videos_data:
-            video['channel_name'] = channel_names.get(video['channel_id'], 'Unknown')
-
         # 既存データを読み込む
         existing_df = self.load_existing_data()
 
