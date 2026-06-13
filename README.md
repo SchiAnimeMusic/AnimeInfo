@@ -1,6 +1,7 @@
-# AnimeInfo
+# 概要
 
-YouTubeの公式アニメOP/ED再生リストから動画情報を自動取得し、CSVに一元管理するツールです。
+YouTubeのアニメOP/ED再生リストから動画情報を自動取得し、CSVへの一元管理および統計レポートの生成を自動化するツールです。
+GitHub Actionsを利用して、毎日自動で最新データに更新されます。
 
 ## ディレクトリ構造
 
@@ -271,7 +272,7 @@ python scripts/visualize_data.py
 
 ```powershell
 $script = @"
-cd C:\Users\MNS\AnimeInfo
+cd C:\Users\(ユーザー名)\AnimeInfo
 .\.venv\Scripts\Activate.ps1
 `$env:YOUTUBE_API_KEY='YOUR_API_KEY_HERE'
 python scripts/fetch_playlist.py
