@@ -37,6 +37,12 @@ GitHub Actionsを利用して、毎日自動で最新データに更新されま
 | `statistics_report.html` | インタラクティブなHTMLレポート（グラフ+テーブル） |
 | `channel_statistics.csv` | 全チャンネルの統計データ |
 
+## 📊 統計レポート
+
+[![View Report](https://img.shields.io/badge/Report-HTML%20View-blue?style=for-the-badge&logo=github)](https://SchiAnimeMusic.github.io/AnimeInfo/data/statistics_report.html)
+
+> 💡 上記のバッジをクリックすると、最新のデータ統計レポート（GitHub Pages）がブラウザで開きます。
+
 #### 実行スケジュール
 
 **毎日午前10時（UTC午前1時）** に自動実行されます。
