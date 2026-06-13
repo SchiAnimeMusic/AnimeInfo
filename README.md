@@ -123,73 +123,181 @@ python fetch_playlist.py
 
 実行すると、再生リストから新規動画を取得して `data/anime_op_ed.csv` に追加されます。
 
-### 統計情報の可視化
+### 統計情報の可視化とレポート生成
 
-チャンネル毎の動画数と合計再生回数をグラフで表示します（TOP 20）：
+チャンネル毎の動画数と合計再生回数をグラフで表示し、レポートを生成します。
 
+#### インタラクティブモード（グラフ表示あり）
 ```bash
 # 仮想環境を有効化（前提）
 python visualize_data.py
 ```
 
-**表示される情報:**
-- チャンネル毎の合計動画数（横棒グラフ、TOP 20）
-- チャンネル毎の合計再生回数（横棒グラフ、TOP 20）
-- ターミナルにTOP 20の詳細な統計情報と全体統計も表示
+**生成される出力:**
+- **PNG グラフ**: `data/channel_statistics.png`
+- **HTML レポート**: `data/statistics_report.html` （ブラウザで表示可能）
+- **統計 CSV**: `data/channel_statistics.csv` （Excel等で確認可能）
+- **ターミナル出力**: TOP 20 の詳細情報と全体統計
 
-**オプション:**
+#### バッチ処理モード（グラフ表示なし、自動実行向け）
 ```bash
-# 別のCSVファイルを指定する場合
-python visualize_data.py --csv ./path/to/file.csv
+python visualize_data.py --no-display
 ```
 
-### ステップ4: GitHub Secretsの設定（GitHub Actions実行時）
+#### 出力ファイル一覧
 
-このリポジトリをフォークして使用する場合、GitHub Actions で自動実行するには：
+| ファイル | 説明 |
+|---------|------|
+| `channel_statistics.png` | チャンネル別の動画数・再生回数グラフ |
+| `statistics_report.html` | インタラクティブなHTMLレポート（グラフ+テーブル） |
+| `channel_statistics.csv` | 全チャンネルの統計データ |
 
-1. フォークしたリポジトリの **Settings** ページに移動
-2. **Secrets and variables** > **Actions** をクリック
-3. **New repository secret** をクリック
-4. 名前: `YOUTUBE_API_KEY`、値: YouTubeデータAPI キーを入力
-5. **Add secret** をクリック
+### 自動実行スケジュール設定
 
-これで、毎日UTC 2時（日本時間 11時）に自動的にデータが更新されます。
+GitHub Actions を使用して、定期的に自動実行できます。
 
-## 使い方
+### GitHub Actions の有効化と設定
 
-### 手動実行（ローカル）
+1. **このリポジトリをフォークまたはクローン**
 
-環境変数が設定されている状態で実行：
+2. **GitHub Secrets に YouTube API キーを登録**
+   - リポジトリの **Settings** → **Secrets and variables** → **Actions** に移動
+   - **New repository secret** をクリック
+   - 名前: `YOUTUBE_API_KEY`
+   - 値: YouTube Data API のキーを入力
+   - **Add secret** をクリック
+
+3. **GitHub Actions を有効化**
+   - リポジトリの **Actions** タブを確認
+   - ワークフロー「AnimeInfo Auto Update」が表示されていることを確認
+   - 自動的に有効状態になります
+   - **古いワークフローがある場合は削除してください**（`fetch-anime-op-ed.yml` など）
+
+#### 実行スケジュール
+
+デフォルトでは **毎日午前10時（UTC午前1時）** に自動実行されます。
+
+スケジュール変更は、`.github/workflows/auto-update.yml` の `cron` 値を編集：
+
+```yaml
+on:
+  schedule:
+    - cron: '0 1 * * *'  # 毎日 01:00 UTC (=午前10時JST)
+```
+
+**cron 表記例:**
+- `0 1 * * *` - 毎日午前1時UTC（午前10時JST）
+- `0 */6 * * *` - 6時間ごと
+- `0 10 * * MON` - 毎週月曜午前10時UTC
+
+#### 手動実行
+
+GitHub Actions ページから、ワークフロー「AnimeInfo Auto Update」を選択し、**Run workflow** をクリックするだけで即座に実行できます。
+
+#### 実行内容（統合ワークフロー）
+
+**AnimeInfo Auto Update** ワークフロー（`.github/workflows/auto-update.yml`）では以下を実行します：
+
+1. ✅ 再生リストから動画情報を取得 (`fetch_playlist.py`)
+2. ✅ 統計レポート生成 (`visualize_data.py --no-display`)
+   - PNG グラフ
+   - HTML レポート
+   - 統計 CSV
+3. ✅ 変更を自動コミット・プッシュ
+
+**注意**: 複数のワークフローが存在する場合、API 呼び出しが重複します。古いワークフロー（`fetch-anime-op-ed.yml` など）は削除してください。
+
+#### 実行結果の確認
+
+- **Actions** タブで実行履歴と結果ログを確認可能
+- 成功時は、自動で `data/` フォルダ内のファイルが更新されリポジトリに反映
+- リポジトリのコミット履歴に「auto-update anime data and reports」という自動コミットが記録
+
+---
+
+## ローカル実行（開発・テスト用）
+
+### 手動実行
 
 ```bash
+# 仮想環境を有効化
+# Windows (PowerShell):
+.\.venv\Scripts\Activate.ps1
+# または Linux/macOS:
+source .venv/bin/activate
+
+# APIキーを設定して実行
+# Windows (PowerShell):
+$env:YOUTUBE_API_KEY="YOUR_API_KEY_HERE"
+python fetch_playlist.py
+
+# または Linux/macOS:
+export YOUTUBE_API_KEY="YOUR_API_KEY_HERE"
 python fetch_playlist.py
 ```
 
-仮想環境を使っている場合は先に有効化してください（PowerShell の例）：
+### 統計レポートの生成
+
+```bash
+python visualize_data.py
+```
+
+### ローカルでの定期実行（ローカル開発環境のみ）
+
+**注意**: GitHub Actions を使用する場合はこの設定は不要です。
+
+**Windows PowerShell** で定期実行する場合：
+
+1. PowerShell を管理者権限で起動
+2. 以下を実行（例：毎日午前2時）：
 
 ```powershell
-.\.venv\Scripts\Activate.ps1
-python fetch_playlist.py
+$trigger = New-ScheduledTaskTrigger -Daily -At 2am
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"C:\Users\MNS\AnimeInfo\run_auto_update.ps1`""
+Register-ScheduledTask -TaskName "AnimeInfo_AutoUpdate" -Trigger $trigger -Action $action -Description "アニメOP/ED情報の自動更新と統計レポート生成"
 ```
 
-カスタム設定ファイルを使う場合（オプション）：
-```bash
-python fetch_playlist.py --config /path/to/config.json
-```
-
-### 自動実行（GitHub Actions）
-
-このリポジトリをフォークして、GitHub Secrets に `YOUTUBE_API_KEY` を設定すると、毎日UTC 2時に自動実行されます。
-
-手動で実行したい場合は、GitHub リポジトリの **Actions** タブから **Fetch Anime OP/ED** ワークフローを選択し、**Run workflow** をクリックしてください。
-
-### 定期実行（ローカルサーバー）
-
-Linux/macOS（crontab）で定期実行する場合：
+**Linux/macOS** で cron を使用する場合：
 
 ```bash
 crontab -e
+
+# 毎日午前2時に実行する場合
+0 2 * * * cd /path/to/AnimeInfo && source .venv/bin/activate && YOUTUBE_API_KEY="YOUR_API_KEY_HERE" python visualize_data.py --no-display
 ```
+
+---
+
+## トラブルシューティング
+
+### YouTube API キーが見つからない場合
+
+```
+ERROR - YouTube APIキーが設定されていません
+```
+
+**解決方法：**
+- 環境変数 `YOUTUBE_API_KEY` を設定してください
+- `.env` ファイルがある場合、中身を確認してください
+
+### GitHub Actions ワークフローが失敗する場合
+
+1. **Secrets が設定されているか確認**
+   - Settings > Secrets and variables > Actions で `YOUTUBE_API_KEY` が登録されているか確認
+
+2. **実行ログを確認**
+   - Actions タブからワークフロー実行履歴を確認
+   - エラーメッセージを確認して対応
+
+3. **API割り当て量超過**
+   - YouTube API の割り当てが超過している可能性
+   - Google Cloud Console でAPI使用状況を確認
+
+---
+
+## ライセンス
+
+MIT License
 
 以下を追加（毎日午前2時に実行）：
 ```
