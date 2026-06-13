@@ -1,5 +1,8 @@
 name: Fetch Anime OP/ED
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '0 2 * * *'
