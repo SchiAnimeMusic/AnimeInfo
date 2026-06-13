@@ -124,7 +124,7 @@ class PlaylistFetcher:
                         'title': item['snippet']['title'],
                         'description': item['snippet']['description'],
                         'published_at': item['snippet']['publishedAt'],
-                        'channel_id': item['snippet']['channelId'],
+                        'channel_name': item['snippet'].get('channelTitle', 'Unknown'),
                         'view_count': item['statistics'].get('viewCount', 0),
                     }
                     videos.append(video_info)
@@ -134,31 +134,6 @@ class PlaylistFetcher:
                 sys.exit(1)
 
         return videos
-
-    def fetch_channel_names(self, channel_ids):
-        """チャンネル名を取得（キャッシング）"""
-        channel_names = {}
-        unique_channel_ids = list(set(channel_ids))
-
-        # 1リクエストで最大50個のチャンネル情報を取得
-        for i in range(0, len(unique_channel_ids), 50):
-            batch_ids = unique_channel_ids[i:i+50]
-
-            try:
-                request = self.youtube.channels().list(
-                    part='snippet',
-                    id=','.join(batch_ids)
-                )
-                response = request.execute()
-
-                for item in response.get('items', []):
-                    channel_names[item['id']] = item['snippet']['title']
-
-            except HttpError as e:
-                logger.error(f'APIエラー: {e}')
-                sys.exit(1)
-
-        return channel_names
 
     def load_existing_data(self):
         """既存のCSVファイルを読み込む"""
@@ -173,23 +148,23 @@ class PlaylistFetcher:
 
     def save_to_csv(self, videos_data):
         """データをCSVに保存"""
+        # 新規取得したデータをデータフレーム化
+        new_df = pd.DataFrame(videos_data)
+        
         # 既存データを読み込む
         existing_df = self.load_existing_data()
 
-        # 新規データをデータフレームに変換
-        new_df = pd.DataFrame(videos_data)
-
-        # video_id が既に存在するデータをフィルタリング
         if not existing_df.empty:
-            existing_ids = set(existing_df['video_id'])
-            new_df = new_df[~new_df['video_id'].isin(existing_ids)]
+            # 既存データと新規データを結合
+            result_df = pd.concat([existing_df, new_df], ignore_index=True)
+        else:
+            result_df = new_df
 
-            if len(new_df) == 0:
-                logger.info('新規動画はありません')
-                return
-
-        # データを結合
-        result_df = pd.concat([existing_df, new_df], ignore_index=True)
+        # 最後に video_id を基準に重複を完全に排除する（新しく取得した側を優先）
+        if 'video_id' in result_df.columns:
+            result_df = result_df.drop_duplicates(subset=['video_id'], keep='last')
+        else:
+            result_df = result_df.drop_duplicates(subset=['title', 'channel_name'], keep='last')
 
         # ディレクトリを作成
         os.makedirs(os.path.dirname(self.output_csv) or '.', exist_ok=True)
@@ -197,7 +172,7 @@ class PlaylistFetcher:
         # CSVに保存
         result_df.to_csv(self.output_csv, index=False, encoding='utf-8')
 
-        logger.info(f'新規 {len(new_df)} 件をCSVに追加しました (合計: {len(result_df)} 件)')
+        logger.info(f'CSVデータを更新しました (総動画数: {len(result_df)} 件)')
 
     def run(self):
         """メイン処理"""
@@ -211,17 +186,7 @@ class PlaylistFetcher:
             logger.info('動画の詳細情報を取得中...')
             videos_data = self.fetch_video_details(video_ids)
 
-            # チャンネル名を取得
-            logger.info('チャンネル名を取得中...')
-            channel_ids = [v['channel_id'] for v in videos_data]
-            channel_names = self.fetch_channel_names(channel_ids)
-
-            # チャンネル名を追加
-            for video in videos_data:
-                video['channel_name'] = channel_names.get(video['channel_id'], 'Unknown')
-                del video['channel_id']  # channel_id は不要なので削除
-
-            # CSVに保存
+            # CSVに保存（重複排除ロジック内蔵）
             self.save_to_csv(videos_data)
 
             logger.info('処理が完了しました')
