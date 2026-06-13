@@ -39,8 +39,8 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
-          python fetch_playlist.py
-          python visualize_data.py --no-display
+          python scripts/fetch_playlist.py
+          python scripts/visualize_data.py --no-display
       
       - name: Commit and push if changed
         run: |

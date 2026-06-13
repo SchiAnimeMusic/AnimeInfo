@@ -1,6 +1,27 @@
-# 概要
+# AnimeInfo
 
 YouTubeの公式アニメOP/ED再生リストから動画情報を自動取得し、CSVに一元管理するツールです。
+
+## ディレクトリ構造
+
+```
+.
+├── README.md              # このファイル
+├── requirements.txt       # Python依存パッケージ
+├── .env.example          # 環境変数テンプレート
+├── scripts/              # Pythonスクリプト
+│   ├── fetch_playlist.py     # 再生リスト取得スクリプト
+│   └── visualize_data.py     # 統計レポート生成スクリプト
+├── docs/                 # ドキュメント
+│   └── config.example.json   # 設定ファイルテンプレート
+├── data/                 # 出力データ（Git追跡対象外）
+│   ├── anime_op_ed.csv
+│   ├── channel_statistics.png
+│   ├── channel_statistics.csv
+│   └── statistics_report.html
+└── .github/workflows/    # GitHub Actions設定
+    └── auto-update.yml
+```
 
 ## 機能
 
@@ -85,11 +106,11 @@ YOUTUBE_API_KEY=YOUR_API_KEY_HERE
 ```bash
 # Linux/macOS
 export YOUTUBE_API_KEY=YOUR_API_KEY_HERE
-python fetch_playlist.py
+python scripts/fetch_playlist.py
 
 # Windows (PowerShell)
 $env:YOUTUBE_API_KEY="YOUR_API_KEY_HERE"
-python fetch_playlist.py
+python scripts/fetch_playlist.py
 ```
 
 ※ローカルで仮想環境を使っている場合は、上の `python` を実行する前に仮想環境を有効化してください。例（PowerShell、プロジェクトルートで）：
@@ -97,7 +118,7 @@ python fetch_playlist.py
 ```powershell
 .\.venv\Scripts\Activate.ps1
 $env:YOUTUBE_API_KEY="YOUR_API_KEY_HERE"
-python fetch_playlist.py
+python scripts/fetch_playlist.py
 ```
 
 ## 使用方法
@@ -114,11 +135,11 @@ source .venv/bin/activate
 # APIキーを設定してスクリプトを実行
 # Windows (PowerShell):
 $env:YOUTUBE_API_KEY="YOUR_API_KEY_HERE"
-python fetch_playlist.py
+python scripts/fetch_playlist.py
 
 # または Linux/macOS:
 export YOUTUBE_API_KEY="YOUR_API_KEY_HERE"
-python fetch_playlist.py
+python scripts/fetch_playlist.py
 ```
 
 実行すると、再生リストから新規動画を取得して `data/anime_op_ed.csv` に追加されます。
@@ -130,7 +151,7 @@ python fetch_playlist.py
 #### インタラクティブモード（グラフ表示あり）
 ```bash
 # 仮想環境を有効化（前提）
-python visualize_data.py
+python scripts/visualize_data.py
 ```
 
 **生成される出力:**
@@ -141,7 +162,7 @@ python visualize_data.py
 
 #### バッチ処理モード（グラフ表示なし、自動実行向け）
 ```bash
-python visualize_data.py --no-display
+python scripts/visualize_data.py --no-display
 ```
 
 #### 出力ファイル一覧
@@ -229,31 +250,36 @@ source .venv/bin/activate
 # APIキーを設定して実行
 # Windows (PowerShell):
 $env:YOUTUBE_API_KEY="YOUR_API_KEY_HERE"
-python fetch_playlist.py
+python scripts/fetch_playlist.py
 
 # または Linux/macOS:
 export YOUTUBE_API_KEY="YOUR_API_KEY_HERE"
-python fetch_playlist.py
+python scripts/fetch_playlist.py
 ```
 
 ### 統計レポートの生成
 
 ```bash
-python visualize_data.py
+python scripts/visualize_data.py
 ```
 
 ### ローカルでの定期実行（ローカル開発環境のみ）
 
 **注意**: GitHub Actions を使用する場合はこの設定は不要です。
 
-**Windows PowerShell** で定期実行する場合：
-
-1. PowerShell を管理者権限で起動
-2. 以下を実行（例：毎日午前2時）：
+**Windows PowerShell** で定期実行する場合（スクリプト例）：
 
 ```powershell
+$script = @"
+cd C:\Users\MNS\AnimeInfo
+.\.venv\Scripts\Activate.ps1
+`$env:YOUTUBE_API_KEY='YOUR_API_KEY_HERE'
+python scripts/fetch_playlist.py
+python scripts/visualize_data.py --no-display
+"@
+
 $trigger = New-ScheduledTaskTrigger -Daily -At 2am
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"C:\Users\MNS\AnimeInfo\run_auto_update.ps1`""
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -Command `"$script`""
 Register-ScheduledTask -TaskName "AnimeInfo_AutoUpdate" -Trigger $trigger -Action $action -Description "アニメOP/ED情報の自動更新と統計レポート生成"
 ```
 
@@ -263,7 +289,7 @@ Register-ScheduledTask -TaskName "AnimeInfo_AutoUpdate" -Trigger $trigger -Actio
 crontab -e
 
 # 毎日午前2時に実行する場合
-0 2 * * * cd /path/to/AnimeInfo && source .venv/bin/activate && YOUTUBE_API_KEY="YOUR_API_KEY_HERE" python visualize_data.py --no-display
+0 2 * * * cd /path/to/AnimeInfo && source .venv/bin/activate && YOUTUBE_API_KEY="YOUR_API_KEY_HERE" python scripts/visualize_data.py --no-display
 ```
 
 ---

@@ -120,8 +120,9 @@ class PlaylistFetcher:
 
                 for item in response.get('items', []):
                     video_info = {
-                        'video_id': f"https://www.youtube.com/watch?v={item['id']}",
+                        'video_id': item['id'],
                         'title': item['snippet']['title'],
+                        'description': item['snippet']['description'],
                         'published_at': item['snippet']['publishedAt'],
                         'channel_id': item['snippet']['channelId'],
                         'view_count': item['statistics'].get('viewCount', 0),
@@ -187,14 +188,8 @@ class PlaylistFetcher:
                 logger.info('新規動画はありません')
                 return
 
-        # 必要なカラムのみを選択
-        new_df = new_df[['video_id', 'title', 'published_at', 'channel_name', 'view_count']]
-
         # データを結合
-        if not existing_df.empty:
-            result_df = pd.concat([existing_df, new_df], ignore_index=True)
-        else:
-            result_df = new_df
+        result_df = pd.concat([existing_df, new_df], ignore_index=True)
 
         # ディレクトリを作成
         os.makedirs(os.path.dirname(self.output_csv) or '.', exist_ok=True)
