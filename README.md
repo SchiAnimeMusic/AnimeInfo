@@ -100,6 +100,49 @@ $env:YOUTUBE_API_KEY="YOUR_API_KEY_HERE"
 python fetch_playlist.py
 ```
 
+## 使用方法
+
+### 動画情報の取得と更新
+
+```bash
+# 仮想環境を有効化（前提）
+# Windows (PowerShell):
+.\.venv\Scripts\Activate.ps1
+# または Linux/macOS/WSL:
+source .venv/bin/activate
+
+# APIキーを設定してスクリプトを実行
+# Windows (PowerShell):
+$env:YOUTUBE_API_KEY="YOUR_API_KEY_HERE"
+python fetch_playlist.py
+
+# または Linux/macOS:
+export YOUTUBE_API_KEY="YOUR_API_KEY_HERE"
+python fetch_playlist.py
+```
+
+実行すると、再生リストから新規動画を取得して `data/anime_op_ed.csv` に追加されます。
+
+### 統計情報の可視化
+
+チャンネル毎の動画数と合計再生回数をグラフで表示します（TOP 20）：
+
+```bash
+# 仮想環境を有効化（前提）
+python visualize_data.py
+```
+
+**表示される情報:**
+- チャンネル毎の合計動画数（横棒グラフ、TOP 20）
+- チャンネル毎の合計再生回数（横棒グラフ、TOP 20）
+- ターミナルにTOP 20の詳細な統計情報と全体統計も表示
+
+**オプション:**
+```bash
+# 別のCSVファイルを指定する場合
+python visualize_data.py --csv ./path/to/file.csv
+```
+
 ### ステップ4: GitHub Secretsの設定（GitHub Actions実行時）
 
 このリポジトリをフォークして使用する場合、GitHub Actions で自動実行するには：
