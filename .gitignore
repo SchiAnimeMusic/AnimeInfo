@@ -3,7 +3,7 @@ config.json
 .env
 
 # Data files
-data/*.csv
+# data/*.csv
 
 # Python
 __pycache__/
