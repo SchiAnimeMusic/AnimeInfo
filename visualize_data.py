@@ -13,8 +13,8 @@ from datetime import datetime
 import base64
 from io import BytesIO
 
-# 日本語フォントの設定
-plt.rcParams['font.sans-serif'] = ['Yu Gothic', 'DejaVu Sans']
+# 日本語フォントの設定（Linux環境用のフォントを優先的に追加）
+plt.rcParams['font.sans-serif'] = ['Noto Sans CJK JP', 'Noto Sans JP', 'TakaoPGothic', 'Yu Gothic', 'DejaVu Sans']
 
 # ログの設定
 logging.basicConfig(
