@@ -1,4 +1,4 @@
-# AnimeInfo
+# 概要
 
 YouTubeの公式アニメOP/ED再生リストから動画情報を自動取得し、CSVに一元管理するツールです。
 
@@ -294,85 +294,6 @@ ERROR - YouTube APIキーが設定されていません
    - Google Cloud Console でAPI使用状況を確認
 
 ---
-
-## ライセンス
-
-MIT License
-
-以下を追加（毎日午前2時に実行）：
-```
-0 2 * * * cd /path/to/AnimeInfo && YOUTUBE_API_KEY=YOUR_KEY python fetch_playlist.py
-```
-
-Windows（タスクスケジューラー）で定期実行する場合：
-
-1. タスクスケジューラーを起動
-2. 基本タスクを作成
-3. トリガー：実行頻度を設定（例：毎日午前2時）
-4. 操作：以下を設定
-   - プログラム：`python.exe`
-   - 引数：`fetch_playlist.py`
-   - 開始位置：`C:\path\to\AnimeInfo`
-   - 環境変数：`YOUTUBE_API_KEY` を設定
-
-Windows で仮想環境を使う場合の推奨設定：
-
-- プログラム：`C:\path\to\AnimeInfo\.venv\Scripts\python.exe`
-- 引数：`fetch_playlist.py`
-- 開始位置：`C:\path\to\AnimeInfo`
-
-あるいは仮想環境の有効化と実行を含むバッチファイル（例 `run_fetch.bat`）を作成し、タスクでそのバッチを呼び出す方法もあります：
-
-```bat
-@echo off
-cd /d C:\path\to\AnimeInfo
-call .venv\Scripts\activate.bat
-set YOUTUBE_API_KEY=YOUR_API_KEY_HERE
-python fetch_playlist.py
-```
-
-## 出力ファイル
-
-実行後、`data/anime_op_ed.csv` が生成されます。
-
-CSVの列：
-- `video_id`: YouTube動画ID
-- `title`: 動画タイトル
-- `description`: 説明文
-- `published_at`: 公開日時（ISO 8601形式）
-- `channel_name`: チャンネル名
-- `view_count`: 再生回数
-
-## トラブルシューティング
-
-### 「YouTube APIキーが設定されていません」エラー
-
-環境変数 `YOUTUBE_API_KEY` が設定されているか確認してください。
-
-**ローカル実行時：**
-- `.env` ファイルに `YOUTUBE_API_KEY=YOUR_KEY` が記載されているか確認
-- または、環境変数を直接設定して実行
-
-**GitHub Actions 実行時：**
-- リポジトリの **Settings** > **Secrets and variables** > **Actions** から `YOUTUBE_API_KEY` が設定されているか確認
-
-### 「再生リストが見つかりません」エラー
-
-再生リストIDが正しいか確認してください。YouTube再生リストのURLから確認できます。
-```
-https://www.youtube.com/playlist?list=PLarZd9ydotojcNKocdU95YFqooKnF-w_p
-                                           ↑ この部分がplaylist_id
-```
-
-### YouTubeデータAPIクォータエラー
-
-YouTubeデータAPIは無料で1日あたり10,000ユニットのクォータが付与されます。このエラーが発生した場合は、翌日までお待ちください。
-
-### 新規動画が検出されない
-
-- 再生リストに新しい動画が追加されているか確認
-- `data/anime_op_ed.csv` ファイルが存在し、正しくロードされているか確認
-- 既存データとの重複チェックが正しく機能しているか確認
 
 ## ライセンス
 
