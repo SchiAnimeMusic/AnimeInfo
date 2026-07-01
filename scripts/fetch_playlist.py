@@ -33,6 +33,11 @@ class PlaylistFetcher:
         self.config = self._load_config(config_path)
         self.youtube = build('youtube', 'v3', developerKey=api_key)
         self.output_csv = self.config['output_csv_path']
+        self.output_network_json = self.config['output_network_json_path']
+
+        self.nodes = {}  # IDをキーとするノードの辞書
+        self.edges = []  # エッジのリスト
+        self._node_id_counter = 0 # ノードIDのカウンター
 
     @staticmethod
     def _load_api_key():
@@ -53,6 +58,7 @@ class PlaylistFetcher:
             return {
                 'playlist_id': 'PLarZd9ydotojcNKocdU95YFqooKnF-w_p',
                 'output_csv_path': './data/anime_op_ed.csv',
+                'output_network_json_path': './data/network_data.json',
                 'timezone': 'Asia/Tokyo'
             }
 
@@ -62,12 +68,16 @@ class PlaylistFetcher:
             return {
                 'playlist_id': 'PLarZd9ydotojcNKocdU95YFqooKnF-w_p',
                 'output_csv_path': './data/anime_op_ed.csv',
+                'output_network_json_path': './data/network_data.json',
                 'timezone': 'Asia/Tokyo'
             }
 
         try:
             with open(config_path, 'r', encoding='utf-8') as f:
                 config = json.load(f)
+            # configにoutput_network_json_pathがない場合は追加
+            if 'output_network_json_path' not in config:
+                config['output_network_json_path'] = './data/network_data.json'
             return config
         except json.JSONDecodeError as e:
             logger.error(f'設定ファイルのパースに失敗しました: {e}')
@@ -103,6 +113,42 @@ class PlaylistFetcher:
         logger.info(f'再生リストから {len(all_videos)} 個の動画を取得しました')
         return all_videos
 
+    def _get_next_node_id(self):
+        self._node_id_counter += 1
+        return self._node_id_counter
+
+    def _add_node_if_not_exists(self, label, node_type):
+        """ノードが存在しない場合に追加し、そのIDを返す"""
+        # 同じラベルとタイプのノードが既に存在するかチェック
+        for node_id, node_data in self.nodes.items():
+            if node_data['label'] == label and node_data['type'] == node_type:
+                return node_id
+
+        # 存在しない場合は新規作成
+        node_id = self._get_next_node_id()
+        self.nodes[node_id] = {
+            'id': node_id,
+            'label': label,
+            'type': node_type,
+            'group': node_type,
+            'shape': 'box' if node_type == 'anime' else 'dot',
+        }
+        return node_id
+    def _extract_edge_label(self, title):
+        """動画タイトルからエッジのラベル（OP/ED/MVなど）を抽出"""
+        title_lower = title.lower()
+        if 'オープニング' in title_lower or 'op' in title_lower:
+            return 'OP'
+        if 'エンディング' in title_lower or 'ed' in title_lower:
+            return 'ED'
+        if 'mv' in title_lower or 'music video' in title_lower:
+            return 'MV'
+        if '挿入歌' in title_lower:
+            return '挿入歌'
+        if 'スペシャル' in title_lower:
+            return 'SP'
+        return '関連動画' # デフォルト
+
     def fetch_video_details(self, video_ids):
         """動画の詳細情報を取得"""
         videos = []
@@ -129,6 +175,27 @@ class PlaylistFetcher:
                     }
                     videos.append(video_info)
 
+                    # ネットワークデータ生成
+                    channel_name = video_info['channel_name']
+                    anime_title = video_info['title'] # 現状は動画タイトルをそのままアニメ作品名とする
+
+                    # チャンネルノードを追加
+                    channel_node_id = self._add_node_if_not_exists(channel_name, 'channel')
+
+                    # アニメ作品ノードを追加
+                    anime_node_id = self._add_node_if_not_exists(anime_title, 'anime')
+
+                    # エッジを追加
+                    edge_label = self._extract_edge_label(anime_title)
+                    self.edges.append({
+                        'from': channel_node_id,
+                        'to': anime_node_id,
+                        'label': edge_label,
+                        'video_id': video_info['video_id'],  # エッジに動画IDを付与
+                        'arrows': 'to',
+                        'font': {'align': 'middle'},
+                    })
+
             except HttpError as e:
                 logger.error(f'APIエラー: {e}')
                 sys.exit(1)
@@ -154,6 +221,22 @@ class PlaylistFetcher:
 
         logger.info(f'CSVファイルを最新データで上書きしました (総動画数: {len(result_df)} 件)')
 
+    def save_network_data_to_json(self):
+        """ノードとエッジのデータをJSONファイルに保存"""
+        output_dir = os.path.dirname(self.output_network_json)
+        os.makedirs(output_dir or '.', exist_ok=True)
+
+        network_data = {
+            'nodes': list(self.nodes.values()),
+            'edges': self.edges
+        }
+
+        with open(self.output_network_json, 'w', encoding='utf-8') as f:
+            json.dump(network_data, f, ensure_ascii=False, indent=4)
+
+        logger.info(f'ネットワークデータをJSONで保存しました: {self.output_network_json}')
+
+
     def run(self):
         """メイン処理"""
         try:
@@ -162,12 +245,15 @@ class PlaylistFetcher:
             # 再生リストから動画IDを取得
             video_ids = self.fetch_playlist_items()
 
-            # 動画の詳細情報を取得
+            # 動画の詳細情報を取得し、ノードとエッジも生成
             logger.info('動画の詳細情報を取得中...')
             videos_data = self.fetch_video_details(video_ids)
 
             # CSVに新規上書き保存
             self.save_to_csv(videos_data)
+
+            # ネットワークデータをJSONで保存
+            self.save_network_data_to_json()
 
             logger.info('処理が完了しました')
 
