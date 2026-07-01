@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnimeInfo ネットワーク可視化</title>
+  <link rel="stylesheet" href="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Yu Gothic UI", sans-serif;
+      background: #f7f8fb;
+      color: #222;
+    }
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1 {
+      margin-bottom: 8px;
+      font-size: 24px;
+    }
+    .note {
+      margin-bottom: 16px;
+      color: #556;
+    }
+    #network {
+      height: 80vh;
+      border: 1px solid #d7dce5;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .status {
+      margin-top: 12px;
+      color: #445;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>AnimeInfo ネットワーク可視化</h1>
+    <div class="note">
+      生成済みの JSON データを読み込み、Vis.js でノードとエッジを表示します。
+    </div>
+    <div id="network"></div>
+    <div id="status" class="status">データを読み込んでいます...</div>
+  </div>
+
+  <script src="https://unpkg.com/vis-network@9.1.2/dist/vis-network.min.js"></script>
+  <script>
+    const statusEl = document.getElementById('status');
+    const container = document.getElementById('network');
+
+    async function loadGraphData() {
+      try {
+        const response = await fetch('../data/network_data.json');
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        const data = await response.json();
+        renderGraph(data);
+      } catch (error) {
+        statusEl.textContent = `読み込みに失敗しました: ${error.message}`;
+        console.error(error);
+      }
+    }
+
+    function renderGraph(graphData) {
+      const nodes = new vis.DataSet(
+        (graphData.nodes || []).map(node => ({
+          ...node,
+          title: node.label,
+          color: node.type === 'channel' ? '#4f83cc' : '#f59e0b',
+          font: {
+            color: '#1f2937',
+            face: 'Segoe UI, Yu Gothic UI, sans-serif',
+            size: 14,
+          },
+          shape: node.shape || 'dot',
+          size: node.type === 'channel' ? 20 : 16,
+        }))
+      );
+
+      const edges = new vis.DataSet(
+        (graphData.edges || []).map(edge => ({
+          ...edge,
+          title: edge.label || '関連動画',
+          color: {
+            color: '#9ca3af',
+            highlight: '#4f83cc',
+          },
+          arrows: edge.arrows || 'to',
+          font: {
+            color: '#4b5563',
+            size: 12,
+          },
+        }))
+      );
+
+      const data = { nodes, edges };
+      const options = {
+        physics: {
+          stabilization: true,
+          barnesHut: {
+            gravitationalConstant: -2000,
+            springLength: 120,
+            springConstant: 0.04,
+          },
+        },
+        interaction: {
+          hover: true,
+          tooltipDelay: 100,
+        },
+        nodes: {
+          borderWidth: 1,
+          borderWidthSelected: 2,
+        },
+        edges: {
+          smooth: false,
+          width: 1.5,
+        },
+        layout: {
+          improvedLayout: true,
+        },
+      };
+
+      new vis.Network(container, data, options);
+      statusEl.textContent = `表示中: ${nodes.length} ノード / ${edges.length} エッジ`;
+    }
+
+    loadGraphData();
+  </script>
+</body>
+</html>
