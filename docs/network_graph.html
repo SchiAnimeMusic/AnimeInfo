@@ -43,7 +43,13 @@
   <div class="wrap">
     <h1>AnimeInfo ネットワーク可視化</h1>
     <div class="note">
-      生成済みの JSON データを読み込み、Vis.js でノードとエッジを表示します。
+      生成済みの JSON データを読み込み、Vis.js でノードとエッジを表示します。データ量が多いため、初期表示は上位ノードに絞り込んでいます。
+    </div>
+    <div class="controls">
+      <button id="showTop">上位 600 ノード表示</button>
+      <button id="showAll">全件表示</button>
+      <button id="showChannels">チャンネルのみ</button>
+      <button id="showAnime">アニメ作品のみ</button>
     </div>
     <div id="network"></div>
     <div id="status" class="status">データを読み込んでいます...</div>
@@ -53,6 +59,13 @@
   <script>
     const statusEl = document.getElementById('status');
     const container = document.getElementById('network');
+    const showTopBtn = document.getElementById('showTop');
+    const showAllBtn = document.getElementById('showAll');
+    const showChannelsBtn = document.getElementById('showChannels');
+    const showAnimeBtn = document.getElementById('showAnime');
+
+    let fullData = null;
+    let network = null;
 
     async function loadGraphData() {
       try {
@@ -60,32 +73,55 @@
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }
-        const data = await response.json();
-        renderGraph(data);
+        fullData = await response.json();
+        updateNetwork();
+        enableControls();
       } catch (error) {
         statusEl.textContent = `読み込みに失敗しました: ${error.message}`;
         console.error(error);
       }
     }
 
-    function renderGraph(graphData) {
+    function enableControls() {
+      [showTopBtn, showAllBtn, showChannelsBtn, showAnimeBtn].forEach(button => {
+        button.disabled = false;
+      });
+    }
+
+    function computeDegree(data) {
+      const degree = {};
+      (data.edges || []).forEach(edge => {
+        degree[edge.from] = (degree[edge.from] || 0) + 1;
+        degree[edge.to] = (degree[edge.to] || 0) + 1;
+      });
+      return degree;
+    }
+
+    function selectGraph(data, nodeFilter) {
+      const nodes = (data.nodes || []).filter(nodeFilter);
+      const nodeIds = new Set(nodes.map(node => node.id));
+      const edges = (data.edges || []).filter(edge => nodeIds.has(edge.from) && nodeIds.has(edge.to));
+      return { nodes, edges };
+    }
+
+    function buildGraphData(data) {
       const nodes = new vis.DataSet(
-        (graphData.nodes || []).map(node => ({
+        (data.nodes || []).map(node => ({
           ...node,
           title: node.label,
           color: node.type === 'channel' ? '#4f83cc' : '#f59e0b',
           font: {
-            color: '#1f2937',
+            color: '#111827',
             face: 'Segoe UI, Yu Gothic UI, sans-serif',
             size: 14,
           },
           shape: node.shape || 'dot',
-          size: node.type === 'channel' ? 20 : 16,
+          size: node.type === 'channel' ? 18 : 14,
         }))
       );
 
       const edges = new vis.DataSet(
-        (graphData.edges || []).map(edge => ({
+        (data.edges || []).map(edge => ({
           ...edge,
           title: edge.label || '関連動画',
           color: {
@@ -94,42 +130,85 @@
           },
           arrows: edge.arrows || 'to',
           font: {
-            color: '#4b5563',
-            size: 12,
+            color: '#111827',
+            size: 10,
           },
+          smooth: {
+            enabled: true,
+            type: 'dynamic',
+          },
+          width: 1,
         }))
       );
 
-      const data = { nodes, edges };
+      return { nodes, edges };
+    }
+
+    function renderGraph(data, label) {
+      const graph = buildGraphData(data);
       const options = {
         physics: {
-          stabilization: true,
+          stabilization: {
+            enabled: true,
+            iterations: 500,
+            updateInterval: 25,
+          },
           barnesHut: {
-            gravitationalConstant: -2000,
+            gravitationalConstant: -8000,
             springLength: 120,
             springConstant: 0.04,
+            damping: 0.09,
           },
         },
         interaction: {
           hover: true,
           tooltipDelay: 100,
+          dragNodes: true,
+          zoomView: true,
+          dragView: true,
         },
         nodes: {
           borderWidth: 1,
           borderWidthSelected: 2,
         },
         edges: {
-          smooth: false,
-          width: 1.5,
+          smooth: true,
         },
         layout: {
           improvedLayout: true,
         },
       };
 
-      new vis.Network(container, data, options);
-      statusEl.textContent = `表示中: ${nodes.length} ノード / ${edges.length} エッジ`;
+      if (network) {
+        network.setData(graph);
+        network.setOptions(options);
+      } else {
+        network = new vis.Network(container, graph, options);
+      }
+      statusEl.textContent = `${label} 表示中: ${data.nodes.length} ノード / ${data.edges.length} エッジ`;
     }
+
+    function updateNetwork() {
+      if (!fullData) return;
+      const degree = computeDegree(fullData);
+      const topIds = Object.entries(degree)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 600)
+        .map(([id]) => Number(id));
+      const filtered = selectGraph(fullData, node => topIds.includes(node.id));
+      renderGraph(filtered, '上位 600 ノード');
+    }
+
+    showTopBtn.addEventListener('click', updateNetwork);
+    showAllBtn.addEventListener('click', () => renderGraph(fullData, '全件'));
+    showChannelsBtn.addEventListener('click', () => {
+      const filtered = selectGraph(fullData, node => node.type === 'channel');
+      renderGraph(filtered, 'チャンネルのみ');
+    });
+    showAnimeBtn.addEventListener('click', () => {
+      const filtered = selectGraph(fullData, node => node.type === 'anime');
+      renderGraph(filtered, 'アニメ作品のみ');
+    });
 
     loadGraphData();
   </script>
