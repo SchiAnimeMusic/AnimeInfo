@@ -36857,20 +36857,34 @@
         },
         {
             "id": 5266,
-            "label": "TVアニメ『ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！』ノンクレジットオープニング｜メロディ・ウェーブ(CV.宮本侑芽)、ルシアナ・ルトルバーグ(CV.大久保瑠美)「マデュアル↔ハート」",
+            "label": "TVアニメ「落第賢者の学院無双」ノンクレジットオープニング｜FLOW「＋ENCOUNT」",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5267,
-            "label": "TVアニメ『ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！』ノンクレジットエンディング｜仲村宗悟「ハンドメイド」",
+            "label": "TVアニメ『花ざかりの君たちへ』第2期ノンクレジットオープニング映像｜Omoinotake「FLASHBULB」",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5268,
+            "label": "TVアニメ『ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！』ノンクレジットオープニング｜メロディ・ウェーブ(CV.宮本侑芽)、ルシアナ・ルトルバーグ(CV.大久保瑠美)「マデュアル↔ハート」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5269,
+            "label": "TVアニメ『ヒロイン？聖女？いいえ、オールワークスメイドです（誇）！』ノンクレジットエンディング｜仲村宗悟「ハンドメイド」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5270,
             "label": "TVアニメ『LV999の村人』ノンクレジットオープニング｜藍月なくる&棗いつき「Not a Hero」",
             "type": "anime",
             "group": "anime",
@@ -85999,8 +86013,28 @@
             }
         },
         {
-            "from": 3629,
+            "from": 130,
             "to": 5266,
+            "label": "OP",
+            "video_id": "tbJPoZC5MWc",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 6,
+            "to": 5267,
+            "label": "OP",
+            "video_id": "SccI7wPhm5s",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 3629,
+            "to": 5268,
             "label": "OP",
             "video_id": "N9qyQ1s06yc",
             "arrows": "to",
@@ -86010,7 +86044,7 @@
         },
         {
             "from": 3629,
-            "to": 5267,
+            "to": 5269,
             "label": "ED",
             "video_id": "hzJqg7M1JrE",
             "arrows": "to",
@@ -86020,7 +86054,7 @@
         },
         {
             "from": 525,
-            "to": 5268,
+            "to": 5270,
             "label": "OP",
             "video_id": "4iRiuYov9pY",
             "arrows": "to",
