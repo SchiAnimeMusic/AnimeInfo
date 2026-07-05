@@ -36871,104 +36871,258 @@
         },
         {
             "id": 5268,
-            "label": "「manacles」【「REIDEEN」OPソング】",
+            "label": "TVアニメ「DIGIMON BEATBREAK」ノンクレジットエンディングムービー④／KISS OF LIFE「BREAK IT」",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5269,
-            "label": "「For You…」【「超者ライディーン」最終回EDソング】",
+            "label": "「manacles」【「REIDEEN」OPソング】",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5270,
-            "label": "【OP映像】TVアニメ「ワールド イズ ダンシング」｜マカロニえんぴつ「終宵」",
+            "label": "「For You…」【「超者ライディーン」最終回EDソング】",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5271,
-            "label": "TVアニメ『令和のダラさん』ノンクレジットオープニング映像｜毎週木曜22：30より放送中！",
+            "label": "【OP映像】TVアニメ「ワールド イズ ダンシング」｜マカロニえんぴつ「終宵」",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5272,
-            "label": "「おれは洸だ」【「勇者ライディーン」EDソング】",
-            "type": "anime",
-            "group": "anime",
-            "shape": "box"
+            "label": "ヤンジャン漫画TV【集英社ヤングジャンプ公式】",
+            "type": "channel",
+            "group": "channel",
+            "shape": "dot"
         },
         {
             "id": 5273,
-            "label": "「駆け足の生き様」【「REIDEEN」EDソング】",
+            "label": "TVアニメ「岩元先輩ノ推薦」ノンクレジットOP映像公開／毎週（土）放送・配信中！",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5274,
-            "label": "TVアニメ「Dr.STONE」最終話スペシャルエンディング映像",
+            "label": "TVアニメ『令和のダラさん』ノンクレジットオープニング映像｜毎週木曜22：30より放送中！",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5275,
-            "label": "TVアニメ『勇者のクズ』ノンクレジット最終回スペシャルエンディング映像 / 「NON-FICTION」w.o.d.",
+            "label": "「おれは洸だ」【「勇者ライディーン」EDソング】",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5276,
-            "label": "TVアニメ「バンドリ！ ゆめ∞みた」ノンクレジットエンディング映像",
+            "label": "『転生したらスライムだった件』第4期オープニング映像 第2弾",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5277,
-            "label": "TVアニメ『ヘルモード ～やり込み好きのゲーマーは廃設定の異世界で無双する～』2nd Seasonノンクレジットエンディング映像｜チョーキューメイ「Firetail」",
+            "label": "「駆け足の生き様」【「REIDEEN」EDソング】",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5278,
-            "label": "TVアニメ『ヘルモード ～やり込み好きのゲーマーは廃設定の異世界で無双する～』2nd Seasonノンクレジットオープニング映像｜浪漫派マシュマロ 「○✕△□」",
+            "label": "TVアニメ「Dr.STONE」最終話スペシャルエンディング映像",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5279,
-            "label": "『追放された転生重騎士はゲーム知識で無双する』ノンクレジットオープニング映像",
+            "label": "TVアニメ「岩元先輩ノ推薦」ノンクレジットED映像公開／毎週（土）放送・配信中！",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5280,
-            "label": "TVアニメ『きみ愛』ノンクレジットオープニング｜りりあ。「いつかちゃんと。」",
+            "label": "『転生したらスライムだった件』第4期エンディング映像 第2弾",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5281,
-            "label": "『追放された転生重騎士はゲーム知識で無双する』ノンクレジットエンディング映像",
+            "label": "TVアニメ「黄泉のツガイ」第2クールノンクレジットオープニングムービー｜音田雅則「back shot」",
             "type": "anime",
             "group": "anime",
             "shape": "box"
         },
         {
             "id": 5282,
+            "label": "TVアニメ『勇者のクズ』ノンクレジット最終回スペシャルエンディング映像 / 「NON-FICTION」w.o.d.",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5283,
+            "label": "TVアニメ『BLACK TORCH』ノンクレジットエンディング映像｜I Don’t Like Mondays.「Groooovy」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5284,
+            "label": "【ノンクレジットOP】PelleK「浪漫街道、お散歩中」｜TVアニメ『骸骨騎士様、只今異世界へお出掛け中Ⅱ』",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5285,
+            "label": "TVアニメ「バンドリ！ ゆめ∞みた」ノンクレジットエンディング映像",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5286,
+            "label": "【ED映像】TVアニメ『MAO』第2クールノンクレジットエンディング｜TV Anime MAO Part 2 Ending｜上田麗奈「揺蕩う」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5287,
+            "label": "TVアニメ『株式会社マジルミエ』第2期ノンクレジットエンディング映像｜宝鐘マリン「BooooM!!!」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5288,
+            "label": "TVアニメ『株式会社マジルミエ』第2期ノンクレジットオープニング映像｜syudou×八木勇征（FANTASTICS）「ラテマジック」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5289,
+            "label": "宝島社公式",
+            "type": "channel",
+            "group": "channel",
+            "shape": "dot"
+        },
+        {
+            "id": 5290,
+            "label": "TVアニメ『猫と竜』ノンクレジットオープニング映像【2026年7月より放送&配信中！】",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5291,
+            "label": "TVアニメ『ヘルモード ～やり込み好きのゲーマーは廃設定の異世界で無双する～』2nd Seasonノンクレジットエンディング映像｜チョーキューメイ「Firetail」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5292,
+            "label": "TVアニメ『天幕のジャードゥーガル』ノンクレジットオープニング映像｜SEKAI NO OWARI「Stella」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5293,
+            "label": "TVアニメ『ヘルモード ～やり込み好きのゲーマーは廃設定の異世界で無双する～』2nd Seasonノンクレジットオープニング映像｜浪漫派マシュマロ 「○✕△□」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5294,
+            "label": "TVアニメ『天幕のジャードゥーガル』ノンクレジットエンディング映像｜女王蜂「星」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5295,
+            "label": "TVアニメ『鬼の花嫁』ノンクレジットオープニング映像 | ClariS「ヒトコト」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5296,
+            "label": "【ノンクレジットオープニング映像】TVアニメ『才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました』",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5297,
+            "label": "【OP映像】TVアニメ「グロウアップショウ ～ひまわりのサーカス団～」オープニング映像【公式X ⇒ @growupshow】",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5298,
+            "label": "TVアニメ『神の雫』第2クールノンテロップED｜eill「エブリー・サマー」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5299,
+            "label": "『追放された転生重騎士はゲーム知識で無双する』ノンクレジットオープニング映像",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5300,
+            "label": "TVアニメ『きみ愛』ノンクレジットオープニング｜りりあ。「いつかちゃんと。」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5301,
+            "label": "TVアニメ『鬼の花嫁』ノンクレジットエンディング映像 | 山崎育三郎「心星」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5302,
+            "label": "『追放された転生重騎士はゲーム知識で無双する』ノンクレジットエンディング映像",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5303,
+            "label": "TVアニメ「黄泉のツガイ」第2クールノンクレジットエンディングムービー｜菅原圭「孔雀」",
+            "type": "anime",
+            "group": "anime",
+            "shape": "box"
+        },
+        {
+            "id": 5304,
             "label": "TVアニメ『LV999の村人』ノンクレジットエンディング｜ゆきむら。「HP」",
             "type": "anime",
             "group": "anime",
@@ -86117,8 +86271,18 @@
             }
         },
         {
-            "from": 4798,
+            "from": 1111,
             "to": 5268,
+            "label": "ED",
+            "video_id": "n3C_g10yQgg",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 4798,
+            "to": 5269,
             "label": "OP",
             "video_id": "YePoVzlhAYI",
             "arrows": "to",
@@ -86128,7 +86292,7 @@
         },
         {
             "from": 4798,
-            "to": 5269,
+            "to": 5270,
             "label": "ED",
             "video_id": "hkQn4B0bxaE",
             "arrows": "to",
@@ -86138,7 +86302,7 @@
         },
         {
             "from": 189,
-            "to": 5270,
+            "to": 5271,
             "label": "OP",
             "video_id": "6f78rxIxzV0",
             "arrows": "to",
@@ -86147,8 +86311,18 @@
             }
         },
         {
+            "from": 5272,
+            "to": 5273,
+            "label": "OP",
+            "video_id": "ms6fXO3Ngk4",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
             "from": 97,
-            "to": 5271,
+            "to": 5274,
             "label": "OP",
             "video_id": "ARajp8DyC48",
             "arrows": "to",
@@ -86158,7 +86332,7 @@
         },
         {
             "from": 4798,
-            "to": 5272,
+            "to": 5275,
             "label": "ED",
             "video_id": "hPNr7qaQbnE",
             "arrows": "to",
@@ -86167,8 +86341,18 @@
             }
         },
         {
+            "from": 481,
+            "to": 5276,
+            "label": "OP",
+            "video_id": "zvIS6EIkXx8",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
             "from": 4798,
-            "to": 5273,
+            "to": 5277,
             "label": "ED",
             "video_id": "cgcvYdr-gIk",
             "arrows": "to",
@@ -86178,7 +86362,7 @@
         },
         {
             "from": 3,
-            "to": 5274,
+            "to": 5278,
             "label": "ED",
             "video_id": "AS6A6ESr9Xo",
             "arrows": "to",
@@ -86187,8 +86371,38 @@
             }
         },
         {
+            "from": 5272,
+            "to": 5279,
+            "label": "ED",
+            "video_id": "WM9BicFEhKs",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 481,
+            "to": 5280,
+            "label": "ED",
+            "video_id": "jYbklPS7mDk",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 6,
+            "to": 5281,
+            "label": "OP",
+            "video_id": "nQGfyebJ_oc",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
             "from": 1737,
-            "to": 5275,
+            "to": 5282,
             "label": "ED",
             "video_id": "dhZ-JfM0FCI",
             "arrows": "to",
@@ -86197,8 +86411,28 @@
             }
         },
         {
+            "from": 84,
+            "to": 5283,
+            "label": "ED",
+            "video_id": "yaX2p36llik",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 322,
+            "to": 5284,
+            "label": "OP",
+            "video_id": "9Qr1nkwhqvM",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
             "from": 519,
-            "to": 5276,
+            "to": 5285,
             "label": "ED",
             "video_id": "7xrs-MPYydw",
             "arrows": "to",
@@ -86207,8 +86441,48 @@
             }
         },
         {
+            "from": 224,
+            "to": 5286,
+            "label": "ED",
+            "video_id": "wZ_NJ3ND-nk",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 2577,
+            "to": 5287,
+            "label": "ED",
+            "video_id": "CCjQ0FuVx7s",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 2577,
+            "to": 5288,
+            "label": "OP",
+            "video_id": "bp1F_BYa27U",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 5289,
+            "to": 5290,
+            "label": "OP",
+            "video_id": "ZH8xYK5vac0",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
             "from": 71,
-            "to": 5277,
+            "to": 5291,
             "label": "ED",
             "video_id": "SYpHpUiGcQU",
             "arrows": "to",
@@ -86217,8 +86491,18 @@
             }
         },
         {
+            "from": 124,
+            "to": 5292,
+            "label": "OP",
+            "video_id": "_GlLp6hyM2E",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
             "from": 71,
-            "to": 5278,
+            "to": 5293,
             "label": "OP",
             "video_id": "ByIgOD0qOKY",
             "arrows": "to",
@@ -86227,8 +86511,58 @@
             }
         },
         {
+            "from": 124,
+            "to": 5294,
+            "label": "ED",
+            "video_id": "bLQV43WeRvk",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 6,
+            "to": 5295,
+            "label": "OP",
+            "video_id": "MnFWBiWIfPg",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 71,
+            "to": 5296,
+            "label": "OP",
+            "video_id": "nWwsthEoUnQ",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 6,
+            "to": 5297,
+            "label": "OP",
+            "video_id": "QxJWmZ74GfM",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 4719,
+            "to": 5298,
+            "label": "ED",
+            "video_id": "O-W6t2MSc5w",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
             "from": 189,
-            "to": 5279,
+            "to": 5299,
             "label": "OP",
             "video_id": "_j3Bm3tr7dA",
             "arrows": "to",
@@ -86238,7 +86572,7 @@
         },
         {
             "from": 67,
-            "to": 5280,
+            "to": 5300,
             "label": "OP",
             "video_id": "GU5DQI5snck",
             "arrows": "to",
@@ -86247,8 +86581,18 @@
             }
         },
         {
+            "from": 6,
+            "to": 5301,
+            "label": "ED",
+            "video_id": "ercJJBclL9k",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
             "from": 189,
-            "to": 5281,
+            "to": 5302,
             "label": "ED",
             "video_id": "2KcoQLp7Kx8",
             "arrows": "to",
@@ -86257,8 +86601,18 @@
             }
         },
         {
+            "from": 6,
+            "to": 5303,
+            "label": "ED",
+            "video_id": "-oJdHssdJAk",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
             "from": 525,
-            "to": 5282,
+            "to": 5304,
             "label": "ED",
             "video_id": "MgIol7kDcTE",
             "arrows": "to",
