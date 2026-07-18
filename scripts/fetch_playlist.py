@@ -117,11 +117,14 @@ class PlaylistFetcher:
         self._node_id_counter += 1
         return self._node_id_counter
 
-    def _add_node_if_not_exists(self, label, node_type, image_url=None):
+    def _add_node_if_not_exists(self, label, node_type, image_url=None, external_id=None):
         """ノードが存在しない場合に追加し、そのIDを返す。画像URLが与えられたらノードに画像を設定する。"""
         # 同じラベルとタイプのノードが既に存在するかチェック
         for node_id, node_data in self.nodes.items():
-            if node_data['label'] == label and node_data['type'] == node_type:
+            if (node_data['label'] == label and node_data['type'] == node_type) or (external_id and node_data.get('external_id') == external_id):
+                # external_idを保持
+                if external_id and 'external_id' not in node_data:
+                    node_data['external_id'] = external_id
                 # 既存ノードに画像が無ければ追加する
                 if image_url and 'image' not in node_data:
                     node_data['image'] = image_url
@@ -148,6 +151,10 @@ class PlaylistFetcher:
         else:
             node['shape'] = 'dot'
 
+        # 外部IDがあれば保存（例: channelId）
+        if external_id:
+            node['external_id'] = external_id
+
         self.nodes[node_id] = node
         return node_id
     def _extract_edge_label(self, title):
@@ -169,6 +176,10 @@ class PlaylistFetcher:
         """動画の詳細情報を取得"""
         videos = []
 
+        # チャンネルID収集用
+        channel_ids_set = set()
+        channel_id_to_name = {}
+
         # 1リクエストで最大50個の動画情報を取得
         for i in range(0, len(video_ids), 50):
             batch_ids = video_ids[i:i+50]
@@ -188,6 +199,7 @@ class PlaylistFetcher:
                         if key in thumbs:
                             thumbnail_url = thumbs[key].get('url')
                             break
+                    channel_id = item['snippet'].get('channelId')
 
                     video_info = {
                         'video_id': item['id'],
@@ -195,6 +207,7 @@ class PlaylistFetcher:
                         'description': item['snippet']['description'],
                         'published_at': item['snippet']['publishedAt'],
                         'channel_name': item['snippet'].get('channelTitle', 'Unknown'),
+                        'channel_id': channel_id,
                         'view_count': item['statistics'].get('viewCount', 0),
                         'thumbnail_url': thumbnail_url,
                     }
@@ -203,9 +216,13 @@ class PlaylistFetcher:
                     # ネットワークデータ生成
                     channel_name = video_info['channel_name']
                     anime_title = video_info['title']  # 現状は動画タイトルをそのままアニメ作品名とする
+                    if channel_id:
+                        channel_ids_set.add(channel_id)
+                        # 後でアイコンを紐付けるために名前を保持
+                        channel_id_to_name[channel_id] = channel_name
 
                     # チャンネルノードを追加
-                    channel_node_id = self._add_node_if_not_exists(channel_name, 'channel')
+                    channel_node_id = self._add_node_if_not_exists(channel_name, 'channel', external_id=channel_id)
 
                     # アニメ作品ノードを追加（サムネを渡して画像ノード化）
                     anime_node_id = self._add_node_if_not_exists(anime_title, 'anime', image_url=video_info.get('thumbnail_url'))
@@ -225,7 +242,48 @@ class PlaylistFetcher:
                 logger.error(f'APIエラー: {e}')
                 sys.exit(1)
 
+        # 取得したチャンネルIDに対してアイコンを取得し、チャネルノードに画像をセット
+        if channel_ids_set:
+            icons_map = self.fetch_channel_icons(channel_ids_set)
+            for cid, name in channel_id_to_name.items():
+                icon = icons_map.get(cid)
+                if icon:
+                    # 既存のチャンネルノードにアイコンを設定（external_idでマッチ）
+                    self._add_node_if_not_exists(name, 'channel', image_url=icon, external_id=cid)
+
+            # 動画データにもチャンネルアイコンURLを追加
+            for v in videos:
+                cid = v.get('channel_id')
+                if cid:
+                    v['channel_icon_url'] = icons_map.get(cid)
+
         return videos
+
+    def fetch_channel_icons(self, channel_ids):
+        """Channels.list を使ってチャンネルアイコンを取得し、channelId->icon_url の辞書を返す"""
+        icons = {}
+        ids = list(channel_ids)
+        for i in range(0, len(ids), 50):
+            batch = ids[i:i+50]
+            try:
+                request = self.youtube.channels().list(
+                    part='snippet',
+                    id=','.join(batch),
+                    maxResults=50
+                )
+                response = request.execute()
+                for item in response.get('items', []):
+                    cid = item.get('id')
+                    thumbs = item['snippet'].get('thumbnails', {})
+                    icon_url = None
+                    for key in ('high', 'default', 'medium'):
+                        if key in thumbs:
+                            icon_url = thumbs[key].get('url')
+                            break
+                    icons[cid] = icon_url
+            except HttpError as e:
+                logger.error(f'Channels API エラー: {e}')
+        return icons
 
     def save_to_csv(self, videos_data):
         """データをCSVに保存（既存データを読み込まず、完全に上書き）"""
