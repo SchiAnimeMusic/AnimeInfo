@@ -1,0 +1,59 @@
+name: バグ修正向け
+description: バグの再現手順や期待動作を整理して修正依頼するためのテンプレート
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        バグ内容を整理し、再現条件と期待動作を明確にして修正しやすくするためのテンプレートです。
+
+  - type: input
+    id: summary
+    attributes:
+      label: バグ概要
+      description: 発生している内容を1行でまとめてください。
+      placeholder: 例: 自動更新が失敗した際にログが見づらい
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      description: バグを再現する手順を記載してください。
+      placeholder: |
+        1. 実行手順
+        2. 期待される動作
+        3. 実際の結果
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する動作
+      description: 本来どう動くべきかを書いてください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の結果
+      description: 実際に発生している事象を書いてください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 環境情報
+      description: OS、Python バージョン、ブラウザなどがあれば記載してください。
+
+  - type: textarea
+    id: references
+    attributes:
+      label: 関連ファイル / リンク
+      description: 関連するファイルやリンクがあれば記載してください。

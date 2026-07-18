@@ -1,0 +1,50 @@
+name: 機能追加向け
+description: 新機能や改善要望を整理して実装しやすくするためのテンプレート
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        追加したい機能や改善内容を整理するためのテンプレートです。
+
+  - type: input
+    id: summary
+    attributes:
+      label: 機能概要
+      description: 追加したい内容を1行でまとめてください。
+      placeholder: 例: 取得データの統計をより見やすく表示したい
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景・目的
+      description: なぜ必要か、どのような課題を解決したいかを書いてください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 実現したい内容
+      description: 具体的な機能やUIのイメージを書いてください。
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 完了条件
+      description: 実装完了と判断する基準を書いてください。
+      placeholder: |
+        - [ ] 期待動作が確認できる
+        - [ ] ドキュメントに反映されている
+
+  - type: textarea
+    id: references
+    attributes:
+      label: 関連ファイル / リンク
+      description: 関連する資料や既存実装があれば記載してください。
