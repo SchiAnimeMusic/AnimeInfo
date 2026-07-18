@@ -109,14 +109,17 @@
         (data.nodes || []).map(node => ({
           ...node,
           title: node.label,
+          label: '',
+          displayLabel: node.label || '',
           color: node.type === 'channel' ? '#4f83cc' : '#f59e0b',
           font: {
             color: '#111827',
             face: 'Segoe UI, Yu Gothic UI, sans-serif',
             size: 14,
+            strokeWidth: 0,
           },
           shape: node.shape || 'dot',
-          size: node.type === 'channel' ? 18 : 14,
+          size: typeof node.size === 'number' ? node.size : (node.type === 'channel' ? 18 : 14),
         }))
       );
 
@@ -166,10 +169,20 @@
           dragNodes: true,
           zoomView: true,
           dragView: true,
+          navigationButtons: true,
+          keyboard: true,
         },
         nodes: {
           borderWidth: 1,
           borderWidthSelected: 2,
+          font: {
+            size: 14,
+            color: '#111827',
+          },
+          scaling: {
+            min: 12,
+            max: 40,
+          },
         },
         edges: {
           smooth: true,
@@ -185,6 +198,50 @@
       } else {
         network = new vis.Network(container, graph, options);
       }
+
+      network.on('click', function (params) {
+        if (!params.nodes || params.nodes.length === 0) return;
+        const nodeId = params.nodes[0];
+        const node = graph.nodes.get(nodeId);
+        if (node && node.url) {
+          window.open(node.url, '_blank', 'noopener,noreferrer');
+        }
+      });
+
+      network.on('selectNode', function (params) {
+        const nodeId = params.nodes[0];
+        if (!nodeId) return;
+        const node = graph.nodes.get(nodeId);
+        if (node) {
+          graph.nodes.update({
+            id: nodeId,
+            label: node.displayLabel || node.label || '',
+            font: { ...(node.font || {}), color: '#111827' }
+          });
+        }
+      });
+
+      network.on('deselectNode', function () {
+        graph.nodes.forEach(node => {
+          graph.nodes.update({ id: node.id, label: '' });
+        });
+      });
+
+      network.on('hoverNode', function (params) {
+        const node = graph.nodes.get(params.node);
+        if (node) {
+          graph.nodes.update({
+            id: params.node,
+            label: node.displayLabel || node.label || '',
+            font: { ...(node.font || {}), color: '#111827' }
+          });
+        }
+      });
+
+      network.on('blurNode', function (params) {
+        graph.nodes.update({ id: params.node, label: '' });
+      });
+
       statusEl.textContent = `${label} 表示中: ${data.nodes.length} ノード / ${data.edges.length} エッジ`;
     }
 

@@ -7,12 +7,17 @@ import json
 import os
 import sys
 import csv
+import math
 from pathlib import Path
 from datetime import datetime
 import logging
 
-import pandas as pd
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    def load_dotenv():
+        return False
+
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
@@ -117,8 +122,21 @@ class PlaylistFetcher:
         self._node_id_counter += 1
         return self._node_id_counter
 
-    def _add_node_if_not_exists(self, label, node_type, image_url=None, external_id=None):
-        """ノードが存在しない場合に追加し、そのIDを返す。画像URLが与えられたらノードに画像を設定する。"""
+    def _calculate_node_size(self, node_type, metric_value):
+        """人気度に応じてノードサイズを計算する"""
+        metric_value = int(metric_value or 0)
+        if metric_value <= 0:
+            return 14 if node_type == 'channel' else 12
+
+        if node_type == 'channel':
+            size = 14 + min(24, int(math.log10(metric_value + 1) * 8))
+        else:
+            size = 12 + min(24, int(math.log10(metric_value + 1) * 10))
+
+        return max(12, min(40, size))
+
+    def _add_node_if_not_exists(self, label, node_type, image_url=None, external_id=None, link_url=None, metric_value=None):
+        """ノードが存在しない場合に追加し、そのIDを返す。画像URLやリンクURL、サイズ用のメトリクスが与えられたら設定する。"""
         # 同じラベルとタイプのノードが既に存在するかチェック
         for node_id, node_data in self.nodes.items():
             if (node_data['label'] == label and node_data['type'] == node_type) or (external_id and node_data.get('external_id') == external_id):
@@ -129,6 +147,15 @@ class PlaylistFetcher:
                 if image_url and 'image' not in node_data:
                     node_data['image'] = image_url
                     node_data['shape'] = 'image'
+                # 既存ノードにリンクが無ければ追加する
+                if link_url and 'url' not in node_data:
+                    node_data['url'] = link_url
+                # 既存ノードのメトリクスが大きい場合だけ更新する
+                if metric_value is not None:
+                    current_metric = node_data.get('metric_value', 0)
+                    if current_metric < int(metric_value):
+                        node_data['metric_value'] = int(metric_value)
+                        node_data['size'] = self._calculate_node_size(node_type, metric_value)
                 return node_id
 
         # 存在しない場合は新規作成
@@ -154,6 +181,14 @@ class PlaylistFetcher:
         # 外部IDがあれば保存（例: channelId）
         if external_id:
             node['external_id'] = external_id
+        if link_url:
+            node['url'] = link_url
+        if metric_value is not None:
+            node['metric_value'] = int(metric_value)
+            node['size'] = self._calculate_node_size(node_type, metric_value)
+        else:
+            node['metric_value'] = 0
+            node['size'] = 14 if node_type == 'channel' else 12
 
         self.nodes[node_id] = node
         return node_id
@@ -216,16 +251,30 @@ class PlaylistFetcher:
                     # ネットワークデータ生成
                     channel_name = video_info['channel_name']
                     anime_title = video_info['title']  # 現状は動画タイトルをそのままアニメ作品名とする
+                    channel_url = f'https://www.youtube.com/channel/{channel_id}' if channel_id else None
+                    anime_url = f'https://www.youtube.com/watch?v={video_info["video_id"]}' if video_info.get('video_id') else None
                     if channel_id:
                         channel_ids_set.add(channel_id)
                         # 後でアイコンを紐付けるために名前を保持
                         channel_id_to_name[channel_id] = channel_name
 
                     # チャンネルノードを追加
-                    channel_node_id = self._add_node_if_not_exists(channel_name, 'channel', external_id=channel_id)
+                    channel_node_id = self._add_node_if_not_exists(
+                        channel_name,
+                        'channel',
+                        external_id=channel_id,
+                        link_url=channel_url,
+                        metric_value=0,
+                    )
 
                     # アニメ作品ノードを追加（サムネを渡して画像ノード化）
-                    anime_node_id = self._add_node_if_not_exists(anime_title, 'anime', image_url=video_info.get('thumbnail_url'))
+                    anime_node_id = self._add_node_if_not_exists(
+                        anime_title,
+                        'anime',
+                        image_url=video_info.get('thumbnail_url'),
+                        link_url=anime_url,
+                        metric_value=video_info.get('view_count', 0),
+                    )
 
                     # エッジを追加
                     edge_label = self._extract_edge_label(anime_title)
@@ -246,28 +295,38 @@ class PlaylistFetcher:
         if channel_ids_set:
             icons_map = self.fetch_channel_icons(channel_ids_set)
             for cid, name in channel_id_to_name.items():
-                icon = icons_map.get(cid)
-                if icon:
-                    # 既存のチャンネルノードにアイコンを設定（external_idでマッチ）
-                    self._add_node_if_not_exists(name, 'channel', image_url=icon, external_id=cid)
+                channel_info = icons_map.get(cid, {})
+                icon = channel_info.get('icon_url')
+                subscriber_count = channel_info.get('subscriber_count', 0)
+                if icon or subscriber_count > 0:
+                    # 既存のチャンネルノードにアイコンと登録者数を設定（external_idでマッチ）
+                    self._add_node_if_not_exists(
+                        name,
+                        'channel',
+                        image_url=icon,
+                        external_id=cid,
+                        metric_value=subscriber_count,
+                    )
 
             # 動画データにもチャンネルアイコンURLを追加
             for v in videos:
                 cid = v.get('channel_id')
                 if cid:
-                    v['channel_icon_url'] = icons_map.get(cid)
+                    channel_info = icons_map.get(cid, {})
+                    v['channel_icon_url'] = channel_info.get('icon_url')
+                    v['subscriber_count'] = channel_info.get('subscriber_count', 0)
 
         return videos
 
     def fetch_channel_icons(self, channel_ids):
-        """Channels.list を使ってチャンネルアイコンを取得し、channelId->icon_url の辞書を返す"""
+        """Channels.list を使ってチャンネルアイコンと登録者数を取得し、channelId->情報 の辞書を返す"""
         icons = {}
         ids = list(channel_ids)
         for i in range(0, len(ids), 50):
             batch = ids[i:i+50]
             try:
                 request = self.youtube.channels().list(
-                    part='snippet',
+                    part='snippet,statistics',
                     id=','.join(batch),
                     maxResults=50
                 )
@@ -280,29 +339,40 @@ class PlaylistFetcher:
                         if key in thumbs:
                             icon_url = thumbs[key].get('url')
                             break
-                    icons[cid] = icon_url
+                    subscriber_count = item['statistics'].get('subscriberCount', 0)
+                    icons[cid] = {
+                        'icon_url': icon_url,
+                        'subscriber_count': int(subscriber_count or 0),
+                    }
             except HttpError as e:
                 logger.error(f'Channels API エラー: {e}')
         return icons
 
     def save_to_csv(self, videos_data):
         """データをCSVに保存（既存データを読み込まず、完全に上書き）"""
-        # 新規取得したデータのみでデータフレームを作成
-        result_df = pd.DataFrame(videos_data)
-
-        # 再生リスト内に万が一重複があってもここで確実に排除
-        if 'video_id' in result_df.columns:
-            result_df = result_df.drop_duplicates(subset=['video_id'], keep='first')
-        else:
-            result_df = result_df.drop_duplicates(subset=['title', 'channel_name'], keep='first')
+        # 重複排除
+        unique_videos = []
+        seen_video_ids = set()
+        for video in videos_data:
+            video_id = video.get('video_id')
+            if video_id and video_id in seen_video_ids:
+                continue
+            if video_id:
+                seen_video_ids.add(video_id)
+            unique_videos.append(video)
 
         # 保存先ディレクトリを作成
         os.makedirs(os.path.dirname(self.output_csv) or '.', exist_ok=True)
 
-        # 既存ファイルを完全に上書き保存 (index=False)
-        result_df.to_csv(self.output_csv, index=False, encoding='utf-8')
+        # CSV書き出し
+        fieldnames = list(unique_videos[0].keys()) if unique_videos else []
+        with open(self.output_csv, 'w', encoding='utf-8', newline='') as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            for row in unique_videos:
+                writer.writerow(row)
 
-        logger.info(f'CSVファイルを最新データで上書きしました (総動画数: {len(result_df)} 件)')
+        logger.info(f'CSVファイルを最新データで上書きしました (総動画数: {len(unique_videos)} 件)')
 
     def save_network_data_to_json(self):
         """ノードとエッジのデータをJSONファイルに保存"""
