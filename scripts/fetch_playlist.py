@@ -129,11 +129,11 @@ class PlaylistFetcher:
             return 14 if node_type == 'channel' else 12
 
         if node_type == 'channel':
-            size = 14 + min(24, int(math.log10(metric_value + 1) * 8))
+            size = 14 + min(36, int(math.log10(metric_value + 1) * 12))
         else:
-            size = 12 + min(24, int(math.log10(metric_value + 1) * 10))
+            size = 12 + min(36, int(math.log10(metric_value + 1) * 14))
 
-        return max(12, min(40, size))
+        return max(12, min(60, size))
 
     def _add_node_if_not_exists(self, label, node_type, image_url=None, external_id=None, link_url=None, metric_value=None):
         """ノードが存在しない場合に追加し、そのIDを返す。画像URLやリンクURL、サイズ用のメトリクスが与えられたら設定する。"""

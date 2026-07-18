@@ -106,21 +106,38 @@
 
     function buildGraphData(data) {
       const nodes = new vis.DataSet(
-        (data.nodes || []).map(node => ({
-          ...node,
-          title: node.label,
-          label: '',
-          displayLabel: node.label || '',
-          color: node.type === 'channel' ? '#4f83cc' : '#f59e0b',
-          font: {
-            color: '#111827',
-            face: 'Segoe UI, Yu Gothic UI, sans-serif',
-            size: 14,
-            strokeWidth: 0,
-          },
-          shape: node.shape || 'dot',
-          size: typeof node.size === 'number' ? node.size : (node.type === 'channel' ? 18 : 14),
-        }))
+        (data.nodes || []).map(node => {
+          const metricValue = Number(node.metric_value || 0);
+          const computedSize = metricValue > 0
+            ? (node.type === 'channel'
+                ? 14 + Math.min(36, Math.log10(metricValue + 1) * 12)
+                : 12 + Math.min(36, Math.log10(metricValue + 1) * 14))
+            : (node.type === 'channel' ? 18 : 14);
+
+          const metricValue = Number(node.metric_value || 0);
+          const metricLabel = node.type === 'channel'
+            ? `登録者数<br/><b>${metricValue.toLocaleString()}人</b>`
+            : `再生回数<br/><b>${metricValue.toLocaleString()}回</b>`;
+          const tooltipText = node.label
+            ? `<div style="line-height:1.4;"><div style="font-weight:700; margin-bottom:4px;">${node.label}</div><div>${metricLabel}</div></div>`
+            : `<div style="line-height:1.4;"><div>${metricLabel}</div></div>`;
+
+          return {
+            ...node,
+            title: tooltipText,
+            label: '',
+            displayLabel: node.label || '',
+            color: node.type === 'channel' ? '#4f83cc' : '#f59e0b',
+            font: {
+              color: '#111827',
+              face: 'Segoe UI, Yu Gothic UI, sans-serif',
+              size: 14,
+              strokeWidth: 0,
+            },
+            shape: node.shape || 'dot',
+            size: typeof node.size === 'number' ? node.size : computedSize,
+          };
+        })
       );
 
       const edges = new vis.DataSet(
@@ -153,8 +170,8 @@
         physics: {
           stabilization: {
             enabled: true,
-            iterations: 500,
-            updateInterval: 25,
+            iterations: 200,
+            updateInterval: 50,
           },
           barnesHut: {
             gravitationalConstant: -8000,
@@ -250,10 +267,10 @@
       const degree = computeDegree(fullData);
       const topIds = Object.entries(degree)
         .sort((a, b) => b[1] - a[1])
-        .slice(0, 600)
+        .slice(0, 300)
         .map(([id]) => Number(id));
       const filtered = selectGraph(fullData, node => topIds.includes(node.id));
-      renderGraph(filtered, '上位 600 ノード');
+      renderGraph(filtered, '上位 300 ノード');
     }
 
     showTopBtn.addEventListener('click', updateNetwork);
