@@ -14,7 +14,7 @@ body:
     attributes:
       label: 課題概要
       description: 1行で要約してください。
-      placeholder: 例: 自動更新ワークフローの実行ログを確認しやすくしたい
+      placeholder: "例: 自動更新ワークフローの実行ログを確認しやすくしたい"
     validations:
       required: true
 
@@ -23,7 +23,7 @@ body:
     attributes:
       label: 現状の背景
       description: 発生している現象、原因、関連情報を記載してください。
-      placeholder: 例: 現在の更新処理では、失敗時に原因が追いづらい。
+      placeholder: "例: 現在の更新処理では、失敗時に原因が追いづらい。"
     validations:
       required: true
 
@@ -32,7 +32,7 @@ body:
     attributes:
       label: 対応目標
       description: 何を達成したいかを書きます。
-      placeholder: 例: 失敗時に原因を確認できるようにする。
+      placeholder: "例: 失敗時に原因を確認できるようにする。"
     validations:
       required: true
 
@@ -65,7 +65,7 @@ body:
     attributes:
       label: 関連ファイル / リンク
       description: 参照先や関連Issue、PR、資料があれば記載してください。
-      placeholder: 例: scripts/fetch_playlist.py, README.md
+      placeholder: "例: scripts/fetch_playlist.py, README.md"
 
   - type: checkboxes
     id: checklist

@@ -14,7 +14,7 @@ body:
     attributes:
       label: バグ概要
       description: 発生している内容を1行でまとめてください。
-      placeholder: 例: 自動更新が失敗した際にログが見づらい
+      placeholder: "例: 自動更新が失敗した際にログが見づらい"
     validations:
       required: true
 

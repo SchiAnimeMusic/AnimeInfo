@@ -14,7 +14,7 @@ body:
     attributes:
       label: 機能概要
       description: 追加したい内容を1行でまとめてください。
-      placeholder: 例: 取得データの統計をより見やすく表示したい
+      placeholder: "例: 取得データの統計をより見やすく表示したい"
     validations:
       required: true
 
