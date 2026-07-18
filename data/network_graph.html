@@ -46,7 +46,7 @@
       生成済みの JSON データを読み込み、Vis.js でノードとエッジを表示します。データ量が多いため、初期表示は上位ノードに絞り込んでいます。
     </div>
     <div class="controls">
-      <button id="showTop">上位 600 ノード表示</button>
+      <button id="showTop">上位 100 ノード表示</button>
       <button id="showAll">全件表示</button>
       <button id="showChannels">チャンネルのみ</button>
       <button id="showAnime">アニメ作品のみ</button>
@@ -267,10 +267,10 @@
       const degree = computeDegree(fullData);
       const topIds = Object.entries(degree)
         .sort((a, b) => b[1] - a[1])
-        .slice(0, 300)
+        .slice(0, 100)
         .map(([id]) => Number(id));
       const filtered = selectGraph(fullData, node => topIds.includes(node.id));
-      renderGraph(filtered, '上位 300 ノード');
+      renderGraph(filtered, '上位 100 ノード');
     }
 
     showTopBtn.addEventListener('click', updateNetwork);
