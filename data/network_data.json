@@ -5,511 +5,678 @@
             "label": "Asmik Ace",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "Asmik Ace",
+            "shape": "image",
+            "external_id": "UCBuAshczy8ouqLU_H381row",
+            "image": "https://yt3.ggpht.com/ytc/AIdro_lKfQknyVnbz-FmD4KUIUa80Ne8E0Rf61z8iExU3o6Veg=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 2,
             "label": "TVアニメ「スーパーの裏でヤニ吸うふたり」TV放送版ノンクレジットOP映像 ｜ずっと真夜中でいいのに。「イチジク煙」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ「スーパーの裏でヤニ吸うふたり」TV放送版ノンクレジットOP映像 ｜ずっと真夜中でいいのに。「イチジク煙」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/0HGEaVFajSU/hqdefault.jpg"
         },
         {
             "id": 3,
             "label": "TOHO animation チャンネル",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "TOHO animation チャンネル",
+            "shape": "image",
+            "external_id": "UC14Yc2Qv92DMuyNRlHvpo2Q",
+            "image": "https://yt3.ggpht.com/eWI91qDASaVas8dGoEkvje7u30u0Wo8buZBhtX9xsMnzGsgzJWiY4WLUzoDXimWFJBbNlc_OXA=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 4,
             "label": "『無職転生Ⅲ ～異世界行ったら本気だす～』ノンクレジットED映像／EDテーマ：「祈り、終われば」中島美嘉",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "『無職転生Ⅲ ～異世界行ったら本気だす～』ノンクレジットED映像／EDテーマ：「祈り、終われば」中島美嘉",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/UKcJqQqiXq0/hqdefault.jpg"
         },
         {
             "id": 5,
             "label": "魔法少女リリカルなのは YouTube OFFICIAL CHANNEL",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "魔法少女リリカルなのは YouTube OFFICIAL CHANNEL",
+            "shape": "image",
+            "external_id": "UCryNrgY4lfJgYkhMNgwHPMg",
+            "image": "https://yt3.ggpht.com/pJQtN708-HL5_ulw00DtEvslVYzvqMSkfE-IGVzkz3Fc7x_OM3TgJ1B6uzGe4RxrHj6aiXxG=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 6,
             "label": "水樹奈々「CRIMSON BULLET」 | 魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance | ノンクレジットOP",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "水樹奈々「CRIMSON BULLET」 | 魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance | ノンクレジットOP",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/_gBcPnxRXDY/hqdefault.jpg"
         },
         {
             "id": 7,
             "label": "【アニメ】名探偵コナン公式",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "【アニメ】名探偵コナン公式",
+            "shape": "image",
+            "external_id": "UCvPA5InlbO2NCV8uFNMVBew",
+            "image": "https://yt3.ggpht.com/-530cxvgiE4ncbYwjn3tYBAmiZfc5FO_dtuv2yAcXQNj9kl-iElEJEDO9Zm1_QTT8fuG2GCCBQ=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 8,
             "label": "『名探偵コナン』新ノンクレジットOP 新浜レオン「愛のFIRE」\"DETECTIVE CONAN\" NEW OPENING Movie(2026)",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "『名探偵コナン』新ノンクレジットOP 新浜レオン「愛のFIRE」\"DETECTIVE CONAN\" NEW OPENING Movie(2026)",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/UV53uVaECT8/hqdefault.jpg"
         },
         {
             "id": 9,
             "label": "KADOKAWAanime",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "KADOKAWAanime",
+            "shape": "image",
+            "external_id": "UCY5fcqgSrQItPAX_Z5Frmwg",
+            "image": "https://yt3.ggpht.com/ytc/AIdro_kBexGPE4xdlwIRGuLFEcoqtNFCi_8bWioG0HyHx7cSbvI=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 10,
             "label": "オリジナルTVアニメ『さよならララ』オープニング映像 |いきものがかり「さよならララ」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "オリジナルTVアニメ『さよならララ』オープニング映像 |いきものがかり「さよならララ」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/GOfC_4qCa9c/hqdefault.jpg"
         },
         {
             "id": 11,
             "label": "TVアニメ『きみが死ぬまで恋をしたい』ノンクレジットオープニング映像｜ReoNa「Amore」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『きみが死ぬまで恋をしたい』ノンクレジットオープニング映像｜ReoNa「Amore」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/01Vgu7BIxmI/hqdefault.jpg"
         },
         {
             "id": 12,
             "label": "TVアニメ『幼女戦記Ⅱ』ノンクレジットOP映像｜MYTH & ROID「Why? RED induction」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『幼女戦記Ⅱ』ノンクレジットOP映像｜MYTH & ROID「Why? RED induction」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/IVyvkwvsqW0/hqdefault.jpg"
         },
         {
             "id": 13,
             "label": "TVアニメ『ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～』ノンクレジットオープニングムービー／オープニングテーマ：milet「Sunny」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『ふつつかな悪女ではございますが ～雛宮蝶鼠とりかえ伝～』ノンクレジットオープニングムービー／オープニングテーマ：milet「Sunny」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/LshSTzPWdLk/hqdefault.jpg"
         },
         {
             "id": 14,
             "label": "VAP Official",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "VAP Official",
+            "shape": "image",
+            "external_id": "UCazjJ6udlwl6cP_om1zqTQQ",
+            "image": "https://yt3.ggpht.com/mpoUy3YTeFEirb9EZnvLirewO1tEe6R4hTEXKYYZqRDN1lbsY2A0UuCio8nu7KIMQpTW6nLB9Eo=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 15,
             "label": "TVアニメ『これ描いて死ね』OP映像【日本テレビ系フラアニにて毎週金曜23時30分から全国30局ネットで放送中！】",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『これ描いて死ね』OP映像【日本テレビ系フラアニにて毎週金曜23時30分から全国30局ネットで放送中！】",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/ZcX905vF0j0/hqdefault.jpg"
         },
         {
             "id": 16,
             "label": "NBCUniversal Anime/Music",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "NBCUniversal Anime/Music",
+            "shape": "image",
+            "external_id": "UCeOMz8AiNhsDhEovu5_3ujQ",
+            "image": "https://yt3.ggpht.com/DpIpvILSTQVJn40L0KZwJOL_j_2fv2i_cZpvuzn7ISw0h6mZajbfJZZPCrcn68RuiaKidABC1wQ=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 17,
             "label": "TVアニメ『鉄鍋のジャン！』ノンクレジットオープニング映像",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『鉄鍋のジャン！』ノンクレジットオープニング映像",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/wTQdf37-OBk/hqdefault.jpg"
         },
         {
             "id": 18,
             "label": "TVアニメ「天は赤い河のほとり」ノンクレジットOP｜OPテーマ：七海ひろき「暁の空」【日本テレビ・ＢＳ日テレにて放送中】",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ「天は赤い河のほとり」ノンクレジットOP｜OPテーマ：七海ひろき「暁の空」【日本テレビ・ＢＳ日テレにて放送中】",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/cpytH8hQ5BE/hqdefault.jpg"
         },
         {
             "id": 19,
             "label": "GOOD SMILE CHANNEL",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "GOOD SMILE CHANNEL",
+            "shape": "image",
+            "external_id": "UCt_XdtyWNVenULI5DylX8-A",
+            "image": "https://yt3.ggpht.com/ytc/AIdro_mybQtOHblclu1oFSLe6HwlqDDh8Y0qA3JQbEDBBU8V7w=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 20,
             "label": "【オープニング】TVアニメ『乙女怪獣キャラメリゼ』｜METANICK「乙女怪獣」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "【オープニング】TVアニメ『乙女怪獣キャラメリゼ』｜METANICK「乙女怪獣」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/hFldDZZcrQo/hqdefault.jpg"
         },
         {
             "id": 21,
             "label": "青木陽菜「Ephemeral」|魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance | ノンクレジットED",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "青木陽菜「Ephemeral」|魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance | ノンクレジットED",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/hHBu5YXhiXQ/hqdefault.jpg"
         },
         {
             "id": 22,
             "label": "avex pictures",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "avex pictures",
+            "shape": "image",
+            "external_id": "UCKlXiCjg_VI0eZ9kKBeNJgw",
+            "image": "https://yt3.ggpht.com/KLeAp_Ld3R_SPHCzNT0prmj4QDQLalKIW_P_HNnsN_e2mZPcHeu4QsnoWtaonoguDcdVJ_8svw=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 23,
             "label": "i☆Ris「Welcome to あざとさワールド」| TVアニメ『炎の闘球女 ドッジ弾子』ノンクレジットエンディング",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "i☆Ris「Welcome to あざとさワールド」| TVアニメ『炎の闘球女 ドッジ弾子』ノンクレジットエンディング",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/miLM7VnR08o/hqdefault.jpg"
         },
         {
             "id": 24,
             "label": "TVアニメ『幼女戦記Ⅱ』ノンクレジットED映像｜ターニャ・デグレチャフ(CV:悠木碧)「Weiter! Weiter!」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『幼女戦記Ⅱ』ノンクレジットED映像｜ターニャ・デグレチャフ(CV:悠木碧)「Weiter! Weiter!」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/x2k_iYCGKvE/hqdefault.jpg"
         },
         {
             "id": 25,
             "label": "京アニチャンネル",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "京アニチャンネル",
+            "shape": "image",
+            "external_id": "UCpGY2vcoKXf7K6tFzsbSv7w",
+            "image": "https://yt3.ggpht.com/QwSNIxqlBPg3q8URSe616n_qFbS2OCXx4_nUUJc7MvmSBrYKuxvIyXABm5lfJz2UY6nLggnl=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 26,
             "label": "TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』｜ノンクレジットOP 第貳話",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』｜ノンクレジットOP 第貳話",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/-UMzc7BI6y4/hqdefault.jpg"
         },
         {
             "id": 27,
             "label": "【ytv animation】読売テレビ アニメ公式",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "【ytv animation】読売テレビ アニメ公式",
+            "shape": "image",
+            "external_id": "UCi3c8HJxjiidVUYn4L4zQJw",
+            "image": "https://yt3.ggpht.com/m5P1xSOZJDVh04WITtI7QISEpEgR5gwO0lwL5M10ygjPs4sq-nBD0mu1yiXZcsr_1Sarbua-=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 28,
             "label": "アニメ『本好きの下剋上 領主の養女』第2クールOPノンクレジット映像「Power of Love」西野カナ/毎週土曜夕方5時半～放送中！",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "アニメ『本好きの下剋上 領主の養女』第2クールOPノンクレジット映像「Power of Love」西野カナ/毎週土曜夕方5時半～放送中！",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/3BlCT0_r6RQ/hqdefault.jpg"
         },
         {
             "id": 29,
             "label": "SHOCHIKU animeチャンネル【公式】",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "SHOCHIKU animeチャンネル【公式】",
+            "shape": "image",
+            "external_id": "UC6VPE3kztGEtFVcJI0oIiUg",
+            "image": "https://yt3.ggpht.com/NsTvqg27tbAF-BNEIy6brMZ1BmSJvqY8KGzw4cWpg8amFL3zmARjR5wj2Ho3SLVHqGmjPCOf=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 30,
             "label": "TVアニメ「正反対な君と僕」第2期ノンクレジットエンディング映像",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ「正反対な君と僕」第2期ノンクレジットエンディング映像",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/FlqDBh8QjZk/hqdefault.jpg"
         },
         {
             "id": 31,
             "label": "TVアニメ「スーパーの裏でヤニ吸うふたり」TV放送版ノンクレジットED映像 ｜imase「Fiction」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ「スーパーの裏でヤニ吸うふたり」TV放送版ノンクレジットED映像 ｜imase「Fiction」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/rn0QtVBIo2o/hqdefault.jpg"
         },
         {
             "id": 32,
             "label": "TVアニメ『いびってこない義母と義姉』ノンクレジットOPムービー｜Lia「雨宿りの憧憬」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『いびってこない義母と義姉』ノンクレジットOPムービー｜Lia「雨宿りの憧憬」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/k2Gfd254sMg/hqdefault.jpg"
         },
         {
             "id": 33,
             "label": "7月より放送中！TVアニメ「#領民0人スタートの辺境領主様 」ノンクレジット・エンディング映像",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "7月より放送中！TVアニメ「#領民0人スタートの辺境領主様 」ノンクレジット・エンディング映像",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/dhAKFhT6pno/hqdefault.jpg"
         },
         {
             "id": 34,
             "label": "アニプレックス チャンネル",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "アニプレックス チャンネル",
+            "shape": "image",
+            "external_id": "UC14QT5j2nQI8lKBCGtrrBQA",
+            "image": "https://yt3.ggpht.com/vG4F6wBFAfaSV13GbkSjmy8rMNMYi7rSs2jxitmaMrqNrWWc9Yvdmh6FlkREnPu0mquEsUvk3g=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 35,
             "label": "【ED映像】TVアニメ「グロウアップショウ ～ひまわりのサーカス団～」ノンクレジットエンディング映像【公式X ⇒ @growupshow】",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "【ED映像】TVアニメ「グロウアップショウ ～ひまわりのサーカス団～」ノンクレジットエンディング映像【公式X ⇒ @growupshow】",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/Z3LKxdlyNSU/hqdefault.jpg"
         },
         {
             "id": 36,
             "label": "ぽにきゃん-Anime PONY CANYON",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "ぽにきゃん-Anime PONY CANYON",
+            "shape": "image",
+            "external_id": "UCb-ekPowbBlQhyt7ZXPiu5Q",
+            "image": "https://yt3.ggpht.com/xf6r6k8A4f-34kU7MpjbqeaZo_zyDUznWlnrNqF0EAb08FscfBAbsXr7B_OM_GTmWXRdsPxmFw=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 37,
             "label": "TVアニメ『花織さんは転生しても喧嘩がしたい』ノンクレジットED｜内田真礼「ベリーグッド・エンカウント」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『花織さんは転生しても喧嘩がしたい』ノンクレジットED｜内田真礼「ベリーグッド・エンカウント」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/mGmKY-PB82o/hqdefault.jpg"
         },
         {
             "id": 38,
             "label": "GREE Entertainment ANIME & GAME【公式】",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "GREE Entertainment ANIME & GAME【公式】",
+            "shape": "image",
+            "external_id": "UCX34wuta-mYtZhKr3lS5nwg",
+            "image": "https://yt3.ggpht.com/hLYrOThgY8iUN_YH9bMlO7Br1msVbzqsW0aJ1DtcVKFt15uidQUHfvQRBe4eVgWGmpcOQJs6=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 39,
             "label": "TVアニメ『ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた。』ノンクレジットOP｜「それでも曇天を越えてゆく」sajou no hana",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた。』ノンクレジットOP｜「それでも曇天を越えてゆく」sajou no hana",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/lMq8obidFDI/hqdefault.jpg"
         },
         {
             "id": 40,
             "label": "TVアニメ『花織さんは転生しても喧嘩がしたい』ノンクレジットOP｜オーイシマサヨシ「ハイメンテナンスガール」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『花織さんは転生しても喧嘩がしたい』ノンクレジットOP｜オーイシマサヨシ「ハイメンテナンスガール」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/dv1TGoV_aS8/hqdefault.jpg"
         },
         {
             "id": 41,
             "label": "TVアニメ『きみが死ぬまで恋をしたい』ノンクレジットエンディング映像｜sajou no hana「エテルネル」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『きみが死ぬまで恋をしたい』ノンクレジットエンディング映像｜sajou no hana「エテルネル」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/bszg61aM_7E/hqdefault.jpg"
         },
         {
             "id": 42,
             "label": "TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』｜ノンクレジットED",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』｜ノンクレジットED",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/lJ6dDUwWOis/hqdefault.jpg"
         },
         {
             "id": 43,
             "label": "MBS animation 公式チャンネル",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "MBS animation 公式チャンネル",
+            "shape": "image",
+            "external_id": "UC8yS5dCzbiPGf1HnAwwcnhQ",
+            "image": "https://yt3.ggpht.com/PfB7DJv0duVb4MZ7xD_RATg9jtamNK3SblNA_KI2gZ_HQmm3BPlM-wh0pA4od1MQ5Za0FHxy=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 44,
             "label": "【ノンクレジットエンディング映像】TVアニメ『才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました』",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "【ノンクレジットエンディング映像】TVアニメ『才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました』",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/n7iidGIYvkw/hqdefault.jpg"
         },
         {
             "id": 45,
             "label": "アニメ『本好きの下剋上 領主の養女』第2クールEDノンクレジット映像「Wanna me」adieu/毎週土曜夕方5時半～放送中！",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "アニメ『本好きの下剋上 領主の養女』第2クールEDノンクレジット映像「Wanna me」adieu/毎週土曜夕方5時半～放送中！",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/JvIeQsFHkMM/hqdefault.jpg"
         },
         {
             "id": 46,
             "label": "「クレバテスⅡ-魔獣の王と偽りの勇者伝承-」ノンクレジットオープニング映像「Foreshadow」｜ClevatessⅡ",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "「クレバテスⅡ-魔獣の王と偽りの勇者伝承-」ノンクレジットオープニング映像「Foreshadow」｜ClevatessⅡ",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/SiTi3WCmzfc/hqdefault.jpg"
         },
         {
             "id": 47,
             "label": "TVアニメ『これ描いて死ね』ノンクレジットED映像【日本テレビ系フラアニにて毎週金曜23時30分から全国30局ネットで放送中！】",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『これ描いて死ね』ノンクレジットED映像【日本テレビ系フラアニにて毎週金曜23時30分から全国30局ネットで放送中！】",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/BHS-_AXCWrc/hqdefault.jpg"
         },
         {
             "id": 48,
             "label": "TVアニメ『うちの弟どもがすみません』ノンクレジットエンディングムービー｜汐れいら「Clover」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『うちの弟どもがすみません』ノンクレジットエンディングムービー｜汐れいら「Clover」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/4KZnNNPfkss/hqdefault.jpg"
         },
         {
             "id": 49,
             "label": "ＴＶアニメ「ぐらんぶる」Season 3ノンクレED",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "ＴＶアニメ「ぐらんぶる」Season 3ノンクレED",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/c-kKrErfKvM/hqdefault.jpg"
         },
         {
             "id": 50,
             "label": "TVアニメ『きみ愛』ノンクレジットエンディング｜sorato「最終回」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『きみ愛』ノンクレジットエンディング｜sorato「最終回」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/jW-nRpVHw8c/hqdefault.jpg"
         },
         {
             "id": 51,
             "label": "【フジテレビ】アニメ公式チャンネル",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "【フジテレビ】アニメ公式チャンネル",
+            "shape": "image",
+            "external_id": "UCO8okJvgXmbmyJTkUMWvURg",
+            "image": "https://yt3.ggpht.com/OtdmaUHVosd0110GDmnaoRj4v5wWCbVALNh-5_iXpSSjAZ3fxYxQlF3qmWz-zYpqMyaM5dTbXg=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 52,
             "label": "『サンダー３』ノンクレジットOP｜優里「サンダーボルト」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "『サンダー３』ノンクレジットOP｜優里「サンダーボルト」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/gnsGSDo0fTU/hqdefault.jpg"
         },
         {
             "id": 53,
             "label": "【公式】アース・スター エンターテイメント",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "【公式】アース・スター エンターテイメント",
+            "shape": "image",
+            "external_id": "UCBoHPnjDHd2W6mY7lHCTzXA",
+            "image": "https://yt3.ggpht.com/AwvZ9pGFT_eE8tbMhKVyfYLlbvvtpWzRIkEMltel3LJNHY8itGNvUYs4jwwRU2KMr_sxI2Pn=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 54,
             "label": "TVアニメ『無自覚聖女は今日も無意識に力を垂れ流す』ノンクレジットオープニング映像┋2026年6月30日より、AT-X・TOKYO MX・BS11ほかにて放送中！",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『無自覚聖女は今日も無意識に力を垂れ流す』ノンクレジットオープニング映像┋2026年6月30日より、AT-X・TOKYO MX・BS11ほかにて放送中！",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/TOj2RisiiwY/hqdefault.jpg"
         },
         {
             "id": 55,
             "label": "TVアニメ『無自覚聖女は今日も無意識に力を垂れ流す』ノンクレジットエンディング映像┋2026年6月30日より、AT-X・TOKYO MX・BS11ほかにて放送中！",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『無自覚聖女は今日も無意識に力を垂れ流す』ノンクレジットエンディング映像┋2026年6月30日より、AT-X・TOKYO MX・BS11ほかにて放送中！",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/tB1cFMYBX_4/hqdefault.jpg"
         },
         {
             "id": 56,
             "label": "【ノンクレジットエンディング】TVアニメ『乙女怪獣キャラメリゼ』｜HoneyWorks feat.ハコニワリリィ「オトメノホンキ」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "【ノンクレジットエンディング】TVアニメ『乙女怪獣キャラメリゼ』｜HoneyWorks feat.ハコニワリリィ「オトメノホンキ」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/waOUdRPozDY/hqdefault.jpg"
         },
         {
             "id": 57,
             "label": "TVアニメ『対ありでした。～お嬢さまは格闘ゲームなんてしない～』ノンクレジットエンディング映像│halca 「NEW GAME」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『対ありでした。～お嬢さまは格闘ゲームなんてしない～』ノンクレジットエンディング映像│halca 「NEW GAME」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/GKtdRThIuuE/hqdefault.jpg"
         },
         {
             "id": 58,
             "label": "「クレバテスⅡ-魔獣の王と偽りの勇者伝承-」ノンクレジットエンディング映像「Awake Anew」｜ClevatessⅡ",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "「クレバテスⅡ-魔獣の王と偽りの勇者伝承-」ノンクレジットエンディング映像「Awake Anew」｜ClevatessⅡ",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/Tbyi0Tx1QLA/hqdefault.jpg"
         },
         {
             "id": 59,
             "label": "TVアニメ『ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた。』ノンクレジットED｜「在り来たりな日常と幸運な日々へ」名称非公開",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた。』ノンクレジットED｜「在り来たりな日常と幸運な日々へ」名称非公開",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/UDD-U-c-m9Y/hqdefault.jpg"
         },
         {
             "id": 60,
             "label": "【ED映像】TVアニメ「ワールド イズ ダンシング」｜hockrockb「名もない花」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "【ED映像】TVアニメ「ワールド イズ ダンシング」｜hockrockb「名もない花」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/kBP_Urtwx7Q/hqdefault.jpg"
         },
         {
             "id": 61,
             "label": "アニメ『神の雫』official YouTube channel",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "アニメ『神の雫』official YouTube channel",
+            "shape": "image",
+            "external_id": "UCZmIOLt8hoHf379OVCC8VTg",
+            "image": "https://yt3.ggpht.com/5Y9d9vVtAzVcnQmO3CHebF7MvACO9WYeDuQXZB7NsEQnQPwuNDuDR3gxKzAohjwlkk-cREsSNw=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 62,
             "label": "TVアニメ『神の雫』第2クールノンテロップOP｜SUPER★DRAGON「Call Me Asap」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『神の雫』第2クールノンテロップOP｜SUPER★DRAGON「Call Me Asap」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/hDt5lumdnjY/hqdefault.jpg"
         },
         {
             "id": 63,
             "label": "TVアニメ『手札が多めのビクトリア』ノンテロップED映像｜エンディングテーマ：KI_EN「縁のつき」⟡.·",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『手札が多めのビクトリア』ノンテロップED映像｜エンディングテーマ：KI_EN「縁のつき」⟡.·",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/r6pUQw5xjoc/hqdefault.jpg"
         },
         {
             "id": 64,
             "label": "『アズールレーン びそくぜんしんっ！にっ！！』ノンクレジット映像｜「Lu lu lun♪〜ウラハラ気分はオートマティック〜」橋本みゆき",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "『アズールレーン びそくぜんしんっ！にっ！！』ノンクレジット映像｜「Lu lu lun♪〜ウラハラ気分はオートマティック〜」橋本みゆき",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/0s8wRiSeKyg/hqdefault.jpg"
         },
         {
             "id": 65,
             "label": "宝島社公式",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "宝島社公式",
+            "shape": "image",
+            "external_id": "UCCPR6Q-5a2qplsH0dPT9HPg",
+            "image": "https://yt3.ggpht.com/ytc/AIdro_kyqHaNRuCF0R17ox8sv1gnOqQ-fj761JlvLU8_-nxz7ns=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 66,
             "label": "TVアニメ『猫と竜』ノンクレジットエンディング映像【2026年7月より放送&配信中！】",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『猫と竜』ノンクレジットエンディング映像【2026年7月より放送&配信中！】",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/CmP5HMtIOEY/hqdefault.jpg"
         },
         {
             "id": 67,
             "label": "7月より放送中！TVアニメ「#領民0人スタートの辺境領主様 」ノンクレジット・オープニング映像",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "7月より放送中！TVアニメ「#領民0人スタートの辺境領主様 」ノンクレジット・オープニング映像",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/fCboU3XWuLU/hqdefault.jpg"
         },
         {
             "id": 68,
             "label": "Project ANIMA チャンネル",
             "type": "channel",
             "group": "channel",
-            "shape": "dot"
+            "title": "Project ANIMA チャンネル",
+            "shape": "image",
+            "external_id": "UCedwDnjKc-CFgMeC6f8n70g",
+            "image": "https://yt3.ggpht.com/-BLtNao72HnDq3MWSgV9qgIuyJ9SnucozizuZxWLVjOSVATy-V1bH3eXl8YDudX9_JyINT_j=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 69,
             "label": "TVアニメ「メビウス・ダスト」ノンクレジットOP映像",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ「メビウス・ダスト」ノンクレジットOP映像",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/DZIN7Fx_K48/hqdefault.jpg"
         },
         {
             "id": 70,
             "label": "TVアニメ「メビウス・ダスト」ノンクレジットED映像",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ「メビウス・ダスト」ノンクレジットED映像",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/00D8aV_cT6c/hqdefault.jpg"
         },
         {
             "id": 71,
             "label": "TVアニメ「天は赤い河のほとり」ノンクレジットED｜EDテーマ：清水美依紗「Reunion」【日本テレビ・ＢＳ日テレにて放送中】",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ「天は赤い河のほとり」ノンクレジットED｜EDテーマ：清水美依紗「Reunion」【日本テレビ・ＢＳ日テレにて放送中】",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/z0cYxw8Eifg/hqdefault.jpg"
         },
         {
             "id": 72,
             "label": "TVアニメ『逃げ上手の若君』第二期ノンクレジットオープニングムービー(歌詞有)｜中島健人「鬼事」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『逃げ上手の若君』第二期ノンクレジットオープニングムービー(歌詞有)｜中島健人「鬼事」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/Dgj69Vqr120/hqdefault.jpg"
         },
         {
             "id": 73,
             "label": "TVアニメ『逃げ上手の若君』第二期ノンクレジットエンディングムービー(歌詞有)｜ぼっちぼろまる「ロマンティックがほしいなら feat. 小坂菜緒,正源司陽子,藤嶌果歩（日向坂46）」",
             "type": "anime",
             "group": "anime",
-            "shape": "box"
+            "title": "TVアニメ『逃げ上手の若君』第二期ノンクレジットエンディングムービー(歌詞有)｜ぼっちぼろまる「ロマンティックがほしいなら feat. 小坂菜緒,正源司陽子,藤嶌果歩（日向坂46）」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/2xkn83S68sM/hqdefault.jpg"
         }
     ],
     "edges": [
