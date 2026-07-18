@@ -69,7 +69,7 @@
 
     async function loadGraphData() {
       try {
-        const response = await fetch('../data/network_data.json');
+        const response = await fetch('./network_data.json');
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}`);
         }

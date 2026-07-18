@@ -40,11 +40,11 @@ GitHub Actionsを利用して、毎日自動で最新データに更新されま
 | `statistics_report.html` | インタラクティブなHTMLレポート（グラフ+テーブル） |
 | `channel_statistics.csv` | 全チャンネルの統計データ |
 | `data/network_data.json` | Vis.js などで利用できるネットワークノード/エッジ形式のJSONデータ |
-| `docs/network_graph.html` | `data/network_data.json` を読み込んで Vis.js で可視化する最小構成ページ |
+| `data/network_graph.html` | `data/network_data.json` を読み込んで Vis.js で可視化する最小構成ページ |
 
 #### ネットワーク可視化
 
-- [ネットワーク可視化ページ](docs/network_graph.html)
+- [ネットワーク可視化ページ](data/network_graph.html)
 - 現在の実装では、チャンネルノードとアニメ作品ノードを分け、各動画をエッジでつなげる形になっています。
 
 #### 実行スケジュール
