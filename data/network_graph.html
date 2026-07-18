@@ -43,7 +43,7 @@
   <div class="wrap">
     <h1>AnimeInfo ネットワーク可視化</h1>
     <div class="note">
-      生成済みの JSON データを読み込み、Vis.js でノードとエッジを表示します。データ量が多いため、初期表示は上位ノードに絞り込んでいます。
+      生成済みの JSON データを読み込み、Vis.js でノードとエッジを表示します。初期表示は、人気チャンネルとその再生回数上位の投稿動画に絞り込んで表示します。
     </div>
     <div class="controls">
       <button id="showTop">上位 100 ノード表示</button>
@@ -104,17 +104,103 @@
       return { nodes, edges };
     }
 
+    function selectChannelCluster(data, channelId) {
+      const nodeMap = new Map((data.nodes || []).map(node => [node.id, node]));
+      const selectedIds = new Set([channelId]);
+      (data.edges || []).forEach(edge => {
+        if (edge.from === channelId) {
+          selectedIds.add(edge.to);
+        } else if (edge.to === channelId) {
+          selectedIds.add(edge.from);
+        }
+      });
+      const nodes = (data.nodes || []).filter(node => selectedIds.has(node.id));
+      const edges = (data.edges || []).filter(edge => selectedIds.has(edge.from) && selectedIds.has(edge.to));
+      return { nodes, edges };
+    }
+
+    function selectTopChannelVideos(data, channelId, topN = 20) {
+      const nodeMap = new Map((data.nodes || []).map(node => [node.id, node]));
+      const videoIds = new Set();
+      (data.edges || []).forEach(edge => {
+        const fromNode = nodeMap.get(edge.from);
+        const toNode = nodeMap.get(edge.to);
+        if (!fromNode || !toNode) return;
+        if (fromNode.type === 'channel' && fromNode.id === channelId && toNode.type !== 'channel') {
+          videoIds.add(toNode.id);
+        }
+        if (toNode.type === 'channel' && toNode.id === channelId && fromNode.type !== 'channel') {
+          videoIds.add(fromNode.id);
+        }
+      });
+      const videos = Array.from(videoIds)
+        .map(id => nodeMap.get(id))
+        .filter(Boolean)
+        .sort((a, b) => Number(b.metric_value || 0) - Number(a.metric_value || 0))
+        .slice(0, topN);
+      const selectedIds = new Set([channelId, ...videos.map(video => video.id)]);
+      const nodes = (data.nodes || []).filter(node => selectedIds.has(node.id));
+      const edges = (data.edges || []).filter(edge => selectedIds.has(edge.from) && selectedIds.has(edge.to));
+      return { nodes, edges };
+    }
+
+    function getTopPopularChannel(data) {
+      const nodeMap = new Map((data.nodes || []).map(node => [node.id, node]));
+      const channelStats = new Map();
+
+      (data.nodes || []).forEach(node => {
+        if (node.type === 'channel') {
+          channelStats.set(node.id, { node, videoCount: 0 });
+        }
+      });
+
+      (data.edges || []).forEach(edge => {
+        const fromNode = nodeMap.get(edge.from);
+        const toNode = nodeMap.get(edge.to);
+        if (!fromNode || !toNode) return;
+        if (fromNode.type === 'channel' && toNode.type !== 'channel') {
+          const stats = channelStats.get(fromNode.id);
+          if (stats) {
+            stats.videoCount += 1;
+            stats.totalVideoViews += Number(toNode.metric_value || 0);
+          }
+        }
+        if (toNode.type === 'channel' && fromNode.type !== 'channel') {
+          const stats = channelStats.get(toNode.id);
+          if (stats) {
+            stats.videoCount += 1;
+            stats.totalVideoViews += Number(fromNode.metric_value || 0);
+          }
+        }
+      });
+
+      let topChannel = null;
+      let topScore = -Infinity;
+      channelStats.forEach(({ node, totalVideoViews }) => {
+        const subscribers = Number(node.metric_value || 0);
+        const score = totalVideoViews + subscribers * 1000;
+        if (score > topScore) {
+          topScore = score;
+          topChannel = node;
+        }
+      });
+      return topChannel;
+    }
+
     function buildGraphData(data) {
       const nodes = new vis.DataSet(
         (data.nodes || []).map(node => {
           const metricValue = Number(node.metric_value || 0);
+          const originalShape = node.shape || 'dot';
+          const shape = node.type === 'channel' && originalShape === 'image' ? 'circularImage' : originalShape;
+          const imageShape = shape === 'image' || shape === 'circularImage';
           const computedSize = metricValue > 0
             ? (node.type === 'channel'
-                ? 14 + Math.min(36, Math.log10(metricValue + 1) * 12)
-                : 12 + Math.min(36, Math.log10(metricValue + 1) * 14))
-            : (node.type === 'channel' ? 18 : 14);
+                ? Math.max(32, 28 + Math.min(48, Math.log10(metricValue + 1) * 14))
+                : Math.max(28, 24 + Math.min(36, Math.log10(metricValue + 1) * 16)))
+            : (node.type === 'channel' ? 40 : 32);
+          const size = typeof node.size === 'number' ? node.size : (imageShape ? Math.max(computedSize, node.type === 'channel' ? 56 : 44) : computedSize);
 
-          const metricValue = Number(node.metric_value || 0);
           const metricLabel = node.type === 'channel'
             ? `登録者数<br/><b>${metricValue.toLocaleString()}人</b>`
             : `再生回数<br/><b>${metricValue.toLocaleString()}回</b>`;
@@ -134,8 +220,20 @@
               size: 14,
               strokeWidth: 0,
             },
-            shape: node.shape || 'dot',
-            size: typeof node.size === 'number' ? node.size : computedSize,
+            shape,
+            size,
+            value: metricValue > 0 ? metricValue : undefined,
+            shadow: {
+              enabled: true,
+              color: 'rgba(0, 0, 0, 0.18)',
+              size: 10,
+              x: 0,
+              y: 0,
+            },
+            shapeProperties: imageShape ? {
+              useBorderWithImage: true,
+              useImageSize: false,
+            } : undefined,
           };
         })
       );
@@ -190,15 +288,18 @@
           keyboard: true,
         },
         nodes: {
-          borderWidth: 1,
-          borderWidthSelected: 2,
+          borderWidth: 2,
+          borderWidthSelected: 4,
           font: {
             size: 14,
             color: '#111827',
           },
           scaling: {
-            min: 12,
-            max: 40,
+            min: 24,
+            max: 80,
+          },
+          shapeProperties: {
+            useBorderWithImage: true,
           },
         },
         edges: {
@@ -264,6 +365,13 @@
 
     function updateNetwork() {
       if (!fullData) return;
+      const topChannel = getTopPopularChannel(fullData);
+      if (topChannel) {
+        const filtered = selectTopChannelVideos(fullData, topChannel.id, 20);
+        renderGraph(filtered, `人気チャンネル動画: ${topChannel.label || topChannel.id}`);
+        return;
+      }
+
       const degree = computeDegree(fullData);
       const topIds = Object.entries(degree)
         .sort((a, b) => b[1] - a[1])
