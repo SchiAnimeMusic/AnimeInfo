@@ -26,7 +26,7 @@ GitHub Actionsを利用して、毎日自動で最新データに更新されま
 ## 機能
 - **YouTube動画情報の自動取得 (GitHub Actions)**
   - 公開中の再生リストから動画のメタデータや指標を定期的に自動取得します。
-  - 対象の再生リストは [サッチー🎧アニソン総合チャンネル](https://www.youtube.com/@SachiAnimeMusic) にて公開の[【アニソン】公式アニメOP/EDまとめ【人気順】](https://www.youtube.com/playlist?list=PLarZd9ydotojcNKocdU95YFqooKnF-w_p)です。
+  - 対象の再生リストは [サッチー🎧アニソン総合チャンネル](https://www.youtube.com/@SachiAnimeMusic) にて公開の[【アニソン】公式アニメOP/EDまとめ②【人気順】](https://www.youtube.com/playlist?list=PLO8ZpNNZxVSA)です。
 - **統計レポートの自動生成とWeb公開**
   - 収集したデータを集計し、自動でHTMLレポートを出力します。
   - 最新のレポートは [GitHub Pages 統計レポート](https://SchiAnimeMusic.github.io/AnimeInfo/data/statistics_report.html) からブラウザでいつでも確認できます。
