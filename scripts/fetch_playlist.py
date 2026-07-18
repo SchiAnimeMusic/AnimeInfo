@@ -117,22 +117,38 @@ class PlaylistFetcher:
         self._node_id_counter += 1
         return self._node_id_counter
 
-    def _add_node_if_not_exists(self, label, node_type):
-        """ノードが存在しない場合に追加し、そのIDを返す"""
+    def _add_node_if_not_exists(self, label, node_type, image_url=None):
+        """ノードが存在しない場合に追加し、そのIDを返す。画像URLが与えられたらノードに画像を設定する。"""
         # 同じラベルとタイプのノードが既に存在するかチェック
         for node_id, node_data in self.nodes.items():
             if node_data['label'] == label and node_data['type'] == node_type:
+                # 既存ノードに画像が無ければ追加する
+                if image_url and 'image' not in node_data:
+                    node_data['image'] = image_url
+                    node_data['shape'] = 'image'
                 return node_id
 
         # 存在しない場合は新規作成
         node_id = self._get_next_node_id()
-        self.nodes[node_id] = {
+        node = {
             'id': node_id,
             'label': label,
             'type': node_type,
             'group': node_type,
-            'shape': 'box' if node_type == 'anime' else 'dot',
+            'title': label,  # ツールチップ用
         }
+
+        # アニメノードは可能なら画像で表示する
+        if node_type == 'anime':
+            if image_url:
+                node['shape'] = 'image'
+                node['image'] = image_url
+            else:
+                node['shape'] = 'box'
+        else:
+            node['shape'] = 'dot'
+
+        self.nodes[node_id] = node
         return node_id
     def _extract_edge_label(self, title):
         """動画タイトルからエッジのラベル（OP/ED/MVなど）を抽出"""
@@ -165,6 +181,14 @@ class PlaylistFetcher:
                 response = request.execute()
 
                 for item in response.get('items', []):
+                    # サムネイルURLを取得（high > medium > default の順で選択）
+                    thumbs = item['snippet'].get('thumbnails', {})
+                    thumbnail_url = None
+                    for key in ('high', 'medium', 'default'):
+                        if key in thumbs:
+                            thumbnail_url = thumbs[key].get('url')
+                            break
+
                     video_info = {
                         'video_id': item['id'],
                         'title': item['snippet']['title'],
@@ -172,18 +196,19 @@ class PlaylistFetcher:
                         'published_at': item['snippet']['publishedAt'],
                         'channel_name': item['snippet'].get('channelTitle', 'Unknown'),
                         'view_count': item['statistics'].get('viewCount', 0),
+                        'thumbnail_url': thumbnail_url,
                     }
                     videos.append(video_info)
 
                     # ネットワークデータ生成
                     channel_name = video_info['channel_name']
-                    anime_title = video_info['title'] # 現状は動画タイトルをそのままアニメ作品名とする
+                    anime_title = video_info['title']  # 現状は動画タイトルをそのままアニメ作品名とする
 
                     # チャンネルノードを追加
                     channel_node_id = self._add_node_if_not_exists(channel_name, 'channel')
 
-                    # アニメ作品ノードを追加
-                    anime_node_id = self._add_node_if_not_exists(anime_title, 'anime')
+                    # アニメ作品ノードを追加（サムネを渡して画像ノード化）
+                    anime_node_id = self._add_node_if_not_exists(anime_title, 'anime', image_url=video_info.get('thumbnail_url'))
 
                     # エッジを追加
                     edge_label = self._extract_edge_label(anime_title)
