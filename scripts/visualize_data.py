@@ -88,8 +88,11 @@ def create_visualizations(channel_stats, csv_path, show=True):
     ax2.invert_yaxis()  # 上から順番に表示
 
     # 値をバーの右側に表示
+    # ラベルのオフセットはプロット単位（百万）に合わせて小さめに設定
+    max_m = (top_20_by_views['total_views'] / 1e6).max() if len(top_20_by_views) > 0 else 0
+    offset = max(0.5, max_m * 0.02)
     for i, v in enumerate(top_20_by_views['total_views'] / 1e6):
-        ax2.text(v + 10, i, f'{v:.1f}M', va='center', fontsize=10)
+        ax2.text(v + offset, i, f'{v:.1f}M', va='center', fontsize=10)
 
     plt.tight_layout()
 
@@ -183,7 +186,8 @@ def generate_html_report(channel_stats, csv_path):
     
     # グラフをBase64エンコード
     buffer = BytesIO()
-    plt.savefig(buffer, format='png', dpi=100, bbox_inches='tight')
+    # HTML埋め込み用の画像はやや高解像度で保存
+    plt.savefig(buffer, format='png', dpi=150, bbox_inches='tight')
     buffer.seek(0)
     graph_base64 = base64.b64encode(buffer.read()).decode()
     plt.close(fig)
