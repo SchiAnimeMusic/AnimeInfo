@@ -182,8 +182,6 @@ def generate_html_report(channel_stats, csv_path):
     max_m = (top_20_by_views['total_views'] / 1e6).max() if len(top_20_by_views) > 0 else 0
     offset = max(0.5, max_m * 0.02)
     for i, v in enumerate(top_20_by_views['total_views'] / 1e6):
-        ax2.text(v + offsetax_m * 0.02)
-    for i, v in enumerate(top_20_by_views['total_views'] / 1e6):
         ax2.text(v + offset, i, f'{v:.1f}M', va='center', fontsize=10)
     
     plt.tight_layout()
