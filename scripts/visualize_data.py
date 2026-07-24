@@ -80,19 +80,19 @@ def create_visualizations(channel_stats, csv_path, show=True):
 
     # 2. チャンネル毎の合計再生回数（合計再生回数でTOP 20）
     ax2 = axes[1]
-    (top_20_by_views['total_views'] / 1e6).plot(kind='barh', ax=ax2, color='coral')
-    ax2.set_xlabel('合計再生回数 (百万)', fontsize=12)
+    (top_20_by_views['total_views'] / 1e4).plot(kind='barh', ax=ax2, color='coral')
+    ax2.set_xlabel('合計再生回数 (万)', fontsize=12)
     ax2.set_ylabel('チャンネル名', fontsize=12)
     ax2.set_title('チャンネル毎の合計再生回数（TOP 20）', fontsize=14, fontweight='bold')
     ax2.grid(axis='x', alpha=0.3)
     ax2.invert_yaxis()  # 上から順番に表示
 
     # 値をバーの右側に表示
-    # ラベルのオフセットはプロット単位（百万）に合わせて小さめに設定
-    max_m = (top_20_by_views['total_views'] / 1e6).max() if len(top_20_by_views) > 0 else 0
+    # ラベルのオフセットはプロット単位（万）に合わせて小さめに設定
+    max_m = (top_20_by_views['total_views'] / 1e4).max() if len(top_20_by_views) > 0 else 0
     offset = max(0.5, max_m * 0.02)
-    for i, v in enumerate(top_20_by_views['total_views'] / 1e6):
-        ax2.text(v + offset, i, f'{v:.1f}M', va='center', fontsize=10)
+    for i, v in enumerate(top_20_by_views['total_views'] / 1e4):
+        ax2.text(v + offset, i, f'{v:.1f}万', va='center', fontsize=10)
 
     plt.tight_layout()
 
