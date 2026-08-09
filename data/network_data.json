@@ -22,7 +22,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/9idm6v9jNbg/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=9idm6v9jNbg",
-            "metric_value": 1432947,
+            "metric_value": 1467927,
             "size": 48
         },
         {
@@ -34,7 +34,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/E2c3V6nxjCw/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=E2c3V6nxjCw",
-            "metric_value": 987201,
+            "metric_value": 1001725,
             "size": 48
         },
         {
@@ -59,7 +59,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/Dgj69Vqr120/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=Dgj69Vqr120",
-            "metric_value": 646854,
+            "metric_value": 661059,
             "size": 48
         },
         {
@@ -71,7 +71,7 @@
             "shape": "image",
             "external_id": "UCBuAshczy8ouqLU_H381row",
             "url": "https://www.youtube.com/channel/UCBuAshczy8ouqLU_H381row",
-            "metric_value": 294000,
+            "metric_value": 295000,
             "size": 50,
             "image": "https://yt3.ggpht.com/ytc/AIdro_lKfQknyVnbz-FmD4KUIUa80Ne8E0Rf61z8iExU3o6Veg=s800-c-k-c0x00ffffff-no-rj"
         },
@@ -84,36 +84,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/0HGEaVFajSU/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=0HGEaVFajSU",
-            "metric_value": 578824,
+            "metric_value": 586978,
             "size": 48
         },
         {
             "id": 8,
-            "label": "TOHO animation チャンネル",
-            "type": "channel",
-            "group": "channel",
-            "title": "TOHO animation チャンネル",
-            "shape": "image",
-            "external_id": "UC14Yc2Qv92DMuyNRlHvpo2Q",
-            "url": "https://www.youtube.com/channel/UC14Yc2Qv92DMuyNRlHvpo2Q",
-            "metric_value": 4420000,
-            "size": 50,
-            "image": "https://yt3.ggpht.com/eWI91qDASaVas8dGoEkvje7u30u0Wo8buZBhtX9xsMnzGsgzJWiY4WLUzoDXimWFJBbNlc_OXA=s800-c-k-c0x00ffffff-no-rj"
-        },
-        {
-            "id": 9,
-            "label": "『無職転生Ⅲ ～異世界行ったら本気だす～』ノンクレジットED映像／EDテーマ：「祈り、終われば」中島美嘉",
-            "type": "anime",
-            "group": "anime",
-            "title": "『無職転生Ⅲ ～異世界行ったら本気だす～』ノンクレジットED映像／EDテーマ：「祈り、終われば」中島美嘉",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/UKcJqQqiXq0/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=UKcJqQqiXq0",
-            "metric_value": 487684,
-            "size": 48
-        },
-        {
-            "id": 10,
             "label": "KADOKAWAanime",
             "type": "channel",
             "group": "channel",
@@ -126,7 +101,7 @@
             "image": "https://yt3.ggpht.com/ytc/AIdro_kBexGPE4xdlwIRGuLFEcoqtNFCi_8bWioG0HyHx7cSbvI=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 11,
+            "id": 9,
             "label": "TVアニメ『幼女戦記Ⅱ』ノンクレジットOP映像｜MYTH & ROID「Why? RED induction」",
             "type": "anime",
             "group": "anime",
@@ -134,7 +109,32 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/IVyvkwvsqW0/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=IVyvkwvsqW0",
-            "metric_value": 490662,
+            "metric_value": 499309,
+            "size": 48
+        },
+        {
+            "id": 10,
+            "label": "TOHO animation チャンネル",
+            "type": "channel",
+            "group": "channel",
+            "title": "TOHO animation チャンネル",
+            "shape": "image",
+            "external_id": "UC14Yc2Qv92DMuyNRlHvpo2Q",
+            "url": "https://www.youtube.com/channel/UC14Yc2Qv92DMuyNRlHvpo2Q",
+            "metric_value": 4420000,
+            "size": 50,
+            "image": "https://yt3.ggpht.com/eWI91qDASaVas8dGoEkvje7u30u0Wo8buZBhtX9xsMnzGsgzJWiY4WLUzoDXimWFJBbNlc_OXA=s800-c-k-c0x00ffffff-no-rj"
+        },
+        {
+            "id": 11,
+            "label": "『無職転生Ⅲ ～異世界行ったら本気だす～』ノンクレジットED映像／EDテーマ：「祈り、終われば」中島美嘉",
+            "type": "anime",
+            "group": "anime",
+            "title": "『無職転生Ⅲ ～異世界行ったら本気だす～』ノンクレジットED映像／EDテーマ：「祈り、終われば」中島美嘉",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/UKcJqQqiXq0/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=UKcJqQqiXq0",
+            "metric_value": 492096,
             "size": 48
         },
         {
@@ -159,7 +159,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/8nQmonIYxig/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=8nQmonIYxig",
-            "metric_value": 471361,
+            "metric_value": 486639,
             "size": 48
         },
         {
@@ -171,7 +171,7 @@
             "shape": "image",
             "external_id": "UCryNrgY4lfJgYkhMNgwHPMg",
             "url": "https://www.youtube.com/channel/UCryNrgY4lfJgYkhMNgwHPMg",
-            "metric_value": 69300,
+            "metric_value": 69400,
             "size": 50,
             "image": "https://yt3.ggpht.com/pJQtN708-HL5_ulw00DtEvslVYzvqMSkfE-IGVzkz3Fc7x_OM3TgJ1B6uzGe4RxrHj6aiXxG=s800-c-k-c0x00ffffff-no-rj"
         },
@@ -184,23 +184,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/_gBcPnxRXDY/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=_gBcPnxRXDY",
-            "metric_value": 436581,
+            "metric_value": 442707,
             "size": 48
         },
         {
             "id": 16,
-            "label": "オリジナルTVアニメ『さよならララ』オープニング映像 |いきものがかり「さよならララ」",
-            "type": "anime",
-            "group": "anime",
-            "title": "オリジナルTVアニメ『さよならララ』オープニング映像 |いきものがかり「さよならララ」",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/GOfC_4qCa9c/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=GOfC_4qCa9c",
-            "metric_value": 386969,
-            "size": 48
-        },
-        {
-            "id": 17,
             "label": "TVアニメ『逃げ上手の若君』第二期ノンクレジットエンディングムービー(歌詞有)｜ぼっちぼろまる「ロマンティックがほしいなら feat. 小坂菜緒,正源司陽子,藤嶌果歩（日向坂46）」",
             "type": "anime",
             "group": "anime",
@@ -208,7 +196,19 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/2xkn83S68sM/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=2xkn83S68sM",
-            "metric_value": 389122,
+            "metric_value": 411121,
+            "size": 48
+        },
+        {
+            "id": 17,
+            "label": "オリジナルTVアニメ『さよならララ』オープニング映像 |いきものがかり「さよならララ」",
+            "type": "anime",
+            "group": "anime",
+            "title": "オリジナルTVアニメ『さよならララ』オープニング映像 |いきものがかり「さよならララ」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/GOfC_4qCa9c/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=GOfC_4qCa9c",
+            "metric_value": 396194,
             "size": 48
         },
         {
@@ -233,7 +233,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/UV53uVaECT8/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=UV53uVaECT8",
-            "metric_value": 371620,
+            "metric_value": 377327,
             "size": 48
         },
         {
@@ -245,7 +245,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/01Vgu7BIxmI/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=01Vgu7BIxmI",
-            "metric_value": 368862,
+            "metric_value": 376977,
             "size": 48
         },
         {
@@ -257,7 +257,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/LshSTzPWdLk/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=LshSTzPWdLk",
-            "metric_value": 271240,
+            "metric_value": 277080,
             "size": 48
         },
         {
@@ -282,7 +282,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/wTQdf37-OBk/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=wTQdf37-OBk",
-            "metric_value": 243401,
+            "metric_value": 246853,
             "size": 48
         },
         {
@@ -307,7 +307,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/mJICDZoKgao/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=mJICDZoKgao",
-            "metric_value": 231763,
+            "metric_value": 236106,
             "size": 48
         },
         {
@@ -332,7 +332,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/ZcX905vF0j0/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=ZcX905vF0j0",
-            "metric_value": 214035,
+            "metric_value": 219462,
             "size": 48
         },
         {
@@ -357,7 +357,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/FlqDBh8QjZk/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=FlqDBh8QjZk",
-            "metric_value": 199654,
+            "metric_value": 203778,
             "size": 48
         },
         {
@@ -382,7 +382,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/2EvOx3XM5I0/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=2EvOx3XM5I0",
-            "metric_value": 183895,
+            "metric_value": 183916,
             "size": 48
         },
         {
@@ -394,11 +394,23 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/T3gqwRlME5Q/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=T3gqwRlME5Q",
-            "metric_value": 169253,
+            "metric_value": 174586,
             "size": 48
         },
         {
             "id": 33,
+            "label": "TVアニメ『令和のダラさん』ノンクレジット特殊エンディング映像 | 毎週木曜22：30より放送中！",
+            "type": "anime",
+            "group": "anime",
+            "title": "TVアニメ『令和のダラさん』ノンクレジット特殊エンディング映像 | 毎週木曜22：30より放送中！",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/wTPWul-o-UY/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=wTPWul-o-UY",
+            "metric_value": 280570,
+            "size": 48
+        },
+        {
+            "id": 34,
             "label": "TVアニメ『幼女戦記Ⅱ』ノンクレジットED映像｜ターニャ・デグレチャフ(CV:悠木碧)「Weiter! Weiter!」",
             "type": "anime",
             "group": "anime",
@@ -406,11 +418,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/x2k_iYCGKvE/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=x2k_iYCGKvE",
-            "metric_value": 135279,
+            "metric_value": 137084,
             "size": 48
         },
         {
-            "id": 34,
+            "id": 35,
             "label": "GOOD SMILE CHANNEL",
             "type": "channel",
             "group": "channel",
@@ -423,7 +435,7 @@
             "image": "https://yt3.ggpht.com/ytc/AIdro_mybQtOHblclu1oFSLe6HwlqDDh8Y0qA3JQbEDBBU8V7w=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 35,
+            "id": 36,
             "label": "【オープニング】TVアニメ『乙女怪獣キャラメリゼ』｜METANICK「乙女怪獣」",
             "type": "anime",
             "group": "anime",
@@ -431,11 +443,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/hFldDZZcrQo/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=hFldDZZcrQo",
-            "metric_value": 103846,
+            "metric_value": 105000,
             "size": 48
         },
         {
-            "id": 36,
+            "id": 37,
             "label": "青木陽菜「Ephemeral」|魔法少女リリカルなのは EXCEEDS Gun Blaze Vengeance | ノンクレジットED",
             "type": "anime",
             "group": "anime",
@@ -443,60 +455,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/hHBu5YXhiXQ/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=hHBu5YXhiXQ",
-            "metric_value": 101320,
+            "metric_value": 102842,
             "size": 48
-        },
-        {
-            "id": 37,
-            "label": "京アニチャンネル",
-            "type": "channel",
-            "group": "channel",
-            "title": "京アニチャンネル",
-            "shape": "image",
-            "external_id": "UCpGY2vcoKXf7K6tFzsbSv7w",
-            "url": "https://www.youtube.com/channel/UCpGY2vcoKXf7K6tFzsbSv7w",
-            "metric_value": 787000,
-            "size": 50,
-            "image": "https://yt3.ggpht.com/QwSNIxqlBPg3q8URSe616n_qFbS2OCXx4_nUUJc7MvmSBrYKuxvIyXABm5lfJz2UY6nLggnl=s800-c-k-c0x00ffffff-no-rj"
         },
         {
             "id": 38,
-            "label": "第貳話「目録の謎」　ノンクレジットOP｜ TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』",
-            "type": "anime",
-            "group": "anime",
-            "title": "第貳話「目録の謎」　ノンクレジットOP｜ TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/-UMzc7BI6y4/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=-UMzc7BI6y4",
-            "metric_value": 100595,
-            "size": 48
-        },
-        {
-            "id": 39,
-            "label": "TVアニメ「天は赤い河のほとり」ノンクレジットOP｜OPテーマ：七海ひろき「暁の空」【日本テレビ・ＢＳ日テレにて放送中】",
-            "type": "anime",
-            "group": "anime",
-            "title": "TVアニメ「天は赤い河のほとり」ノンクレジットOP｜OPテーマ：七海ひろき「暁の空」【日本テレビ・ＢＳ日テレにて放送中】",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/cpytH8hQ5BE/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=cpytH8hQ5BE",
-            "metric_value": 92040,
-            "size": 48
-        },
-        {
-            "id": 40,
-            "label": "『無職転生Ⅲ』第5話ノンクレジットOPムービー／OPテーマ：「芽吹の唄」大原ゆい子",
-            "type": "anime",
-            "group": "anime",
-            "title": "『無職転生Ⅲ』第5話ノンクレジットOPムービー／OPテーマ：「芽吹の唄」大原ゆい子",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/7ClAoZKbuhA/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=7ClAoZKbuhA",
-            "metric_value": 91207,
-            "size": 48
-        },
-        {
-            "id": 41,
             "label": "バンドリちゃんねる☆",
             "type": "channel",
             "group": "channel",
@@ -509,7 +472,7 @@
             "image": "https://yt3.ggpht.com/8-ZDsgf-6XXttZNvUfnfnU34iSNJv84_nQK-p76MPaALDN8vx2sfVVeir2UgtI1sxoRxMs83wQk=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 42,
+            "id": 39,
             "label": "TVアニメ「バンドリ！ ゆめ∞みた」ノンクレジットオープニング映像第2弾",
             "type": "anime",
             "group": "anime",
@@ -517,7 +480,44 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/9TTfyS5r3Ps/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=9TTfyS5r3Ps",
-            "metric_value": 101988,
+            "metric_value": 108778,
+            "size": 48
+        },
+        {
+            "id": 40,
+            "label": "京アニチャンネル",
+            "type": "channel",
+            "group": "channel",
+            "title": "京アニチャンネル",
+            "shape": "image",
+            "external_id": "UCpGY2vcoKXf7K6tFzsbSv7w",
+            "url": "https://www.youtube.com/channel/UCpGY2vcoKXf7K6tFzsbSv7w",
+            "metric_value": 787000,
+            "size": 50,
+            "image": "https://yt3.ggpht.com/QwSNIxqlBPg3q8URSe616n_qFbS2OCXx4_nUUJc7MvmSBrYKuxvIyXABm5lfJz2UY6nLggnl=s800-c-k-c0x00ffffff-no-rj"
+        },
+        {
+            "id": 41,
+            "label": "第貳話「目録の謎」　ノンクレジットOP｜ TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』",
+            "type": "anime",
+            "group": "anime",
+            "title": "第貳話「目録の謎」　ノンクレジットOP｜ TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/-UMzc7BI6y4/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=-UMzc7BI6y4",
+            "metric_value": 101519,
+            "size": 48
+        },
+        {
+            "id": 42,
+            "label": "TVアニメ「天は赤い河のほとり」ノンクレジットOP｜OPテーマ：七海ひろき「暁の空」【日本テレビ・ＢＳ日テレにて放送中】",
+            "type": "anime",
+            "group": "anime",
+            "title": "TVアニメ「天は赤い河のほとり」ノンクレジットOP｜OPテーマ：七海ひろき「暁の空」【日本テレビ・ＢＳ日テレにて放送中】",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/cpytH8hQ5BE/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=cpytH8hQ5BE",
+            "metric_value": 92656,
             "size": 48
         },
         {
@@ -529,11 +529,23 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/k2Gfd254sMg/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=k2Gfd254sMg",
-            "metric_value": 91544,
+            "metric_value": 93285,
             "size": 48
         },
         {
             "id": 44,
+            "label": "『無職転生Ⅲ』第5話ノンクレジットOPムービー／OPテーマ：「芽吹の唄」大原ゆい子",
+            "type": "anime",
+            "group": "anime",
+            "title": "『無職転生Ⅲ』第5話ノンクレジットOPムービー／OPテーマ：「芽吹の唄」大原ゆい子",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/7ClAoZKbuhA/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=7ClAoZKbuhA",
+            "metric_value": 91571,
+            "size": 48
+        },
+        {
+            "id": 45,
             "label": "「クレバテスⅡ-魔獣の王と偽りの勇者伝承-」ノンクレジットオープニング映像「Foreshadow」｜ClevatessⅡ",
             "type": "anime",
             "group": "anime",
@@ -541,11 +553,23 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/SiTi3WCmzfc/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=SiTi3WCmzfc",
-            "metric_value": 88386,
+            "metric_value": 90690,
             "size": 48
         },
         {
-            "id": 45,
+            "id": 46,
+            "label": "TVアニメ「スーパーの裏でヤニ吸うふたり」TV放送版ノンクレジットED映像 ｜imase「Fiction」",
+            "type": "anime",
+            "group": "anime",
+            "title": "TVアニメ「スーパーの裏でヤニ吸うふたり」TV放送版ノンクレジットED映像 ｜imase「Fiction」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/rn0QtVBIo2o/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=rn0QtVBIo2o",
+            "metric_value": 89707,
+            "size": 48
+        },
+        {
+            "id": 47,
             "label": "avex pictures",
             "type": "channel",
             "group": "channel",
@@ -558,7 +582,7 @@
             "image": "https://yt3.ggpht.com/KLeAp_Ld3R_SPHCzNT0prmj4QDQLalKIW_P_HNnsN_e2mZPcHeu4QsnoWtaonoguDcdVJ_8svw=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 46,
+            "id": 48,
             "label": "i☆Ris「Welcome to あざとさワールド」| TVアニメ『炎の闘球女 ドッジ弾子』ノンクレジットエンディング",
             "type": "anime",
             "group": "anime",
@@ -566,23 +590,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/miLM7VnR08o/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=miLM7VnR08o",
-            "metric_value": 85272,
+            "metric_value": 85859,
             "size": 48
         },
         {
-            "id": 47,
-            "label": "TVアニメ「スーパーの裏でヤニ吸うふたり」TV放送版ノンクレジットED映像 ｜imase「Fiction」",
-            "type": "anime",
-            "group": "anime",
-            "title": "TVアニメ「スーパーの裏でヤニ吸うふたり」TV放送版ノンクレジットED映像 ｜imase「Fiction」",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/rn0QtVBIo2o/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=rn0QtVBIo2o",
-            "metric_value": 87322,
-            "size": 48
-        },
-        {
-            "id": 48,
+            "id": 49,
             "label": "【ytv animation】読売テレビ アニメ公式",
             "type": "channel",
             "group": "channel",
@@ -590,12 +602,12 @@
             "shape": "image",
             "external_id": "UCi3c8HJxjiidVUYn4L4zQJw",
             "url": "https://www.youtube.com/channel/UCi3c8HJxjiidVUYn4L4zQJw",
-            "metric_value": 60400,
+            "metric_value": 60500,
             "size": 50,
             "image": "https://yt3.ggpht.com/m5P1xSOZJDVh04WITtI7QISEpEgR5gwO0lwL5M10ygjPs4sq-nBD0mu1yiXZcsr_1Sarbua-=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 49,
+            "id": 50,
             "label": "アニメ『本好きの下剋上 領主の養女』第2クールOPノンクレジット映像「Power of Love」西野カナ/毎週土曜夕方5時半～放送中！",
             "type": "anime",
             "group": "anime",
@@ -603,11 +615,23 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/3BlCT0_r6RQ/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=3BlCT0_r6RQ",
-            "metric_value": 81792,
+            "metric_value": 83131,
             "size": 48
         },
         {
-            "id": 50,
+            "id": 51,
+            "label": "『無職転生Ⅲ』第6話ノンクレジットOPムービー／OPテーマ：「芽吹の唄」大原ゆい子",
+            "type": "anime",
+            "group": "anime",
+            "title": "『無職転生Ⅲ』第6話ノンクレジットOPムービー／OPテーマ：「芽吹の唄」大原ゆい子",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/24_Q2ND4vEo/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=24_Q2ND4vEo",
+            "metric_value": 82179,
+            "size": 48
+        },
+        {
+            "id": 52,
             "label": "【公式】石森プロ",
             "type": "channel",
             "group": "channel",
@@ -620,7 +644,7 @@
             "image": "https://yt3.ggpht.com/ytc/AIdro_kxLvUqn8POcCw61HL7dQzUQUALRKJ_Tju25CSaq2cn5w=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 51,
+            "id": 53,
             "label": "「サイボーグ009 ネメシス」ノンクレジットオープニング映像｜杏子「誰がために」",
             "type": "anime",
             "group": "anime",
@@ -628,23 +652,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/5d81RgISG5o/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=5d81RgISG5o",
-            "metric_value": 81220,
+            "metric_value": 82272,
             "size": 48
         },
         {
-            "id": 52,
-            "label": "『無職転生Ⅲ』第6話ノンクレジットOPムービー／OPテーマ：「芽吹の唄」大原ゆい子",
-            "type": "anime",
-            "group": "anime",
-            "title": "『無職転生Ⅲ』第6話ノンクレジットOPムービー／OPテーマ：「芽吹の唄」大原ゆい子",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/24_Q2ND4vEo/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=24_Q2ND4vEo",
-            "metric_value": 81571,
-            "size": 48
-        },
-        {
-            "id": 53,
+            "id": 54,
             "label": "ぽにきゃん-Anime PONY CANYON",
             "type": "channel",
             "group": "channel",
@@ -657,7 +669,7 @@
             "image": "https://yt3.ggpht.com/xf6r6k8A4f-34kU7MpjbqeaZo_zyDUznWlnrNqF0EAb08FscfBAbsXr7B_OM_GTmWXRdsPxmFw=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 54,
+            "id": 55,
             "label": "TVアニメ『花織さんは転生しても喧嘩がしたい』ノンクレジットED｜内田真礼「ベリーグッド・エンカウント」",
             "type": "anime",
             "group": "anime",
@@ -665,11 +677,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/mGmKY-PB82o/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=mGmKY-PB82o",
-            "metric_value": 76441,
+            "metric_value": 78174,
             "size": 48
         },
         {
-            "id": 55,
+            "id": 56,
             "label": "TVアニメ『きみが死ぬまで恋をしたい』ノンクレジットエンディング映像｜sajou no hana「エテルネル」",
             "type": "anime",
             "group": "anime",
@@ -677,11 +689,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/bszg61aM_7E/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=bszg61aM_7E",
-            "metric_value": 73291,
+            "metric_value": 74255,
             "size": 48
         },
         {
-            "id": 56,
+            "id": 57,
             "label": "『無職転生Ⅲ』第4話ノンクレジットOPムービー／OPテーマ：「芽吹の唄」大原ゆい子",
             "type": "anime",
             "group": "anime",
@@ -689,11 +701,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/Es0mqcdYw9Q/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=Es0mqcdYw9Q",
-            "metric_value": 68484,
+            "metric_value": 68918,
             "size": 48
         },
         {
-            "id": 57,
+            "id": 58,
             "label": "7月より放送中！TVアニメ「#領民0人スタートの辺境領主様 」ノンクレジット・エンディング映像",
             "type": "anime",
             "group": "anime",
@@ -701,11 +713,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/dhAKFhT6pno/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=dhAKFhT6pno",
-            "metric_value": 59793,
+            "metric_value": 59962,
             "size": 48
         },
         {
-            "id": 58,
+            "id": 59,
             "label": "【ED映像】TVアニメ「グロウアップショウ ～ひまわりのサーカス団～」ノンクレジットエンディング映像【公式X ⇒ @growupshow】",
             "type": "anime",
             "group": "anime",
@@ -713,11 +725,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/Z3LKxdlyNSU/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=Z3LKxdlyNSU",
-            "metric_value": 54436,
+            "metric_value": 55658,
             "size": 48
         },
         {
-            "id": 59,
+            "id": 60,
             "label": "TVアニメ『花織さんは転生しても喧嘩がしたい』ノンクレジットOP｜オーイシマサヨシ「ハイメンテナンスガール」",
             "type": "anime",
             "group": "anime",
@@ -725,11 +737,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/dv1TGoV_aS8/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=dv1TGoV_aS8",
-            "metric_value": 54048,
+            "metric_value": 54993,
             "size": 48
         },
         {
-            "id": 60,
+            "id": 61,
             "label": "TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』｜ノンクレジットED",
             "type": "anime",
             "group": "anime",
@@ -737,11 +749,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/lJ6dDUwWOis/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=lJ6dDUwWOis",
-            "metric_value": 47839,
+            "metric_value": 48484,
             "size": 48
         },
         {
-            "id": 61,
+            "id": 62,
             "label": "MBS animation 公式チャンネル",
             "type": "channel",
             "group": "channel",
@@ -754,7 +766,7 @@
             "image": "https://yt3.ggpht.com/PfB7DJv0duVb4MZ7xD_RATg9jtamNK3SblNA_KI2gZ_HQmm3BPlM-wh0pA4od1MQ5Za0FHxy=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 62,
+            "id": 63,
             "label": "【ノンクレジットエンディング映像】TVアニメ『才女のお世話 高嶺の花だらけな名門校で、学院一のお嬢様(生活能力皆無)を陰ながらお世話することになりました』",
             "type": "anime",
             "group": "anime",
@@ -762,11 +774,23 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/n7iidGIYvkw/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=n7iidGIYvkw",
-            "metric_value": 47734,
+            "metric_value": 49074,
             "size": 48
         },
         {
-            "id": 63,
+            "id": 64,
+            "label": "ショートアニメ「北斗の拳 拳王軍ザコたちの挽歌」ノンクレジットエンディングテーマ｜「白い蝶が飛んだら」　イツカ▶︎ feat. Dr.Washington, うじきつよし　7/6より第2クール放送中！",
+            "type": "anime",
+            "group": "anime",
+            "title": "ショートアニメ「北斗の拳 拳王軍ザコたちの挽歌」ノンクレジットエンディングテーマ｜「白い蝶が飛んだら」　イツカ▶︎ feat. Dr.Washington, うじきつよし　7/6より第2クール放送中！",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/H4J8Kh65Qu8/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=H4J8Kh65Qu8",
+            "metric_value": 74616,
+            "size": 48
+        },
+        {
+            "id": 65,
             "label": "GREE Entertainment ANIME & GAME【公式】",
             "type": "channel",
             "group": "channel",
@@ -774,12 +798,12 @@
             "shape": "image",
             "external_id": "UCX34wuta-mYtZhKr3lS5nwg",
             "url": "https://www.youtube.com/channel/UCX34wuta-mYtZhKr3lS5nwg",
-            "metric_value": 54500,
+            "metric_value": 54600,
             "size": 50,
             "image": "https://yt3.ggpht.com/hLYrOThgY8iUN_YH9bMlO7Br1msVbzqsW0aJ1DtcVKFt15uidQUHfvQRBe4eVgWGmpcOQJs6=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 64,
+            "id": 66,
             "label": "TVアニメ『ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた。』ノンクレジットOP｜「それでも曇天を越えてゆく」sajou no hana",
             "type": "anime",
             "group": "anime",
@@ -787,11 +811,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/lMq8obidFDI/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=lMq8obidFDI",
-            "metric_value": 44692,
+            "metric_value": 45278,
             "size": 48
         },
         {
-            "id": 65,
+            "id": 67,
             "label": "オリジナルTVアニメ『さよならララ』ノンテロップエンディング映像 |好評放送・配信中！",
             "type": "anime",
             "group": "anime",
@@ -799,11 +823,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/od3XN58Gnws/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=od3XN58Gnws",
-            "metric_value": 44154,
+            "metric_value": 45539,
             "size": 48
         },
         {
-            "id": 66,
+            "id": 68,
             "label": "【フジテレビ】アニメ公式チャンネル",
             "type": "channel",
             "group": "channel",
@@ -816,7 +840,7 @@
             "image": "https://yt3.ggpht.com/OtdmaUHVosd0110GDmnaoRj4v5wWCbVALNh-5_iXpSSjAZ3fxYxQlF3qmWz-zYpqMyaM5dTbXg=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 67,
+            "id": 69,
             "label": "『サンダー３』ノンクレジットOP｜優里「サンダーボルト」",
             "type": "anime",
             "group": "anime",
@@ -824,11 +848,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/gnsGSDo0fTU/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=gnsGSDo0fTU",
-            "metric_value": 41771,
+            "metric_value": 42643,
             "size": 48
         },
         {
-            "id": 68,
+            "id": 70,
             "label": "アニメ『本好きの下剋上 領主の養女』第2クールEDノンクレジット映像「Wanna me」adieu/毎週土曜夕方5時半～放送中！",
             "type": "anime",
             "group": "anime",
@@ -836,11 +860,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/JvIeQsFHkMM/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=JvIeQsFHkMM",
-            "metric_value": 40478,
+            "metric_value": 41329,
             "size": 48
         },
         {
-            "id": 69,
+            "id": 71,
             "label": "ベイチューブ | BEYBLADE Channel",
             "type": "channel",
             "group": "channel",
@@ -853,7 +877,7 @@
             "image": "https://yt3.ggpht.com/wQ6Ik-R5uXeCF8txg-9G7VCl5XBjWURUn4BDMe1CIaj-nWZPFJROZSaz_EpAj04lX26NcrTtEcM=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 70,
+            "id": 72,
             "label": "i-dle 「Invincible」 最新ノンクレジット映像 | アニメ『BEYBLADE X 真・未来編』 オープニングテーマ",
             "type": "anime",
             "group": "anime",
@@ -861,11 +885,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/pNbOW-n26XA/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=pNbOW-n26XA",
-            "metric_value": 38334,
+            "metric_value": 39086,
             "size": 48
         },
         {
-            "id": 71,
+            "id": 73,
             "label": "TVアニメ「バンドリ！ ゆめ∞みた」ノンクレジットエンディング映像第2弾",
             "type": "anime",
             "group": "anime",
@@ -873,11 +897,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/ZkFgIRoGoP4/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=ZkFgIRoGoP4",
-            "metric_value": 37590,
+            "metric_value": 38611,
             "size": 48
         },
         {
-            "id": 72,
+            "id": 74,
             "label": "ＴＶアニメ「ぐらんぶる」Season 3ノンクレED",
             "type": "anime",
             "group": "anime",
@@ -885,11 +909,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/c-kKrErfKvM/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=c-kKrErfKvM",
-            "metric_value": 30944,
+            "metric_value": 31350,
             "size": 48
         },
         {
-            "id": 73,
+            "id": 75,
             "label": "「クレバテスⅡ-魔獣の王と偽りの勇者伝承-」ノンクレジットエンディング映像「Awake Anew」｜ClevatessⅡ",
             "type": "anime",
             "group": "anime",
@@ -897,11 +921,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/Tbyi0Tx1QLA/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=Tbyi0Tx1QLA",
-            "metric_value": 30628,
+            "metric_value": 31423,
             "size": 48
         },
         {
-            "id": 74,
+            "id": 76,
             "label": "TVアニメ『これ描いて死ね』ノンクレジットED映像【日本テレビ系フラアニにて毎週金曜23時30分から全国30局ネットで放送中！】",
             "type": "anime",
             "group": "anime",
@@ -909,11 +933,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/BHS-_AXCWrc/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=BHS-_AXCWrc",
-            "metric_value": 30000,
+            "metric_value": 30690,
             "size": 48
         },
         {
-            "id": 75,
+            "id": 77,
             "label": "TVアニメ『鉄鍋のジャン！』ノンクレジットエンディング映像",
             "type": "anime",
             "group": "anime",
@@ -921,11 +945,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/1tc784esysA/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=1tc784esysA",
-            "metric_value": 27097,
+            "metric_value": 27449,
             "size": 48
         },
         {
-            "id": 76,
+            "id": 78,
             "label": "TVアニメ『うちの弟どもがすみません』ノンクレジットエンディングムービー｜汐れいら「Clover」",
             "type": "anime",
             "group": "anime",
@@ -933,11 +957,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/4KZnNNPfkss/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=4KZnNNPfkss",
-            "metric_value": 26549,
+            "metric_value": 26992,
             "size": 48
         },
         {
-            "id": 77,
+            "id": 79,
             "label": "第參話「二人の夢」　ノンクレジットOP｜ TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』",
             "type": "anime",
             "group": "anime",
@@ -945,11 +969,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/c09YTWOppMM/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=c09YTWOppMM",
-            "metric_value": 24461,
+            "metric_value": 24668,
             "size": 48
         },
         {
-            "id": 78,
+            "id": 80,
             "label": "【公式】アース・スター エンターテイメント",
             "type": "channel",
             "group": "channel",
@@ -962,7 +986,7 @@
             "image": "https://yt3.ggpht.com/AwvZ9pGFT_eE8tbMhKVyfYLlbvvtpWzRIkEMltel3LJNHY8itGNvUYs4jwwRU2KMr_sxI2Pn=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 79,
+            "id": 81,
             "label": "TVアニメ『無自覚聖女は今日も無意識に力を垂れ流す』ノンクレジットオープニング映像┋2026年6月30日より、AT-X・TOKYO MX・BS11ほかにて放送中！",
             "type": "anime",
             "group": "anime",
@@ -970,11 +994,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/TOj2RisiiwY/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=TOj2RisiiwY",
-            "metric_value": 21708,
+            "metric_value": 22034,
             "size": 48
         },
         {
-            "id": 80,
+            "id": 82,
             "label": "TVアニメ『きみ愛』ノンクレジットエンディング｜sorato「最終回」",
             "type": "anime",
             "group": "anime",
@@ -982,11 +1006,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/jW-nRpVHw8c/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=jW-nRpVHw8c",
-            "metric_value": 21331,
+            "metric_value": 21678,
             "size": 48
         },
         {
-            "id": 81,
+            "id": 83,
             "label": "TVアニメ『対ありでした。～お嬢さまは格闘ゲームなんてしない～』ノンクレジットエンディング映像│halca 「NEW GAME」",
             "type": "anime",
             "group": "anime",
@@ -994,11 +1018,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/GKtdRThIuuE/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=GKtdRThIuuE",
-            "metric_value": 20238,
+            "metric_value": 20645,
             "size": 48
         },
         {
-            "id": 82,
+            "id": 84,
             "label": "【ノンクレジットエンディング】TVアニメ『乙女怪獣キャラメリゼ』｜HoneyWorks feat.ハコニワリリィ「オトメノホンキ」",
             "type": "anime",
             "group": "anime",
@@ -1006,31 +1030,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/waOUdRPozDY/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=waOUdRPozDY",
-            "metric_value": 20127,
-            "size": 48
-        },
-        {
-            "id": 83,
-            "label": "【ED映像】TVアニメ「ワールド イズ ダンシング」｜hockrockb「名もない花」",
-            "type": "anime",
-            "group": "anime",
-            "title": "【ED映像】TVアニメ「ワールド イズ ダンシング」｜hockrockb「名もない花」",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/kBP_Urtwx7Q/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=kBP_Urtwx7Q",
-            "metric_value": 19400,
-            "size": 48
-        },
-        {
-            "id": 84,
-            "label": "TVアニメ『ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた。』ノンクレジットED｜「在り来たりな日常と幸運な日々へ」名称非公開",
-            "type": "anime",
-            "group": "anime",
-            "title": "TVアニメ『ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた。』ノンクレジットED｜「在り来たりな日常と幸運な日々へ」名称非公開",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/UDD-U-c-m9Y/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=UDD-U-c-m9Y",
-            "metric_value": 19280,
+            "metric_value": 20482,
             "size": 48
         },
         {
@@ -1042,11 +1042,35 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/sbaSQw9Soks/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=sbaSQw9Soks",
-            "metric_value": 19537,
+            "metric_value": 20146,
             "size": 48
         },
         {
             "id": 86,
+            "label": "【ED映像】TVアニメ「ワールド イズ ダンシング」｜hockrockb「名もない花」",
+            "type": "anime",
+            "group": "anime",
+            "title": "【ED映像】TVアニメ「ワールド イズ ダンシング」｜hockrockb「名もない花」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/kBP_Urtwx7Q/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=kBP_Urtwx7Q",
+            "metric_value": 19765,
+            "size": 48
+        },
+        {
+            "id": 87,
+            "label": "TVアニメ『ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた。』ノンクレジットED｜「在り来たりな日常と幸運な日々へ」名称非公開",
+            "type": "anime",
+            "group": "anime",
+            "title": "TVアニメ『ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた。』ノンクレジットED｜「在り来たりな日常と幸運な日々へ」名称非公開",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/UDD-U-c-m9Y/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=UDD-U-c-m9Y",
+            "metric_value": 19743,
+            "size": 48
+        },
+        {
+            "id": 88,
             "label": "「サイボーグ009 ネメシス」ノンクレジットエンディング映像｜スキマスイッチ「クライマル」",
             "type": "anime",
             "group": "anime",
@@ -1054,11 +1078,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/dFPEYdbTAD4/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=dFPEYdbTAD4",
-            "metric_value": 18702,
+            "metric_value": 18971,
             "size": 48
         },
         {
-            "id": 87,
+            "id": 89,
             "label": "TVアニメ『無自覚聖女は今日も無意識に力を垂れ流す』ノンクレジットエンディング映像┋2026年6月30日より、AT-X・TOKYO MX・BS11ほかにて放送中！",
             "type": "anime",
             "group": "anime",
@@ -1066,11 +1090,23 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/tB1cFMYBX_4/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=tB1cFMYBX_4",
-            "metric_value": 18379,
+            "metric_value": 18666,
             "size": 48
         },
         {
-            "id": 88,
+            "id": 90,
+            "label": "【ノンクレジットOP】TVアニメ「透明な夜に駆ける君と、目に見えない恋をした。」｜秦 基博「ひとひら」",
+            "type": "anime",
+            "group": "anime",
+            "title": "【ノンクレジットOP】TVアニメ「透明な夜に駆ける君と、目に見えない恋をした。」｜秦 基博「ひとひら」",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/OhRKTSgC7Es/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=OhRKTSgC7Es",
+            "metric_value": 20145,
+            "size": 48
+        },
+        {
+            "id": 91,
             "label": "第四話「信心の娘」　ノンクレジットOP｜ TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』",
             "type": "anime",
             "group": "anime",
@@ -1078,11 +1114,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/NjdE4RFQ4rY/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=NjdE4RFQ4rY",
-            "metric_value": 17719,
+            "metric_value": 18065,
             "size": 48
         },
         {
-            "id": 89,
+            "id": 92,
             "label": "TVアニメ『いびってこない義母と義姉』ノンクレジットEDムービー｜AVAM「クレール」",
             "type": "anime",
             "group": "anime",
@@ -1090,11 +1126,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/q1p5q_HIeCk/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=q1p5q_HIeCk",
-            "metric_value": 15535,
+            "metric_value": 15910,
             "size": 48
         },
         {
-            "id": 90,
+            "id": 93,
             "label": "宝島社公式",
             "type": "channel",
             "group": "channel",
@@ -1107,7 +1143,7 @@
             "image": "https://yt3.ggpht.com/ytc/AIdro_kyqHaNRuCF0R17ox8sv1gnOqQ-fj761JlvLU8_-nxz7ns=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 91,
+            "id": 94,
             "label": "TVアニメ『猫と竜』ノンクレジットエンディング映像【2026年7月より放送&配信中！】",
             "type": "anime",
             "group": "anime",
@@ -1115,23 +1151,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/CmP5HMtIOEY/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=CmP5HMtIOEY",
-            "metric_value": 15331,
+            "metric_value": 15773,
             "size": 48
         },
         {
-            "id": 92,
-            "label": "ショートアニメ「北斗の拳 拳王軍ザコたちの挽歌」ノンクレジットエンディングテーマ｜「白い蝶が飛んだら」　イツカ▶︎ feat. Dr.Washington, うじきつよし　7/6より第2クール放送中！",
-            "type": "anime",
-            "group": "anime",
-            "title": "ショートアニメ「北斗の拳 拳王軍ザコたちの挽歌」ノンクレジットエンディングテーマ｜「白い蝶が飛んだら」　イツカ▶︎ feat. Dr.Washington, うじきつよし　7/6より第2クール放送中！",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/H4J8Kh65Qu8/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=H4J8Kh65Qu8",
-            "metric_value": 50143,
-            "size": 48
-        },
-        {
-            "id": 93,
+            "id": 95,
             "label": "Project ANIMA チャンネル",
             "type": "channel",
             "group": "channel",
@@ -1144,7 +1168,7 @@
             "image": "https://yt3.ggpht.com/-BLtNao72HnDq3MWSgV9qgIuyJ9SnucozizuZxWLVjOSVATy-V1bH3eXl8YDudX9_JyINT_j=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 94,
+            "id": 96,
             "label": "TVアニメ「メビウス・ダスト」ノンクレジットOP映像",
             "type": "anime",
             "group": "anime",
@@ -1152,11 +1176,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/DZIN7Fx_K48/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=DZIN7Fx_K48",
-            "metric_value": 14190,
+            "metric_value": 14415,
             "size": 48
         },
         {
-            "id": 95,
+            "id": 97,
             "label": "7月より放送中！TVアニメ「#領民0人スタートの辺境領主様 」ノンクレジット・オープニング映像",
             "type": "anime",
             "group": "anime",
@@ -1164,23 +1188,23 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/fCboU3XWuLU/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=fCboU3XWuLU",
-            "metric_value": 13532,
+            "metric_value": 13892,
             "size": 48
         },
         {
-            "id": 96,
-            "label": "【ノンクレジットOP】TVアニメ「透明な夜に駆ける君と、目に見えない恋をした。」｜秦 基博「ひとひら」",
+            "id": 98,
+            "label": "【ノンクレジットED】TVアニメ「透明な夜に駆ける君と、目に見えない恋をした。」｜櫻井優衣「光」",
             "type": "anime",
             "group": "anime",
-            "title": "【ノンクレジットOP】TVアニメ「透明な夜に駆ける君と、目に見えない恋をした。」｜秦 基博「ひとひら」",
+            "title": "【ノンクレジットED】TVアニメ「透明な夜に駆ける君と、目に見えない恋をした。」｜櫻井優衣「光」",
             "shape": "image",
-            "image": "https://i.ytimg.com/vi/OhRKTSgC7Es/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=OhRKTSgC7Es",
-            "metric_value": 18297,
+            "image": "https://i.ytimg.com/vi/H_Ab3nKZUfM/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=H_Ab3nKZUfM",
+            "metric_value": 14677,
             "size": 48
         },
         {
-            "id": 97,
+            "id": 99,
             "label": "第五話「愛の証明」　ノンクレジットOP｜ TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』",
             "type": "anime",
             "group": "anime",
@@ -1188,11 +1212,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/bnxaEYPJm7Q/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=bnxaEYPJm7Q",
-            "metric_value": 12584,
+            "metric_value": 13174,
             "size": 48
         },
         {
-            "id": 98,
+            "id": 100,
             "label": "アニメ『神の雫』official YouTube channel",
             "type": "channel",
             "group": "channel",
@@ -1205,7 +1229,7 @@
             "image": "https://yt3.ggpht.com/5Y9d9vVtAzVcnQmO3CHebF7MvACO9WYeDuQXZB7NsEQnQPwuNDuDR3gxKzAohjwlkk-cREsSNw=s800-c-k-c0x00ffffff-no-rj"
         },
         {
-            "id": 99,
+            "id": 101,
             "label": "TVアニメ『神の雫』第2クールノンテロップOP｜SUPER★DRAGON「Call Me Asap」",
             "type": "anime",
             "group": "anime",
@@ -1213,11 +1237,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/hDt5lumdnjY/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=hDt5lumdnjY",
-            "metric_value": 10970,
+            "metric_value": 11147,
             "size": 48
         },
         {
-            "id": 100,
+            "id": 102,
             "label": "TVアニメ「天は赤い河のほとり」ノンクレジットED｜EDテーマ：清水美依紗「Reunion」【日本テレビ・ＢＳ日テレにて放送中】",
             "type": "anime",
             "group": "anime",
@@ -1225,11 +1249,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/z0cYxw8Eifg/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=z0cYxw8Eifg",
-            "metric_value": 10756,
+            "metric_value": 10915,
             "size": 48
         },
         {
-            "id": 101,
+            "id": 103,
             "label": "『アズールレーン びそくぜんしんっ！にっ！！』ノンクレジット映像｜「Lu lu lun♪〜ウラハラ気分はオートマティック〜」橋本みゆき",
             "type": "anime",
             "group": "anime",
@@ -1237,11 +1261,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/0s8wRiSeKyg/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=0s8wRiSeKyg",
-            "metric_value": 10563,
+            "metric_value": 10794,
             "size": 48
         },
         {
-            "id": 102,
+            "id": 104,
             "label": "TVアニメ『手札が多めのビクトリア』ノンテロップED映像｜エンディングテーマ：KI_EN「縁のつき」⟡.·",
             "type": "anime",
             "group": "anime",
@@ -1249,23 +1273,11 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/r6pUQw5xjoc/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=r6pUQw5xjoc",
-            "metric_value": 10138,
+            "metric_value": 10336,
             "size": 48
         },
         {
-            "id": 103,
-            "label": "【ノンクレジットED】TVアニメ「透明な夜に駆ける君と、目に見えない恋をした。」｜櫻井優衣「光」",
-            "type": "anime",
-            "group": "anime",
-            "title": "【ノンクレジットED】TVアニメ「透明な夜に駆ける君と、目に見えない恋をした。」｜櫻井優衣「光」",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/H_Ab3nKZUfM/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=H_Ab3nKZUfM",
-            "metric_value": 12863,
-            "size": 48
-        },
-        {
-            "id": 104,
+            "id": 105,
             "label": "TVアニメ「メビウス・ダスト」ノンクレジットED映像",
             "type": "anime",
             "group": "anime",
@@ -1273,19 +1285,7 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/00D8aV_cT6c/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=00D8aV_cT6c",
-            "metric_value": 3750,
-            "size": 48
-        },
-        {
-            "id": 105,
-            "label": "TVアニメ『令和のダラさん』ノンクレジット特殊エンディング映像 | 毎週木曜22：30より放送中！",
-            "type": "anime",
-            "group": "anime",
-            "title": "TVアニメ『令和のダラさん』ノンクレジット特殊エンディング映像 | 毎週木曜22：30より放送中！",
-            "shape": "image",
-            "image": "https://i.ytimg.com/vi/wTPWul-o-UY/hqdefault.jpg",
-            "url": "https://www.youtube.com/watch?v=wTPWul-o-UY",
-            "metric_value": 170531,
+            "metric_value": 3830,
             "size": 48
         },
         {
@@ -1297,7 +1297,19 @@
             "shape": "image",
             "image": "https://i.ytimg.com/vi/V0u41dBKwHQ/hqdefault.jpg",
             "url": "https://www.youtube.com/watch?v=V0u41dBKwHQ",
-            "metric_value": 3695,
+            "metric_value": 4962,
+            "size": 48
+        },
+        {
+            "id": 107,
+            "label": "第六話「革新の音」ノンクレジットOP映像 ｜TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』",
+            "type": "anime",
+            "group": "anime",
+            "title": "第六話「革新の音」ノンクレジットOP映像 ｜TVアニメ『二十世紀電氣目録-ユーレカ・エヴリカ-』",
+            "shape": "image",
+            "image": "https://i.ytimg.com/vi/v0fPsgHT5_8/hqdefault.jpg",
+            "url": "https://www.youtube.com/watch?v=v0fPsgHT5_8",
+            "metric_value": 3863,
             "size": 48
         }
     ],
@@ -1345,8 +1357,8 @@
         {
             "from": 8,
             "to": 9,
-            "label": "ED",
-            "video_id": "UKcJqQqiXq0",
+            "label": "OP",
+            "video_id": "IVyvkwvsqW0",
             "arrows": "to",
             "font": {
                 "align": "middle"
@@ -1355,8 +1367,8 @@
         {
             "from": 10,
             "to": 11,
-            "label": "OP",
-            "video_id": "IVyvkwvsqW0",
+            "label": "ED",
+            "video_id": "UKcJqQqiXq0",
             "arrows": "to",
             "font": {
                 "align": "middle"
@@ -1383,20 +1395,20 @@
             }
         },
         {
-            "from": 10,
+            "from": 4,
             "to": 16,
-            "label": "OP",
-            "video_id": "GOfC_4qCa9c",
+            "label": "ED",
+            "video_id": "2xkn83S68sM",
             "arrows": "to",
             "font": {
                 "align": "middle"
             }
         },
         {
-            "from": 4,
+            "from": 8,
             "to": 17,
-            "label": "ED",
-            "video_id": "2xkn83S68sM",
+            "label": "OP",
+            "video_id": "GOfC_4qCa9c",
             "arrows": "to",
             "font": {
                 "align": "middle"
@@ -1413,7 +1425,7 @@
             }
         },
         {
-            "from": 10,
+            "from": 8,
             "to": 20,
             "label": "OP",
             "video_id": "01Vgu7BIxmI",
@@ -1423,7 +1435,7 @@
             }
         },
         {
-            "from": 8,
+            "from": 10,
             "to": 21,
             "label": "OP",
             "video_id": "LshSTzPWdLk",
@@ -1483,7 +1495,7 @@
             }
         },
         {
-            "from": 8,
+            "from": 10,
             "to": 32,
             "label": "ED",
             "video_id": "T3gqwRlME5Q",
@@ -1493,8 +1505,18 @@
             }
         },
         {
-            "from": 10,
+            "from": 8,
             "to": 33,
+            "label": "ED",
+            "video_id": "wTPWul-o-UY",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 8,
+            "to": 34,
             "label": "ED",
             "video_id": "x2k_iYCGKvE",
             "arrows": "to",
@@ -1503,8 +1525,8 @@
             }
         },
         {
-            "from": 34,
-            "to": 35,
+            "from": 35,
+            "to": 36,
             "label": "OP",
             "video_id": "hFldDZZcrQo",
             "arrows": "to",
@@ -1514,7 +1536,7 @@
         },
         {
             "from": 14,
-            "to": 36,
+            "to": 37,
             "label": "ED",
             "video_id": "hHBu5YXhiXQ",
             "arrows": "to",
@@ -1523,8 +1545,18 @@
             }
         },
         {
-            "from": 37,
-            "to": 38,
+            "from": 38,
+            "to": 39,
+            "label": "OP",
+            "video_id": "9TTfyS5r3Ps",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 40,
+            "to": 41,
             "label": "OP",
             "video_id": "-UMzc7BI6y4",
             "arrows": "to",
@@ -1534,29 +1566,9 @@
         },
         {
             "from": 26,
-            "to": 39,
-            "label": "OP",
-            "video_id": "cpytH8hQ5BE",
-            "arrows": "to",
-            "font": {
-                "align": "middle"
-            }
-        },
-        {
-            "from": 8,
-            "to": 40,
-            "label": "OP",
-            "video_id": "7ClAoZKbuhA",
-            "arrows": "to",
-            "font": {
-                "align": "middle"
-            }
-        },
-        {
-            "from": 41,
             "to": 42,
             "label": "OP",
-            "video_id": "9TTfyS5r3Ps",
+            "video_id": "cpytH8hQ5BE",
             "arrows": "to",
             "font": {
                 "align": "middle"
@@ -1576,6 +1588,16 @@
             "from": 10,
             "to": 44,
             "label": "OP",
+            "video_id": "7ClAoZKbuhA",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 8,
+            "to": 45,
+            "label": "OP",
             "video_id": "SiTi3WCmzfc",
             "arrows": "to",
             "font": {
@@ -1583,18 +1605,8 @@
             }
         },
         {
-            "from": 45,
-            "to": 46,
-            "label": "ED",
-            "video_id": "miLM7VnR08o",
-            "arrows": "to",
-            "font": {
-                "align": "middle"
-            }
-        },
-        {
             "from": 6,
-            "to": 47,
+            "to": 46,
             "label": "ED",
             "video_id": "rn0QtVBIo2o",
             "arrows": "to",
@@ -1603,8 +1615,18 @@
             }
         },
         {
-            "from": 48,
-            "to": 49,
+            "from": 47,
+            "to": 48,
+            "label": "ED",
+            "video_id": "miLM7VnR08o",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 49,
+            "to": 50,
             "label": "OP",
             "video_id": "3BlCT0_r6RQ",
             "arrows": "to",
@@ -1613,18 +1635,8 @@
             }
         },
         {
-            "from": 50,
+            "from": 10,
             "to": 51,
-            "label": "OP",
-            "video_id": "5d81RgISG5o",
-            "arrows": "to",
-            "font": {
-                "align": "middle"
-            }
-        },
-        {
-            "from": 8,
-            "to": 52,
             "label": "OP",
             "video_id": "24_Q2ND4vEo",
             "arrows": "to",
@@ -1633,8 +1645,18 @@
             }
         },
         {
-            "from": 53,
-            "to": 54,
+            "from": 52,
+            "to": 53,
+            "label": "OP",
+            "video_id": "5d81RgISG5o",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 54,
+            "to": 55,
             "label": "ED",
             "video_id": "mGmKY-PB82o",
             "arrows": "to",
@@ -1643,8 +1665,8 @@
             }
         },
         {
-            "from": 10,
-            "to": 55,
+            "from": 8,
+            "to": 56,
             "label": "ED",
             "video_id": "bszg61aM_7E",
             "arrows": "to",
@@ -1653,8 +1675,8 @@
             }
         },
         {
-            "from": 8,
-            "to": 56,
+            "from": 10,
+            "to": 57,
             "label": "OP",
             "video_id": "Es0mqcdYw9Q",
             "arrows": "to",
@@ -1664,7 +1686,7 @@
         },
         {
             "from": 22,
-            "to": 57,
+            "to": 58,
             "label": "ED",
             "video_id": "dhAKFhT6pno",
             "arrows": "to",
@@ -1674,7 +1696,7 @@
         },
         {
             "from": 4,
-            "to": 58,
+            "to": 59,
             "label": "ED",
             "video_id": "Z3LKxdlyNSU",
             "arrows": "to",
@@ -1683,8 +1705,8 @@
             }
         },
         {
-            "from": 53,
-            "to": 59,
+            "from": 54,
+            "to": 60,
             "label": "OP",
             "video_id": "dv1TGoV_aS8",
             "arrows": "to",
@@ -1693,8 +1715,8 @@
             }
         },
         {
-            "from": 37,
-            "to": 60,
+            "from": 40,
+            "to": 61,
             "label": "ED",
             "video_id": "lJ6dDUwWOis",
             "arrows": "to",
@@ -1703,8 +1725,8 @@
             }
         },
         {
-            "from": 61,
-            "to": 62,
+            "from": 62,
+            "to": 63,
             "label": "ED",
             "video_id": "n7iidGIYvkw",
             "arrows": "to",
@@ -1713,8 +1735,18 @@
             }
         },
         {
-            "from": 63,
+            "from": 30,
             "to": 64,
+            "label": "ED",
+            "video_id": "H4J8Kh65Qu8",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 65,
+            "to": 66,
             "label": "OP",
             "video_id": "lMq8obidFDI",
             "arrows": "to",
@@ -1723,8 +1755,8 @@
             }
         },
         {
-            "from": 10,
-            "to": 65,
+            "from": 8,
+            "to": 67,
             "label": "ED",
             "video_id": "od3XN58Gnws",
             "arrows": "to",
@@ -1733,8 +1765,8 @@
             }
         },
         {
-            "from": 66,
-            "to": 67,
+            "from": 68,
+            "to": 69,
             "label": "OP",
             "video_id": "gnsGSDo0fTU",
             "arrows": "to",
@@ -1743,8 +1775,8 @@
             }
         },
         {
-            "from": 48,
-            "to": 68,
+            "from": 49,
+            "to": 70,
             "label": "ED",
             "video_id": "JvIeQsFHkMM",
             "arrows": "to",
@@ -1753,8 +1785,8 @@
             }
         },
         {
-            "from": 69,
-            "to": 70,
+            "from": 71,
+            "to": 72,
             "label": "OP",
             "video_id": "pNbOW-n26XA",
             "arrows": "to",
@@ -1763,8 +1795,8 @@
             }
         },
         {
-            "from": 41,
-            "to": 71,
+            "from": 38,
+            "to": 73,
             "label": "ED",
             "video_id": "ZkFgIRoGoP4",
             "arrows": "to",
@@ -1774,7 +1806,7 @@
         },
         {
             "from": 22,
-            "to": 72,
+            "to": 74,
             "label": "ED",
             "video_id": "c-kKrErfKvM",
             "arrows": "to",
@@ -1783,8 +1815,8 @@
             }
         },
         {
-            "from": 10,
-            "to": 73,
+            "from": 8,
+            "to": 75,
             "label": "ED",
             "video_id": "Tbyi0Tx1QLA",
             "arrows": "to",
@@ -1794,7 +1826,7 @@
         },
         {
             "from": 26,
-            "to": 74,
+            "to": 76,
             "label": "ED",
             "video_id": "BHS-_AXCWrc",
             "arrows": "to",
@@ -1804,7 +1836,7 @@
         },
         {
             "from": 22,
-            "to": 75,
+            "to": 77,
             "label": "ED",
             "video_id": "1tc784esysA",
             "arrows": "to",
@@ -1814,7 +1846,7 @@
         },
         {
             "from": 4,
-            "to": 76,
+            "to": 78,
             "label": "ED",
             "video_id": "4KZnNNPfkss",
             "arrows": "to",
@@ -1823,8 +1855,8 @@
             }
         },
         {
-            "from": 37,
-            "to": 77,
+            "from": 40,
+            "to": 79,
             "label": "OP",
             "video_id": "c09YTWOppMM",
             "arrows": "to",
@@ -1833,8 +1865,8 @@
             }
         },
         {
-            "from": 78,
-            "to": 79,
+            "from": 80,
+            "to": 81,
             "label": "OP",
             "video_id": "TOj2RisiiwY",
             "arrows": "to",
@@ -1843,8 +1875,8 @@
             }
         },
         {
-            "from": 45,
-            "to": 80,
+            "from": 47,
+            "to": 82,
             "label": "ED",
             "video_id": "jW-nRpVHw8c",
             "arrows": "to",
@@ -1853,8 +1885,8 @@
             }
         },
         {
-            "from": 10,
-            "to": 81,
+            "from": 8,
+            "to": 83,
             "label": "ED",
             "video_id": "GKtdRThIuuE",
             "arrows": "to",
@@ -1863,30 +1895,10 @@
             }
         },
         {
-            "from": 34,
-            "to": 82,
-            "label": "ED",
-            "video_id": "waOUdRPozDY",
-            "arrows": "to",
-            "font": {
-                "align": "middle"
-            }
-        },
-        {
-            "from": 28,
-            "to": 83,
-            "label": "ED",
-            "video_id": "kBP_Urtwx7Q",
-            "arrows": "to",
-            "font": {
-                "align": "middle"
-            }
-        },
-        {
-            "from": 63,
+            "from": 35,
             "to": 84,
             "label": "ED",
-            "video_id": "UDD-U-c-m9Y",
+            "video_id": "waOUdRPozDY",
             "arrows": "to",
             "font": {
                 "align": "middle"
@@ -1903,8 +1915,28 @@
             }
         },
         {
-            "from": 50,
+            "from": 28,
             "to": 86,
+            "label": "ED",
+            "video_id": "kBP_Urtwx7Q",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 65,
+            "to": 87,
+            "label": "ED",
+            "video_id": "UDD-U-c-m9Y",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 52,
+            "to": 88,
             "label": "ED",
             "video_id": "dFPEYdbTAD4",
             "arrows": "to",
@@ -1913,8 +1945,8 @@
             }
         },
         {
-            "from": 78,
-            "to": 87,
+            "from": 80,
+            "to": 89,
             "label": "ED",
             "video_id": "tB1cFMYBX_4",
             "arrows": "to",
@@ -1923,8 +1955,18 @@
             }
         },
         {
-            "from": 37,
-            "to": 88,
+            "from": 28,
+            "to": 90,
+            "label": "OP",
+            "video_id": "OhRKTSgC7Es",
+            "arrows": "to",
+            "font": {
+                "align": "middle"
+            }
+        },
+        {
+            "from": 40,
+            "to": 91,
             "label": "OP",
             "video_id": "NjdE4RFQ4rY",
             "arrows": "to",
@@ -1934,7 +1976,7 @@
         },
         {
             "from": 22,
-            "to": 89,
+            "to": 92,
             "label": "ED",
             "video_id": "q1p5q_HIeCk",
             "arrows": "to",
@@ -1943,8 +1985,8 @@
             }
         },
         {
-            "from": 90,
-            "to": 91,
+            "from": 93,
+            "to": 94,
             "label": "ED",
             "video_id": "CmP5HMtIOEY",
             "arrows": "to",
@@ -1953,18 +1995,8 @@
             }
         },
         {
-            "from": 30,
-            "to": 92,
-            "label": "ED",
-            "video_id": "H4J8Kh65Qu8",
-            "arrows": "to",
-            "font": {
-                "align": "middle"
-            }
-        },
-        {
-            "from": 93,
-            "to": 94,
+            "from": 95,
+            "to": 96,
             "label": "OP",
             "video_id": "DZIN7Fx_K48",
             "arrows": "to",
@@ -1974,7 +2006,7 @@
         },
         {
             "from": 22,
-            "to": 95,
+            "to": 97,
             "label": "OP",
             "video_id": "fCboU3XWuLU",
             "arrows": "to",
@@ -1984,17 +2016,17 @@
         },
         {
             "from": 28,
-            "to": 96,
-            "label": "OP",
-            "video_id": "OhRKTSgC7Es",
+            "to": 98,
+            "label": "ED",
+            "video_id": "H_Ab3nKZUfM",
             "arrows": "to",
             "font": {
                 "align": "middle"
             }
         },
         {
-            "from": 37,
-            "to": 97,
+            "from": 40,
+            "to": 99,
             "label": "OP",
             "video_id": "bnxaEYPJm7Q",
             "arrows": "to",
@@ -2003,8 +2035,8 @@
             }
         },
         {
-            "from": 98,
-            "to": 99,
+            "from": 100,
+            "to": 101,
             "label": "OP",
             "video_id": "hDt5lumdnjY",
             "arrows": "to",
@@ -2014,7 +2046,7 @@
         },
         {
             "from": 26,
-            "to": 100,
+            "to": 102,
             "label": "ED",
             "video_id": "z0cYxw8Eifg",
             "arrows": "to",
@@ -2024,7 +2056,7 @@
         },
         {
             "from": 28,
-            "to": 101,
+            "to": 103,
             "label": "関連動画",
             "video_id": "0s8wRiSeKyg",
             "arrows": "to",
@@ -2033,8 +2065,8 @@
             }
         },
         {
-            "from": 10,
-            "to": 102,
+            "from": 8,
+            "to": 104,
             "label": "ED",
             "video_id": "r6pUQw5xjoc",
             "arrows": "to",
@@ -2043,18 +2075,8 @@
             }
         },
         {
-            "from": 28,
-            "to": 103,
-            "label": "ED",
-            "video_id": "H_Ab3nKZUfM",
-            "arrows": "to",
-            "font": {
-                "align": "middle"
-            }
-        },
-        {
-            "from": 93,
-            "to": 104,
+            "from": 95,
+            "to": 105,
             "label": "ED",
             "video_id": "00D8aV_cT6c",
             "arrows": "to",
@@ -2063,20 +2085,20 @@
             }
         },
         {
-            "from": 10,
-            "to": 105,
-            "label": "ED",
-            "video_id": "wTPWul-o-UY",
+            "from": 8,
+            "to": 106,
+            "label": "OP",
+            "video_id": "V0u41dBKwHQ",
             "arrows": "to",
             "font": {
                 "align": "middle"
             }
         },
         {
-            "from": 10,
-            "to": 106,
+            "from": 40,
+            "to": 107,
             "label": "OP",
-            "video_id": "V0u41dBKwHQ",
+            "video_id": "v0fPsgHT5_8",
             "arrows": "to",
             "font": {
                 "align": "middle"
