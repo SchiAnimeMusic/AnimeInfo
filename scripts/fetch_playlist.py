@@ -252,8 +252,10 @@ class PlaylistFetcher:
             elif '後期' in pattern:
                 season_order = 2
             elif 'Season' in pattern or 'season' in pattern:
-                season_order = int(match.group(1))
-            elif match.group(1):
+                # Season パターンはグループ1を持つ
+                season_order = int(match.group(1)) if match.lastindex and match.lastindex >= 1 else 0
+            elif match.lastindex and match.lastindex >= 1:
+                # クール/シーズン パターンはグループ1を持つ
                 season_order = int(match.group(1))
             else:
                 season_order = default_value
@@ -267,7 +269,7 @@ class PlaylistFetcher:
         candidate = re.sub(r'\([^)]*\)', ' ', candidate)
         candidate = re.sub(r'\[[^\]]*\]', ' ', candidate)
         candidate = re.sub(r'(?i)\b(?:TV\s*Anime|TVアニメ|Anime|アニメ|Official|official)\b', ' ', candidate)
-        candidate = re.sub(r'(?i)\b(?:ノンクレジット|ノンテロップ|TV放送版|歌詞有|歌詞付き|ver|VER|映像|ムービー|主題歌|テーマ|ミュージックビデオ|オープニング|エンディング|OP|ED|MV|挿入歌|スペシャル|上映中)\b', ' ', candidate)
+        candidate = re.sub(r'(?i)\b(?:ノンクレジット|ノンテロップ|TV放送版|歌詞有|歌詞付き|ver|VER|映像|ムービー|主題歌|テーマ|ミュージックビデオ|オープニング|エンディング|挿入歌)\b', ' ', candidate)
         candidate = re.sub(r'(?i)\b(?:Season|season)\s*\d+\b', ' ', candidate)
         candidate = re.sub(r'(?i)(?:第\s*\d+\s*(?:クール|シーズン|期)|前期|後期)', ' ', candidate)
         candidate = re.sub(r'[^0-9A-Za-zぁ-んァ-ン一-龥ー〜\s\-]', '', candidate)
