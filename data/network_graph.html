@@ -262,21 +262,38 @@
       return { nodes, edges };
     }
 
+    function applyAnimeSeriesOrdering(data) {
+      const groups = new Map();
+      (data.nodes || []).forEach(node => {
+        if (node.type !== 'anime') return;
+        const key = node.series_key || node.anime_key || node.label;
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(node);
+      });
+
+      groups.forEach(nodes => {
+        nodes.sort((a, b) => {
+          const seasonDelta = Number(a.season_order ?? 99) - Number(b.season_order ?? 99);
+          if (seasonDelta !== 0) return seasonDelta;
+          const priorityDelta = Number(a.priority_order ?? 99) - Number(b.priority_order ?? 99);
+          if (priorityDelta !== 0) return priorityDelta;
+          return Number(b.metric_value || 0) - Number(a.metric_value || 0);
+        });
+
+        nodes.forEach((node, index) => {
+          node.level = index + 1;
+          node.group = node.series_key || node.anime_key || node.label;
+        });
+      });
+    }
+
     function renderGraph(data, label) {
+      applyAnimeSeriesOrdering(data);
+
       const graph = buildGraphData(data);
       const options = {
         physics: {
-          stabilization: {
-            enabled: true,
-            iterations: 200,
-            updateInterval: 50,
-          },
-          barnesHut: {
-            gravitationalConstant: -8000,
-            springLength: 120,
-            springConstant: 0.04,
-            damping: 0.09,
-          },
+          enabled: false,
         },
         interaction: {
           hover: true,
@@ -304,9 +321,21 @@
         },
         edges: {
           smooth: true,
+          arrows: {
+            to: { enabled: true, scaleFactor: 1 }
+          },
         },
         layout: {
           improvedLayout: true,
+          hierarchical: {
+            enabled: true,
+            direction: 'LR',
+            sortMethod: 'directed',
+            levelSeparation: 180,
+            nodeSpacing: 140,
+            treeSpacing: 220,
+            edgeMinimization: true,
+          },
         },
       };
 
