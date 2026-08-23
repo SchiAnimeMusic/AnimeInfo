@@ -8,8 +8,10 @@ import os
 import sys
 import csv
 import math
+import re
 from pathlib import Path
 from datetime import datetime
+from collections import defaultdict
 import logging
 
 try:
@@ -135,7 +137,7 @@ class PlaylistFetcher:
 
         return max(12, min(60, size))
 
-    def _add_node_if_not_exists(self, label, node_type, image_url=None, external_id=None, link_url=None, metric_value=None):
+    def _add_node_if_not_exists(self, label, node_type, image_url=None, external_id=None, link_url=None, metric_value=None, metadata=None):
         """ノードが存在しない場合に追加し、そのIDを返す。画像URLやリンクURL、サイズ用のメトリクスが与えられたら設定する。"""
         # 同じラベルとタイプのノードが既に存在するかチェック
         for node_id, node_data in self.nodes.items():
@@ -156,6 +158,10 @@ class PlaylistFetcher:
                     if current_metric < int(metric_value):
                         node_data['metric_value'] = int(metric_value)
                         node_data['size'] = self._calculate_node_size(node_type, metric_value)
+                if metadata:
+                    for key, value in metadata.items():
+                        if value is not None and key not in node_data:
+                            node_data[key] = value
                 return node_id
 
         # 存在しない場合は新規作成
@@ -189,9 +195,131 @@ class PlaylistFetcher:
         else:
             node['metric_value'] = 0
             node['size'] = 14 if node_type == 'channel' else 12
+        if metadata:
+            for key, value in metadata.items():
+                if value is not None:
+                    node[key] = value
 
         self.nodes[node_id] = node
         return node_id
+
+    @staticmethod
+    def _normalize_space(value):
+        return re.sub(r'\s+', '', str(value or '').strip())
+
+    def _extract_series_metadata(self, title, description=''):
+        """タイトルと説明からアニメシリーズ名・シーズン・曲種を抽出する"""
+        source = ' '.join(part for part in [title or '', description or ''] if part)
+        searchable = re.sub(r'\s+', '', source)
+
+        kind = 'related'
+        kind_label = '関連動画'
+        if re.search(r'(?:オープニング|OP|opening|ＯＰ)', searchable, re.IGNORECASE):
+            kind = 'op'
+            kind_label = 'OP'
+        elif re.search(r'(?:エンディング|ED|ending|ＥＤ)', searchable, re.IGNORECASE):
+            kind = 'ed'
+            kind_label = 'ED'
+        elif re.search(r'(?:挿入歌|insert song|インサート)', searchable, re.IGNORECASE):
+            kind = 'insert'
+            kind_label = '挿入歌'
+        elif re.search(r'(?:MV|music video|ミュージックビデオ)', searchable, re.IGNORECASE):
+            kind = 'mv'
+            kind_label = 'MV'
+        elif re.search(r'(?:スペシャル|special)', searchable, re.IGNORECASE):
+            kind = 'special'
+            kind_label = 'SP'
+
+        season_order = 99
+        season_label = '未分類'
+        season_patterns = [
+            (r'(?:第\s*1|1st|第一)\s*(?:クール|シーズン|期)', '第1クール', 1),
+            (r'(?:第\s*2|2nd|第二)\s*(?:クール|シーズン|期)', '第2クール', 2),
+            (r'(?:第\s*3|3rd|第三)\s*(?:クール|シーズン|期)', '第3クール', 3),
+            (r'(?:第\s*4|4th|第四)\s*(?:クール|シーズン|期)', '第4クール', 4),
+            (r'(?:前期)', '前期', 1),
+            (r'(?:後期)', '後期', 2),
+            (r'(?:Season|season)\s*(\d+)', 'Season', 0),
+            (r'(?:第\s*(\d+)\s*(?:クール|シーズン|期))', 'クール/シーズン', 0),
+        ]
+        for pattern, label, default_value in season_patterns:
+            match = re.search(pattern, source, re.IGNORECASE)
+            if not match:
+                continue
+            season_label = label
+            if '前期' in pattern:
+                season_order = 1
+            elif '後期' in pattern:
+                season_order = 2
+            elif 'Season' in pattern or 'season' in pattern:
+                season_order = int(match.group(1))
+            elif match.group(1):
+                season_order = int(match.group(1))
+            else:
+                season_order = default_value
+            break
+
+        candidate = source
+        candidate = re.sub(r'\s+', ' ', candidate).strip()
+        candidate = candidate.replace('【', ' ').replace('】', ' ')
+        candidate = candidate.replace('「', ' ').replace('」', ' ').replace('『', ' ').replace('』', ' ')
+        candidate = candidate.replace('|', ' ').replace('｜', ' ').replace('／', ' ')
+        candidate = re.sub(r'\([^)]*\)', ' ', candidate)
+        candidate = re.sub(r'\[[^\]]*\]', ' ', candidate)
+        candidate = re.sub(r'(?i)\b(?:TV\s*Anime|TVアニメ|Anime|アニメ|Official|official)\b', ' ', candidate)
+        candidate = re.sub(r'(?i)\b(?:ノンクレジット|ノンテロップ|TV放送版|歌詞有|歌詞付き|ver|VER|映像|ムービー|主題歌|テーマ|ミュージックビデオ|オープニング|エンディング|OP|ED|MV|挿入歌|スペシャル|上映中)\b', ' ', candidate)
+        candidate = re.sub(r'(?i)\b(?:Season|season)\s*\d+\b', ' ', candidate)
+        candidate = re.sub(r'(?i)(?:第\s*\d+\s*(?:クール|シーズン|期)|前期|後期)', ' ', candidate)
+        candidate = re.sub(r'[^0-9A-Za-zぁ-んァ-ン一-龥ー〜\s\-]', '', candidate)
+        candidate = re.sub(r'\s+', ' ', candidate).strip(' -_')
+
+        if len(candidate) < 2:
+            fallback = title or description or ''
+            fallback = re.sub(r'(?i)\b(?:OP|ED|MV|オープニング|エンディング|ノンクレジット|ノンテロップ|映像|ムービー)\b', ' ', fallback)
+            fallback = re.sub(r'\s+', ' ', fallback).strip(' -_')
+            candidate = fallback
+
+        series_key = candidate or (title or description or 'Unknown')
+        return {
+            'anime_key': series_key,
+            'series_key': series_key,
+            'series_name': series_key,
+            'season_order': season_order,
+            'season_label': season_label,
+            'tag': kind,
+            'segment_label': kind_label,
+            'priority_order': {'op': 0, 'ed': 1, 'mv': 2, 'insert': 3, 'special': 4, 'related': 99}.get(kind, 99),
+        }
+
+    def _build_series_sequence_edges(self):
+        """同一アニメシリーズ内の動画を優先度順に接続し、同列に並ぶようにする"""
+        groups = defaultdict(list)
+        for node in self.nodes.values():
+            if node.get('type') != 'anime':
+                continue
+            key = node.get('series_key') or node.get('anime_key') or node.get('label')
+            groups[key].append(node)
+
+        for series_nodes in groups.values():
+            series_nodes.sort(key=lambda node: (
+                int(node.get('season_order', 99)),
+                int(node.get('priority_order', 99)),
+                -int(node.get('metric_value', 0)),
+                str(node.get('label', '')),
+            ))
+            for previous, current in zip(series_nodes, series_nodes[1:]):
+                self.edges.append({
+                    'from': previous['id'],
+                    'to': current['id'],
+                    'label': 'series',
+                    'arrows': 'to',
+                    'dashes': True,
+                    'series_link': True,
+                    'color': {'color': '#7c3aed', 'highlight': '#6d28d9'},
+                    'font': {'align': 'middle', 'color': '#4c1d95'},
+                    'width': 2,
+                })
+
     def _extract_edge_label(self, title):
         """動画タイトルからエッジのラベル（OP/ED/MVなど）を抽出"""
         title_lower = title.lower()
@@ -246,6 +374,17 @@ class PlaylistFetcher:
                         'view_count': item['statistics'].get('viewCount', 0),
                         'thumbnail_url': thumbnail_url,
                     }
+                    series_metadata = self._extract_series_metadata(video_info['title'], video_info.get('description', ''))
+                    video_info.update({
+                        'anime_key': series_metadata['anime_key'],
+                        'series_key': series_metadata['series_key'],
+                        'series_name': series_metadata['series_name'],
+                        'season_order': series_metadata['season_order'],
+                        'season_label': series_metadata['season_label'],
+                        'tag': series_metadata['tag'],
+                        'segment_label': series_metadata['segment_label'],
+                        'priority_order': series_metadata['priority_order'],
+                    })
                     videos.append(video_info)
 
                     # ネットワークデータ生成
@@ -272,8 +411,19 @@ class PlaylistFetcher:
                         anime_title,
                         'anime',
                         image_url=video_info.get('thumbnail_url'),
+                        external_id=video_info['video_id'],
                         link_url=anime_url,
                         metric_value=video_info.get('view_count', 0),
+                        metadata={
+                            'anime_key': video_info.get('anime_key'),
+                            'series_key': video_info.get('series_key'),
+                            'series_name': video_info.get('series_name'),
+                            'season_order': video_info.get('season_order'),
+                            'season_label': video_info.get('season_label'),
+                            'tag': video_info.get('tag'),
+                            'segment_label': video_info.get('segment_label'),
+                            'priority_order': video_info.get('priority_order'),
+                        },
                     )
 
                     # エッジを追加
@@ -285,6 +435,9 @@ class PlaylistFetcher:
                         'video_id': video_info['video_id'],  # エッジに動画IDを付与
                         'arrows': 'to',
                         'font': {'align': 'middle'},
+                        'series_key': video_info.get('series_key'),
+                        'tag': video_info.get('tag'),
+                        'priority_order': video_info.get('priority_order'),
                     })
 
             except HttpError as e:
@@ -378,6 +531,7 @@ class PlaylistFetcher:
         """ノードとエッジのデータをJSONファイルに保存"""
         output_dir = os.path.dirname(self.output_network_json)
         os.makedirs(output_dir or '.', exist_ok=True)
+        self._build_series_sequence_edges()
 
         network_data = {
             'nodes': list(self.nodes.values()),
