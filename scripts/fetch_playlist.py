@@ -261,13 +261,38 @@ class PlaylistFetcher:
                 season_order = default_value
             break
 
-        candidate = source
+        candidate = title or description or ''
+        title_matches = list(re.finditer(r'[『「]([^』」]+)[』」]', candidate))
+        anime_title_matches = [
+            match for match in title_matches
+            if re.search(r'(?:TV\s*)?アニメ\s*$', candidate[:match.start()])
+        ]
+        if anime_title_matches:
+            candidate = anime_title_matches[-1].group(1)
+        pipe_parts = [part.strip() for part in re.split(r'[|｜]', candidate) if part.strip()]
+        series_part = next(
+            (part for part in pipe_parts if re.search(r'アニメ|EXCEEDS|シリーズ', part, re.IGNORECASE)
+             and not re.search(r'ノンクレジット|\b(?:OP|ED)\b', part, re.IGNORECASE)),
+            None,
+        )
+        if series_part:
+            candidate = re.sub(r'^TV\s*アニメ\s*', '', series_part, flags=re.IGNORECASE).strip()
+        elif len(title_matches) == 1 and not anime_title_matches:
+            candidate = title_matches[0].group(1)
+        elif len(title_matches) > 1:
+            leading_title_match = re.search(r'[『「]([^』」]+)[』」]', re.split(r'[／/|｜]', title)[0])
+            if leading_title_match:
+                candidate = leading_title_match.group(1)
+        candidate = re.sub(r'[〜～].*?[〜～]', ' ', candidate)
+        candidate = re.sub(r'\s*第\s*\d+\s*話.*$', '', candidate)
+        candidate = re.sub(r'\s*[／/|].*$', '', candidate)
         candidate = re.sub(r'\s+', ' ', candidate).strip()
         candidate = candidate.replace('【', ' ').replace('】', ' ')
         candidate = candidate.replace('「', ' ').replace('」', ' ').replace('『', ' ').replace('』', ' ')
         candidate = candidate.replace('|', ' ').replace('｜', ' ').replace('／', ' ')
         candidate = re.sub(r'\([^)]*\)', ' ', candidate)
         candidate = re.sub(r'\[[^\]]*\]', ' ', candidate)
+        candidate = re.sub(r'#\s*\d+\s*[「『][^」』]+[」』]', ' ', candidate)
         candidate = re.sub(r'(?i)\b(?:TV\s*Anime|TVアニメ|Anime|アニメ|Official|official)\b', ' ', candidate)
         candidate = re.sub(r'(?i)\b(?:ノンクレジット|ノンテロップ|TV放送版|歌詞有|歌詞付き|ver|VER|映像|ムービー|主題歌|テーマ|ミュージックビデオ|オープニング|エンディング|挿入歌)\b', ' ', candidate)
         candidate = re.sub(r'(?i)\b(?:Season|season)\s*\d+\b', ' ', candidate)

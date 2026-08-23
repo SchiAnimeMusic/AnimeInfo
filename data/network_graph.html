@@ -26,6 +26,7 @@
       color: #556;
     }
     #network {
+      position: relative;
       height: 80vh;
       border: 1px solid #d7dce5;
       background: #ffffff;
@@ -36,6 +37,20 @@
       margin-top: 12px;
       color: #445;
       font-size: 14px;
+    }
+    .series-hover-tooltip {
+      position: absolute;
+      z-index: 10;
+      display: none;
+      max-width: min(360px, calc(100% - 20px));
+      padding: 8px 10px;
+      border: 1px solid #c4b5fd;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.96);
+      color: #4c1d95;
+      font-size: 14px;
+      pointer-events: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     }
   </style>
 </head>
@@ -51,7 +66,7 @@
       <button id="showChannels">チャンネルのみ</button>
       <button id="showAnime">アニメ作品のみ</button>
     </div>
-    <div id="network"></div>
+    <div id="network"><div id="seriesHoverTooltip" class="series-hover-tooltip"></div></div>
     <div id="status" class="status">データを読み込んでいます...</div>
   </div>
 
@@ -63,9 +78,11 @@
     const showAllBtn = document.getElementById('showAll');
     const showChannelsBtn = document.getElementById('showChannels');
     const showAnimeBtn = document.getElementById('showAnime');
+    const seriesHoverTooltip = document.getElementById('seriesHoverTooltip');
 
     let fullData = null;
     let network = null;
+    let seriesAnnotations = [];
 
     async function loadGraphData() {
       try {
@@ -150,7 +167,7 @@
 
       (data.nodes || []).forEach(node => {
         if (node.type === 'channel') {
-          channelStats.set(node.id, { node, videoCount: 0 });
+          channelStats.set(node.id, { node, videoCount: 0, totalVideoViews: 0 });
         }
       });
 
@@ -241,23 +258,236 @@
       const edges = new vis.DataSet(
         (data.edges || []).map(edge => ({
           ...edge,
-          title: edge.label || '関連動画',
+          label: '',
+          title: '',
           color: {
-            color: '#9ca3af',
-            highlight: '#4f83cc',
+            color: edge.series_link ? '#7c3aed' : '#9ca3af',
+            highlight: edge.series_link ? '#6d28d9' : '#4f83cc',
           },
           arrows: edge.arrows || 'to',
           font: {
             color: '#111827',
-            size: 10,
+            size: 12,
+            align: 'middle',
+            background: '#ffffff',
+            strokeWidth: 3,
+            strokeColor: '#ffffff',
           },
           smooth: {
             enabled: true,
             type: 'dynamic',
           },
-          width: 1,
+          width: edge.series_link ? 2 : 1,
         }))
       );
+
+      return { nodes, edges };
+    }
+
+    function updateSeriesAnnotations(data) {
+      const groups = new Map();
+      (data.nodes || []).forEach(node => {
+        if (node.type !== 'anime') return;
+        const key = getSeriesKey(node);
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(node.id);
+      });
+      seriesAnnotations = Array.from(groups.entries())
+        .filter(([, nodeIds]) => nodeIds.length > 1)
+        .map(([label, nodeIds]) => ({ label, nodeIds }));
+    }
+
+    function getSeriesAnnotationBounds() {
+      if (!network) return [];
+      const positions = network.getPositions();
+      return seriesAnnotations.map(annotation => {
+        const points = annotation.nodeIds.map(nodeId => positions[nodeId]).filter(Boolean);
+        if (points.length < 2) return null;
+        const padding = 120;
+        const minX = Math.min(...points.map(point => point.x)) - padding;
+        const maxX = Math.max(...points.map(point => point.x)) + padding;
+        const minY = Math.min(...points.map(point => point.y)) - padding;
+        const maxY = Math.max(...points.map(point => point.y)) + padding;
+        const centerX = (minX + maxX) / 2;
+        const centerY = (minY + maxY) / 2;
+        const radius = Math.max(maxX - minX, maxY - minY) / 2;
+        const labelWidth = Array.from(annotation.label).reduce((width, character) =>
+          width + (character.charCodeAt(0) > 255 ? 18 : 9), 0) + 24;
+        return {
+          label: annotation.label,
+          minX,
+          maxX,
+          minY,
+          maxY,
+          labelMinX: centerX - labelWidth / 2,
+          labelMaxX: centerX + labelWidth / 2,
+          labelMinY: centerY - 14,
+          labelMaxY: centerY + 14,
+        };
+      }).filter(Boolean);
+    }
+
+    function drawSeriesAnnotations(ctx) {
+      if (!network) return;
+      ctx.save();
+      ctx.font = '500 18px "Segoe UI", "Yu Gothic UI", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      getSeriesAnnotationBounds().forEach(({ label, minX, maxX, minY, maxY }) => {
+        const centerX = (minX + maxX) / 2;
+        const centerY = (minY + maxY) / 2;
+        const radius = Math.max(maxX - minX, maxY - minY) / 2;
+        const labelY = centerY;
+        const labelWidth = ctx.measureText(label).width + 24;
+
+        ctx.fillStyle = 'rgba(124, 58, 237, 0.06)';
+        ctx.strokeStyle = 'rgba(124, 58, 237, 0.8)';
+        ctx.lineWidth = 2;
+        ctx.setLineDash([8, 5]);
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.88)';
+        ctx.fillRect(centerX - labelWidth / 2, labelY - 14, labelWidth, 28);
+        ctx.fillStyle = 'rgba(76, 29, 149, 0.86)';
+        ctx.fillText(label, centerX, labelY);
+      });
+      ctx.restore();
+    }
+
+    function updateSeriesHover(event) {
+      if (!network) return;
+      const point = network.DOMtoCanvas({ x: event.clientX, y: event.clientY });
+      const annotation = getSeriesAnnotationBounds().find(bounds =>
+        point.x >= bounds.labelMinX && point.x <= bounds.labelMaxX &&
+        point.y >= bounds.labelMinY && point.y <= bounds.labelMaxY
+      );
+      if (!annotation) {
+        seriesHoverTooltip.style.display = 'none';
+        return;
+      }
+
+      const rect = container.getBoundingClientRect();
+      seriesHoverTooltip.textContent = annotation.label;
+      seriesHoverTooltip.style.display = 'block';
+      seriesHoverTooltip.style.left = `${Math.min(event.clientX - rect.left + 12, rect.width - seriesHoverTooltip.offsetWidth - 10)}px`;
+      seriesHoverTooltip.style.top = `${Math.min(event.clientY - rect.top + 12, rect.height - seriesHoverTooltip.offsetHeight - 10)}px`;
+    }
+
+    container.addEventListener('mousemove', updateSeriesHover);
+    container.addEventListener('mouseleave', () => {
+      seriesHoverTooltip.style.display = 'none';
+    });
+
+    function normalizeSeriesTitle(title) {
+      return title
+        .replace(/[〜～].*?[〜～]/g, ' ')
+        .replace(/\s*第\s*\d+\s*話.*$/g, '')
+        .replace(/\s*[／/|].*$/g, '')
+        .trim();
+    }
+
+    function getSeriesKey(node) {
+      let key = node.label || node.series_name || node.series_key || node.anime_key || '';
+      const titleMatches = Array.from(key.matchAll(/[『「]([^』」]+)[』」]/g));
+      const animeTitleMatch = titleMatches.reverse().find(match => /(?:TV\s*)?アニメ\s*$/.test(key.slice(0, match.index)));
+      if (animeTitleMatch) return normalizeSeriesTitle(animeTitleMatch[1]);
+      const pipeParts = key.split(/[|｜]/).map(part => part.trim()).filter(Boolean);
+      const seriesPart = pipeParts.find(part => /アニメ|EXCEEDS|シリーズ/i.test(part) && !/ノンクレジット|\b(?:OP|ED)\b/i.test(part));
+      if (seriesPart) return normalizeSeriesTitle(seriesPart.replace(/^TV\s*アニメ\s*/i, ''));
+      if (titleMatches.length === 1) return normalizeSeriesTitle(titleMatches[0][1]);
+      const leadingTitleMatch = key.split(/[／/|｜]/)[0].match(/[『「]([^』」]+)[』」]/);
+      if (leadingTitleMatch) return normalizeSeriesTitle(leadingTitleMatch[1]);
+      key = key.replace(/\([^)]*\)|\[[^\]]*\]/g, ' ');
+      key = key.replace(/#\s*\d+\s*[「『][^」』]+[」』]/g, ' ');
+      key = key.replace(/TV\s*アニメ|ノンクレジット|ノンテロップ|TV放送版|歌詞付き|オープニング|エンディング|主題歌|テーマ|ミュージックビデオ|挿入歌|スペシャル|映像|ムービー|\b(?:OP|ED|MV)\b/gi, ' ');
+      key = key.replace(/第\s*\d+\s*(?:クール|シーズン|期)|(?:前期|後期)|\bSeason\s*\d+\b/gi, ' ');
+      return key.replace(/[『』「」【】|｜]/g, ' ').replace(/\s+/g, ' ').trim() || key;
+    }
+
+    function compareSeriesOrder(left, right) {
+      const seasonDelta = Number(left.season_order ?? 99) - Number(right.season_order ?? 99);
+      if (seasonDelta !== 0) return seasonDelta;
+      const priorityDelta = Number(left.priority_order ?? 99) - Number(right.priority_order ?? 99);
+      if (priorityDelta !== 0) return priorityDelta;
+      const metricDelta = Number(right.metric_value || 0) - Number(left.metric_value || 0);
+      if (metricDelta !== 0) return metricDelta;
+      return String(left.label || '').localeCompare(String(right.label || ''));
+    }
+
+    function buildSeriesSequenceData(data) {
+      const nodes = (data.nodes || []).map(node => ({ ...node }));
+      const nodeMap = new Map(nodes.map(node => [node.id, node]));
+      const groups = new Map();
+
+      nodes.forEach(node => {
+        if (node.type !== 'anime') return;
+        const key = getSeriesKey(node);
+        if (!groups.has(key)) groups.set(key, []);
+        groups.get(key).push(node);
+      });
+
+      const firstByChannelAndSeries = new Map();
+      groups.forEach(seriesNodes => {
+        seriesNodes.sort(compareSeriesOrder);
+        seriesNodes.forEach((node, index) => {
+          node.group = getSeriesKey(node);
+          node.series_index = index;
+        });
+      });
+
+      (data.edges || []).forEach(edge => {
+        const fromNode = nodeMap.get(edge.from);
+        const toNode = nodeMap.get(edge.to);
+        if (!fromNode || !toNode) return;
+        const channelNode = fromNode.type === 'channel' ? fromNode : toNode.type === 'channel' ? toNode : null;
+        const animeNode = fromNode.type === 'anime' ? fromNode : toNode.type === 'anime' ? toNode : null;
+        if (!channelNode || !animeNode) return;
+        const seriesKey = getSeriesKey(animeNode);
+        const key = `${channelNode.id}:${seriesKey}`;
+        const current = firstByChannelAndSeries.get(key);
+        if (!current || compareSeriesOrder(animeNode, current) < 0) {
+          firstByChannelAndSeries.set(key, animeNode);
+        }
+      });
+
+      const edges = (data.edges || []).filter(edge => {
+        const fromNode = nodeMap.get(edge.from);
+        const toNode = nodeMap.get(edge.to);
+        if (!fromNode || !toNode) return true;
+        const channelNode = fromNode.type === 'channel' ? fromNode : toNode.type === 'channel' ? toNode : null;
+        const animeNode = fromNode.type === 'anime' ? fromNode : toNode.type === 'anime' ? toNode : null;
+        if (!channelNode || !animeNode) return true;
+        const seriesKey = getSeriesKey(animeNode);
+        return firstByChannelAndSeries.get(`${channelNode.id}:${seriesKey}`)?.id === animeNode.id;
+      }).map(edge => {
+        const fromNode = nodeMap.get(edge.from);
+        const toNode = nodeMap.get(edge.to);
+        const animeNode = fromNode?.type === 'anime' ? fromNode : toNode?.type === 'anime' ? toNode : null;
+        return animeNode ? { ...edge, label: getSeriesKey(animeNode) } : edge;
+      });
+
+      const edgeKeys = new Set(edges.map(edge => `${edge.from}:${edge.to}`));
+      groups.forEach(seriesNodes => {
+        for (let index = 1; index < seriesNodes.length; index += 1) {
+          const edge = {
+            from: seriesNodes[index - 1].id,
+            to: seriesNodes[index].id,
+            arrows: 'to',
+            dashes: true,
+            series_link: true,
+          };
+          const edgeKey = `${edge.from}:${edge.to}`;
+          if (!edgeKeys.has(edgeKey)) {
+            edges.push(edge);
+            edgeKeys.add(edgeKey);
+          }
+        }
+      });
 
       return { nodes, edges };
     }
@@ -266,7 +496,7 @@
       const groups = new Map();
       (data.nodes || []).forEach(node => {
         if (node.type !== 'anime') return;
-        const key = node.series_key || node.anime_key || node.label;
+        const key = getSeriesKey(node);
         if (!groups.has(key)) groups.set(key, []);
         groups.get(key).push(node);
       });
@@ -281,19 +511,76 @@
         });
 
         nodes.forEach((node, index) => {
-          node.level = index + 1;
-          node.group = node.series_key || node.anime_key || node.label;
+          node.group = getSeriesKey(node);
         });
       });
     }
 
-    function renderGraph(data, label) {
-      applyAnimeSeriesOrdering(data);
+    function applyRadialLayout(data) {
+      const nodes = (data.nodes || []).map(node => ({ ...node }));
+      const nodeMap = new Map(nodes.map(node => [node.id, node]));
+      const channels = nodes.filter(node => node.type === 'channel');
+      const videosByChannel = new Map(channels.map(channel => [channel.id, []]));
+      const assignedVideos = new Set();
 
-      const graph = buildGraphData(data);
+      (data.edges || []).forEach(edge => {
+        const fromNode = nodeMap.get(edge.from);
+        const toNode = nodeMap.get(edge.to);
+        if (!fromNode || !toNode) return;
+        const channel = fromNode.type === 'channel' ? fromNode : toNode.type === 'channel' ? toNode : null;
+        const video = fromNode.type === 'anime' ? fromNode : toNode.type === 'anime' ? toNode : null;
+        if (!channel || !video || !videosByChannel.has(channel.id) || assignedVideos.has(video.id)) return;
+        videosByChannel.get(channel.id).push(video);
+        assignedVideos.add(video.id);
+      });
+
+      const channelDistance = Math.max(650, channels.length * 45);
+      channels.forEach((channel, index) => {
+        const channelAngle = channels.length > 1 ? (2 * Math.PI * index) / channels.length : 0;
+        const channelX = channels.length > 1 ? Math.cos(channelAngle) * channelDistance : 0;
+        const channelY = channels.length > 1 ? Math.sin(channelAngle) * channelDistance : 0;
+        channel.x = channelX;
+        channel.y = channelY;
+
+        const videos = videosByChannel.get(channel.id) || [];
+        const videoDistance = Math.max(220, videos.length * 28);
+        videos.forEach((video, videoIndex) => {
+          const videoAngle = (2 * Math.PI * videoIndex) / Math.max(videos.length, 1);
+          video.x = channelX + Math.cos(videoAngle) * videoDistance;
+          video.y = channelY + Math.sin(videoAngle) * videoDistance;
+        });
+      });
+
+      nodes.filter(node => !Number.isFinite(node.x) || !Number.isFinite(node.y)).forEach((node, index) => {
+        const angle = (2 * Math.PI * index) / Math.max(nodes.length, 1);
+        node.x = Math.cos(angle) * 300;
+        node.y = Math.sin(angle) * 300;
+      });
+
+      return { nodes, edges: data.edges || [] };
+    }
+
+    function renderGraph(data, label) {
+      const radialData = applyRadialLayout(data);
+      const sequenceData = buildSeriesSequenceData(radialData);
+      applyAnimeSeriesOrdering(sequenceData);
+      updateSeriesAnnotations(sequenceData);
+
+      const graph = buildGraphData(sequenceData);
       const options = {
         physics: {
-          enabled: false,
+          enabled: true,
+          stabilization: {
+            enabled: true,
+            iterations: 200,
+            updateInterval: 50,
+          },
+          barnesHut: {
+            gravitationalConstant: -8000,
+            springLength: 120,
+            springConstant: 0.04,
+            damping: 0.09,
+          },
         },
         interaction: {
           hover: true,
@@ -326,25 +613,18 @@
           },
         },
         layout: {
-          improvedLayout: true,
-          hierarchical: {
-            enabled: true,
-            direction: 'LR',
-            sortMethod: 'directed',
-            levelSeparation: 180,
-            nodeSpacing: 140,
-            treeSpacing: 220,
-            edgeMinimization: true,
-          },
+          improvedLayout: false,
         },
       };
 
       if (network) {
-        network.setData(graph);
         network.setOptions(options);
+        network.setData(graph);
       } else {
         network = new vis.Network(container, graph, options);
+        network.on('afterDrawing', ctx => drawSeriesAnnotations(ctx));
       }
+      if (!container.contains(seriesHoverTooltip)) container.appendChild(seriesHoverTooltip);
 
       network.on('click', function (params) {
         if (!params.nodes || params.nodes.length === 0) return;
@@ -401,16 +681,52 @@
         return;
       }
 
+      renderTopNodes();
+    }
+
+    function renderTopNodes() {
+      if (!fullData) return;
       const degree = computeDegree(fullData);
-      const topIds = Object.entries(degree)
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 100)
-        .map(([id]) => Number(id));
-      const filtered = selectGraph(fullData, node => topIds.includes(node.id));
+      const rankedNodes = (fullData.nodes || [])
+        .slice()
+        .sort((a, b) => (degree[b.id] || 0) - (degree[a.id] || 0))
+      const selectedIds = new Set(rankedNodes.slice(0, 100).map(node => node.id));
+      const selectedChannels = new Set(rankedNodes.slice(0, 100)
+        .filter(node => node.type === 'channel')
+        .map(node => node.id));
+      const channelsWithSelectedVideos = new Set();
+      const connectedVideoIds = new Set();
+
+      (fullData.edges || []).forEach(edge => {
+        const channelId = selectedChannels.has(edge.from) ? edge.from : selectedChannels.has(edge.to) ? edge.to : null;
+        if (!channelId) return;
+        const otherId = edge.from === channelId ? edge.to : edge.from;
+        const otherNode = (fullData.nodes || []).find(node => node.id === otherId);
+        if (otherNode?.type === 'anime' && selectedIds.has(otherId)) channelsWithSelectedVideos.add(channelId);
+      });
+
+      (fullData.edges || []).forEach(edge => {
+        const channelId = selectedChannels.has(edge.from) ? edge.from : selectedChannels.has(edge.to) ? edge.to : null;
+        if (!channelId || channelsWithSelectedVideos.has(channelId)) return;
+        const otherId = edge.from === channelId ? edge.to : edge.from;
+        const otherNode = (fullData.nodes || []).find(node => node.id === otherId);
+        if (otherNode?.type === 'anime') connectedVideoIds.add(otherId);
+      });
+
+      connectedVideoIds.forEach(videoId => {
+        if (selectedIds.has(videoId)) return;
+        selectedIds.add(videoId);
+        const removableNode = rankedNodes.slice().reverse().find(node =>
+          selectedIds.has(node.id) && node.type !== 'channel' && !connectedVideoIds.has(node.id)
+        );
+        if (removableNode) selectedIds.delete(removableNode.id);
+      });
+
+      const filtered = selectGraph(fullData, node => selectedIds.has(node.id));
       renderGraph(filtered, '上位 100 ノード');
     }
 
-    showTopBtn.addEventListener('click', updateNetwork);
+    showTopBtn.addEventListener('click', renderTopNodes);
     showAllBtn.addEventListener('click', () => renderGraph(fullData, '全件'));
     showChannelsBtn.addEventListener('click', () => {
       const filtered = selectGraph(fullData, node => node.type === 'channel');
