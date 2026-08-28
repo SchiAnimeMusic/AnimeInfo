@@ -625,6 +625,7 @@
         network.on('afterDrawing', ctx => drawSeriesAnnotations(ctx));
       }
       if (!container.contains(seriesHoverTooltip)) container.appendChild(seriesHoverTooltip);
+      network.fit({ animation: false, minZoomLevel: 0.1, maxZoomLevel: 2 });
 
       network.on('click', function (params) {
         if (!params.nodes || params.nodes.length === 0) return;
@@ -694,32 +695,13 @@
       const selectedChannels = new Set(rankedNodes.slice(0, 100)
         .filter(node => node.type === 'channel')
         .map(node => node.id));
-      const channelsWithSelectedVideos = new Set();
-      const connectedVideoIds = new Set();
+      const nodeMap = new Map((fullData.nodes || []).map(node => [node.id, node]));
 
       (fullData.edges || []).forEach(edge => {
         const channelId = selectedChannels.has(edge.from) ? edge.from : selectedChannels.has(edge.to) ? edge.to : null;
         if (!channelId) return;
         const otherId = edge.from === channelId ? edge.to : edge.from;
-        const otherNode = (fullData.nodes || []).find(node => node.id === otherId);
-        if (otherNode?.type === 'anime' && selectedIds.has(otherId)) channelsWithSelectedVideos.add(channelId);
-      });
-
-      (fullData.edges || []).forEach(edge => {
-        const channelId = selectedChannels.has(edge.from) ? edge.from : selectedChannels.has(edge.to) ? edge.to : null;
-        if (!channelId || channelsWithSelectedVideos.has(channelId)) return;
-        const otherId = edge.from === channelId ? edge.to : edge.from;
-        const otherNode = (fullData.nodes || []).find(node => node.id === otherId);
-        if (otherNode?.type === 'anime') connectedVideoIds.add(otherId);
-      });
-
-      connectedVideoIds.forEach(videoId => {
-        if (selectedIds.has(videoId)) return;
-        selectedIds.add(videoId);
-        const removableNode = rankedNodes.slice().reverse().find(node =>
-          selectedIds.has(node.id) && node.type !== 'channel' && !connectedVideoIds.has(node.id)
-        );
-        if (removableNode) selectedIds.delete(removableNode.id);
+        if (nodeMap.get(otherId)?.type === 'anime') selectedIds.add(otherId);
       });
 
       const filtered = selectGraph(fullData, node => selectedIds.has(node.id));
