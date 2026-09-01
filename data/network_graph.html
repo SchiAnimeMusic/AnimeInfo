@@ -74,6 +74,36 @@
       outline: 2px solid rgba(79, 70, 229, 0.2);
       border-color: #6366f1;
     }
+    .search-suggestions {
+      display: none;
+      width: min(100%, 520px);
+      margin-top: -8px;
+      margin-bottom: 12px;
+      padding: 8px;
+      border: 1px solid #dbe4ff;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 3px 10px rgba(37, 99, 235, 0.08);
+    }
+    .search-suggestions.visible {
+      display: block;
+    }
+    .search-suggestion {
+      display: block;
+      width: 100%;
+      border: none;
+      background: #f8fafc;
+      text-align: left;
+      padding: 8px 10px;
+      margin-bottom: 4px;
+      border-radius: 6px;
+      color: #1f2937;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .search-suggestion:hover {
+      background: #eef2ff;
+    }
     #network {
       position: relative;
       height: 80vh;
@@ -120,6 +150,7 @@
       <button id="searchBtn" type="button">検索</button>
       <button id="clearSearchBtn" type="button">クリア</button>
     </div>
+    <div id="searchSuggestions" class="search-suggestions" aria-live="polite"></div>
     <div id="network"><div id="seriesHoverTooltip" class="series-hover-tooltip"></div></div>
     <div id="status" class="status">データを読み込んでいます...</div>
   </div>
@@ -135,19 +166,127 @@
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
     const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const searchSuggestions = document.getElementById('searchSuggestions');
     const seriesHoverTooltip = document.getElementById('seriesHoverTooltip');
 
     let fullData = null;
     let network = null;
     let seriesAnnotations = [];
 
+    function parseCsvRows(csvText) {
+      const rows = [];
+      let currentRow = [];
+      let currentValue = '';
+      let inQuotes = false;
+
+      const pushValue = () => {
+        currentRow.push(currentValue);
+        currentValue = '';
+      };
+
+      const pushRow = () => {
+        if (currentRow.length > 0) {
+          rows.push(currentRow);
+        }
+        currentRow = [];
+      };
+
+      for (let index = 0; index < csvText.length; index += 1) {
+        const char = csvText[index];
+        const nextChar = csvText[index + 1];
+
+        if (char === '"') {
+          if (inQuotes && nextChar === '"') {
+            currentValue += '"';
+            index += 1;
+          } else {
+            inQuotes = !inQuotes;
+          }
+          continue;
+        }
+
+        if (char === ',' && !inQuotes) {
+          pushValue();
+          continue;
+        }
+
+        if ((char === '\n' || char === '\r') && !inQuotes) {
+          if (char === '\r' && nextChar === '\n') {
+            index += 1;
+          }
+          pushValue();
+          pushRow();
+          continue;
+        }
+
+        currentValue += char;
+      }
+
+      if (currentValue.length > 0 || currentRow.length > 0) {
+        pushValue();
+        pushRow();
+      }
+
+      return rows;
+    }
+
+    function mergeVideoDescriptions(data, csvText) {
+      const rows = parseCsvRows(csvText);
+      if (rows.length < 2) return data;
+
+      const headers = rows[0].map(header => String(header).trim());
+      const descriptionMap = new Map();
+
+      rows.slice(1).forEach(record => {
+        const rowObject = {};
+        headers.forEach((header, index) => {
+          rowObject[header] = record[index] ?? '';
+        });
+        const videoId = String(rowObject.video_id || '').trim();
+        if (!videoId) return;
+        const description = String(rowObject.description || '').trim();
+        const channelName = String(rowObject.channel_name || '').trim();
+        descriptionMap.set(videoId, { description, channelName });
+      });
+
+      (data.nodes || []).forEach(node => {
+        if (node.type !== 'anime') return;
+        const videoId = String(node.external_id || node.video_id || '').trim();
+        const metadata = descriptionMap.get(videoId);
+        if (!metadata) return;
+
+        const searchParts = [
+          node.label,
+          node.title,
+          node.series_name,
+          metadata.description,
+          metadata.channelName,
+        ].filter(Boolean).map(value => String(value).trim());
+
+        node.description = metadata.description;
+        node.channel_name = metadata.channelName;
+        node.search_text = searchParts.join(' ');
+      });
+
+      return data;
+    }
+
     async function loadGraphData() {
       try {
-        const response = await fetch('./network_data.json');
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
+        const [graphResponse, csvResponse] = await Promise.all([
+          fetch('./network_data.json'),
+          fetch('./anime_op_ed.csv')
+        ]);
+
+        if (!graphResponse.ok) {
+          throw new Error(`HTTP ${graphResponse.status}`);
         }
-        fullData = await response.json();
+
+        fullData = await graphResponse.json();
+        if (csvResponse.ok) {
+          const csvText = await csvResponse.text();
+          fullData = mergeVideoDescriptions(fullData, csvText);
+        }
         updateNetwork();
         enableControls();
       } catch (error) {
@@ -193,9 +332,35 @@
         node.anime_key,
         node.channel_name,
         node.type,
+        node.description,
+        node.search_text,
       ].filter(Boolean);
 
       return textValues.some(value => String(value).toLowerCase().includes(keyword));
+    }
+
+    function getSearchCandidates(data, keyword, limit = 10) {
+      const normalizedKeyword = normalizeSearchKeyword(keyword);
+      if (!normalizedKeyword) return [];
+
+      return (data.nodes || [])
+        .filter(node => matchesSearchKeyword(node, normalizedKeyword))
+        .map(node => {
+          const label = String(node.label || node.displayLabel || node.id || '').toLowerCase();
+          const description = String(node.description || node.search_text || '').toLowerCase();
+          let score = 0;
+
+          if (label.includes(normalizedKeyword)) score += 30;
+          if (description.includes(normalizedKeyword)) score += 10;
+          if (node.type === 'anime') score += 5;
+          if (node.type === 'channel') score += 2;
+          return { ...node, score };
+        })
+        .sort((a, b) => {
+          if (b.score !== a.score) return b.score - a.score;
+          return String(a.label || a.id).localeCompare(String(b.label || b.id), 'ja');
+        })
+        .slice(0, limit);
     }
 
     function selectSearchMatches(data, keyword) {
@@ -218,6 +383,19 @@
       const nodes = (data.nodes || []).filter(node => selectedIds.has(node.id));
       const edges = (data.edges || []).filter(edge => selectedIds.has(edge.from) && selectedIds.has(edge.to));
       return { nodes, edges, noResults: false };
+    }
+
+    function selectNodeCluster(data, nodeId) {
+      const selectedIds = new Set([nodeId]);
+      (data.edges || []).forEach(edge => {
+        if (edge.from === nodeId || edge.to === nodeId) {
+          selectedIds.add(edge.from);
+          selectedIds.add(edge.to);
+        }
+      });
+      const nodes = (data.nodes || []).filter(node => selectedIds.has(node.id));
+      const edges = (data.edges || []).filter(edge => selectedIds.has(edge.from) && selectedIds.has(edge.to));
+      return { nodes, edges };
     }
 
     function selectChannelCluster(data, channelId) {
@@ -807,15 +985,52 @@
       renderGraph(filtered, '上位 100 ノード');
     }
 
+    function renderSearchSuggestions(candidates) {
+      if (!candidates || candidates.length === 0) {
+        searchSuggestions.classList.remove('visible');
+        searchSuggestions.innerHTML = '';
+        return;
+      }
+
+      const items = candidates.map(node => {
+        const label = node.label || node.displayLabel || node.id;
+        const typeLabel = node.type === 'anime' ? 'アニメ' : node.type === 'channel' ? 'チャンネル' : '関連';
+        return `<button type="button" class="search-suggestion" data-node-id="${node.id}">${label} <span style="color:#64748b;">(${typeLabel})</span></button>`;
+      }).join('');
+
+      searchSuggestions.innerHTML = items;
+      searchSuggestions.classList.add('visible');
+
+      searchSuggestions.querySelectorAll('.search-suggestion').forEach(button => {
+        button.addEventListener('click', () => {
+          const nodeId = Number(button.dataset.nodeId);
+          const node = (fullData.nodes || []).find(item => item.id === nodeId);
+          if (!node) return;
+          const filtered = selectNodeCluster(fullData, nodeId);
+          searchInput.value = node.label || node.displayLabel || node.id;
+          renderGraph(filtered, `候補: ${node.label || node.id}`);
+        });
+      });
+    }
+
+    function clearSearchState() {
+      searchSuggestions.classList.remove('visible');
+      searchSuggestions.innerHTML = '';
+    }
+
     function performSearch() {
       if (!fullData) return;
       const query = searchInput.value;
       const keyword = normalizeSearchKeyword(query);
 
       if (!keyword) {
+        clearSearchState();
         renderTopNodes();
         return;
       }
+
+      const candidates = getSearchCandidates(fullData, keyword, 12);
+      renderSearchSuggestions(candidates);
 
       const filtered = selectSearchMatches(fullData, keyword);
       if (!filtered || filtered.noResults) {
@@ -838,12 +1053,14 @@
     });
     searchBtn.addEventListener('click', performSearch);
     clearSearchBtn.addEventListener('click', () => {
+      clearSearchState();
       searchInput.value = '';
       renderTopNodes();
     });
     searchInput.addEventListener('input', () => {
       const keyword = normalizeSearchKeyword(searchInput.value);
       if (!keyword) {
+        clearSearchState();
         renderTopNodes();
         return;
       }
