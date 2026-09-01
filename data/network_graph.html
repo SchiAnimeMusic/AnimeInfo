@@ -25,6 +25,55 @@
       margin-bottom: 16px;
       color: #556;
     }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .controls button,
+    .search-bar button {
+      padding: 8px 14px;
+      border: 1px solid #c7d2fe;
+      border-radius: 6px;
+      background: #eef2ff;
+      color: #1f2937;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .controls button:hover,
+    .search-bar button:hover {
+      background: #e0e7ff;
+      transform: translateY(-1px);
+    }
+    .controls button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .search-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .search-bar input {
+      flex: 1 1 280px;
+      min-width: 220px;
+      max-width: 440px;
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 15px;
+      background: #fff;
+    }
+    .search-bar input:focus {
+      outline: 2px solid rgba(79, 70, 229, 0.2);
+      border-color: #6366f1;
+    }
     #network {
       position: relative;
       height: 80vh;
@@ -66,6 +115,11 @@
       <button id="showChannels">チャンネルのみ</button>
       <button id="showAnime">アニメ作品のみ</button>
     </div>
+    <div class="search-bar">
+      <input id="searchInput" type="search" placeholder="アニメ名・チャンネル名で検索" aria-label="アニメ名またはチャンネル名で検索" />
+      <button id="searchBtn" type="button">検索</button>
+      <button id="clearSearchBtn" type="button">クリア</button>
+    </div>
     <div id="network"><div id="seriesHoverTooltip" class="series-hover-tooltip"></div></div>
     <div id="status" class="status">データを読み込んでいます...</div>
   </div>
@@ -78,6 +132,9 @@
     const showAllBtn = document.getElementById('showAll');
     const showChannelsBtn = document.getElementById('showChannels');
     const showAnimeBtn = document.getElementById('showAnime');
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
     const seriesHoverTooltip = document.getElementById('seriesHoverTooltip');
 
     let fullData = null;
@@ -119,6 +176,48 @@
       const nodeIds = new Set(nodes.map(node => node.id));
       const edges = (data.edges || []).filter(edge => nodeIds.has(edge.from) && nodeIds.has(edge.to));
       return { nodes, edges };
+    }
+
+    function normalizeSearchKeyword(value) {
+      return String(value || '').trim().toLowerCase();
+    }
+
+    function matchesSearchKeyword(node, keyword) {
+      const textValues = [
+        node.label,
+        node.title,
+        node.displayLabel,
+        node.id,
+        node.url,
+        node.series_name,
+        node.anime_key,
+        node.channel_name,
+        node.type,
+      ].filter(Boolean);
+
+      return textValues.some(value => String(value).toLowerCase().includes(keyword));
+    }
+
+    function selectSearchMatches(data, keyword) {
+      const normalizedKeyword = normalizeSearchKeyword(keyword);
+      if (!normalizedKeyword) return null;
+
+      const matches = (data.nodes || []).filter(node => matchesSearchKeyword(node, normalizedKeyword));
+      if (matches.length === 0) {
+        return { nodes: [], edges: [], noResults: true };
+      }
+
+      const selectedIds = new Set(matches.map(node => node.id));
+      (data.edges || []).forEach(edge => {
+        if (selectedIds.has(edge.from) || selectedIds.has(edge.to)) {
+          selectedIds.add(edge.from);
+          selectedIds.add(edge.to);
+        }
+      });
+
+      const nodes = (data.nodes || []).filter(node => selectedIds.has(node.id));
+      const edges = (data.edges || []).filter(edge => selectedIds.has(edge.from) && selectedIds.has(edge.to));
+      return { nodes, edges, noResults: false };
     }
 
     function selectChannelCluster(data, channelId) {
@@ -708,6 +807,25 @@
       renderGraph(filtered, '上位 100 ノード');
     }
 
+    function performSearch() {
+      if (!fullData) return;
+      const query = searchInput.value;
+      const keyword = normalizeSearchKeyword(query);
+
+      if (!keyword) {
+        renderTopNodes();
+        return;
+      }
+
+      const filtered = selectSearchMatches(fullData, keyword);
+      if (!filtered || filtered.noResults) {
+        statusEl.textContent = `「${query.trim()}」に一致するアニメまたはチャンネルは見つかりませんでした。`;
+        return;
+      }
+
+      renderGraph(filtered, `検索: ${query.trim()}`);
+    }
+
     showTopBtn.addEventListener('click', renderTopNodes);
     showAllBtn.addEventListener('click', () => renderGraph(fullData, '全件'));
     showChannelsBtn.addEventListener('click', () => {
@@ -717,6 +835,24 @@
     showAnimeBtn.addEventListener('click', () => {
       const filtered = selectGraph(fullData, node => node.type === 'anime');
       renderGraph(filtered, 'アニメ作品のみ');
+    });
+    searchBtn.addEventListener('click', performSearch);
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      renderTopNodes();
+    });
+    searchInput.addEventListener('input', () => {
+      const keyword = normalizeSearchKeyword(searchInput.value);
+      if (!keyword) {
+        renderTopNodes();
+        return;
+      }
+      performSearch();
+    });
+    searchInput.addEventListener('keydown', event => {
+      if (event.key === 'Enter') {
+        performSearch();
+      }
     });
 
     loadGraphData();
