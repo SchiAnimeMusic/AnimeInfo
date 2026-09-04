@@ -137,7 +137,7 @@
   <div class="wrap">
     <h1>AnimeInfo ネットワーク可視化</h1>
     <div class="note">
-      生成済みの JSON データを読み込み、Vis.js でノードとエッジを表示します。初期表示は、人気チャンネルとその再生回数上位の投稿動画に絞り込んで表示します。
+      生成済みの JSON データを読み込み、Vis.js でノードとエッジを表示します。初期表示は、投稿動画数が最も多いチャンネルとその投稿動画に絞り込みます。
     </div>
     <div class="controls">
       <button id="showTop">上位 100 ノード表示</button>
@@ -146,7 +146,7 @@
       <button id="showAnime">アニメ作品のみ</button>
     </div>
     <div class="search-bar">
-      <input id="searchInput" type="search" placeholder="アニメ名・チャンネル名で検索" aria-label="アニメ名またはチャンネル名で検索" />
+      <input id="searchInput" type="search" placeholder="動画タイトル・チャンネル名で検索" aria-label="動画タイトルまたはチャンネル名で検索" />
       <button id="searchBtn" type="button">検索</button>
       <button id="clearSearchBtn" type="button">クリア</button>
     </div>
@@ -173,120 +173,15 @@
     let network = null;
     let seriesAnnotations = [];
 
-    function parseCsvRows(csvText) {
-      const rows = [];
-      let currentRow = [];
-      let currentValue = '';
-      let inQuotes = false;
-
-      const pushValue = () => {
-        currentRow.push(currentValue);
-        currentValue = '';
-      };
-
-      const pushRow = () => {
-        if (currentRow.length > 0) {
-          rows.push(currentRow);
-        }
-        currentRow = [];
-      };
-
-      for (let index = 0; index < csvText.length; index += 1) {
-        const char = csvText[index];
-        const nextChar = csvText[index + 1];
-
-        if (char === '"') {
-          if (inQuotes && nextChar === '"') {
-            currentValue += '"';
-            index += 1;
-          } else {
-            inQuotes = !inQuotes;
-          }
-          continue;
-        }
-
-        if (char === ',' && !inQuotes) {
-          pushValue();
-          continue;
-        }
-
-        if ((char === '\n' || char === '\r') && !inQuotes) {
-          if (char === '\r' && nextChar === '\n') {
-            index += 1;
-          }
-          pushValue();
-          pushRow();
-          continue;
-        }
-
-        currentValue += char;
-      }
-
-      if (currentValue.length > 0 || currentRow.length > 0) {
-        pushValue();
-        pushRow();
-      }
-
-      return rows;
-    }
-
-    function mergeVideoDescriptions(data, csvText) {
-      const rows = parseCsvRows(csvText);
-      if (rows.length < 2) return data;
-
-      const headers = rows[0].map(header => String(header).trim());
-      const descriptionMap = new Map();
-
-      rows.slice(1).forEach(record => {
-        const rowObject = {};
-        headers.forEach((header, index) => {
-          rowObject[header] = record[index] ?? '';
-        });
-        const videoId = String(rowObject.video_id || '').trim();
-        if (!videoId) return;
-        const description = String(rowObject.description || '').trim();
-        const channelName = String(rowObject.channel_name || '').trim();
-        descriptionMap.set(videoId, { description, channelName });
-      });
-
-      (data.nodes || []).forEach(node => {
-        if (node.type !== 'anime') return;
-        const videoId = String(node.external_id || node.video_id || '').trim();
-        const metadata = descriptionMap.get(videoId);
-        if (!metadata) return;
-
-        const searchParts = [
-          node.label,
-          node.title,
-          node.series_name,
-          metadata.description,
-          metadata.channelName,
-        ].filter(Boolean).map(value => String(value).trim());
-
-        node.description = metadata.description;
-        node.channel_name = metadata.channelName;
-        node.search_text = searchParts.join(' ');
-      });
-
-      return data;
-    }
-
     async function loadGraphData() {
       try {
-        const [graphResponse, csvResponse] = await Promise.all([
-          fetch('./network_data.json'),
-          fetch('./anime_op_ed.csv')
-        ]);
+        const graphResponse = await fetch('./network_data.json');
 
         if (!graphResponse.ok) {
           throw new Error(`HTTP ${graphResponse.status}`);
         }
 
         fullData = await graphResponse.json();
-        if (csvResponse.ok) {
-          const csvText = await csvResponse.text();
-          fullData = mergeVideoDescriptions(fullData, csvText);
-        }
         updateNetwork();
         enableControls();
       } catch (error) {
@@ -332,8 +227,6 @@
         node.anime_key,
         node.channel_name,
         node.type,
-        node.description,
-        node.search_text,
       ].filter(Boolean);
 
       return textValues.some(value => String(value).toLowerCase().includes(keyword));
@@ -347,11 +240,9 @@
         .filter(node => matchesSearchKeyword(node, normalizedKeyword))
         .map(node => {
           const label = String(node.label || node.displayLabel || node.id || '').toLowerCase();
-          const description = String(node.description || node.search_text || '').toLowerCase();
           let score = 0;
 
           if (label.includes(normalizedKeyword)) score += 30;
-          if (description.includes(normalizedKeyword)) score += 10;
           if (node.type === 'anime') score += 5;
           if (node.type === 'channel') score += 2;
           return { ...node, score };
@@ -372,9 +263,12 @@
         return { nodes: [], edges: [], noResults: true };
       }
 
-      const selectedIds = new Set(matches.map(node => node.id));
+      const matchedIds = new Set(matches.map(node => node.id));
+      const selectedIds = new Set(matchedIds);
       (data.edges || []).forEach(edge => {
-        if (selectedIds.has(edge.from) || selectedIds.has(edge.to)) {
+        // Expand only from the matched nodes. This prevents a series of edges
+        // from progressively pulling the entire graph into the search result.
+        if (matchedIds.has(edge.from) || matchedIds.has(edge.to)) {
           selectedIds.add(edge.from);
           selectedIds.add(edge.to);
         }
@@ -413,7 +307,7 @@
       return { nodes, edges };
     }
 
-    function selectTopChannelVideos(data, channelId, topN = 20) {
+    function selectTopChannelVideos(data, channelId) {
       const nodeMap = new Map((data.nodes || []).map(node => [node.id, node]));
       const videoIds = new Set();
       (data.edges || []).forEach(edge => {
@@ -430,21 +324,20 @@
       const videos = Array.from(videoIds)
         .map(id => nodeMap.get(id))
         .filter(Boolean)
-        .sort((a, b) => Number(b.metric_value || 0) - Number(a.metric_value || 0))
-        .slice(0, topN);
+        .sort((a, b) => Number(b.metric_value || 0) - Number(a.metric_value || 0));
       const selectedIds = new Set([channelId, ...videos.map(video => video.id)]);
       const nodes = (data.nodes || []).filter(node => selectedIds.has(node.id));
       const edges = (data.edges || []).filter(edge => selectedIds.has(edge.from) && selectedIds.has(edge.to));
       return { nodes, edges };
     }
 
-    function getTopPopularChannel(data) {
+    function getTopVideoCountChannel(data) {
       const nodeMap = new Map((data.nodes || []).map(node => [node.id, node]));
       const channelStats = new Map();
 
       (data.nodes || []).forEach(node => {
         if (node.type === 'channel') {
-          channelStats.set(node.id, { node, videoCount: 0, totalVideoViews: 0 });
+          channelStats.set(node.id, { node, videoIds: new Set() });
         }
       });
 
@@ -455,26 +348,22 @@
         if (fromNode.type === 'channel' && toNode.type !== 'channel') {
           const stats = channelStats.get(fromNode.id);
           if (stats) {
-            stats.videoCount += 1;
-            stats.totalVideoViews += Number(toNode.metric_value || 0);
+            stats.videoIds.add(toNode.id);
           }
         }
         if (toNode.type === 'channel' && fromNode.type !== 'channel') {
           const stats = channelStats.get(toNode.id);
           if (stats) {
-            stats.videoCount += 1;
-            stats.totalVideoViews += Number(fromNode.metric_value || 0);
+            stats.videoIds.add(fromNode.id);
           }
         }
       });
 
       let topChannel = null;
-      let topScore = -Infinity;
-      channelStats.forEach(({ node, totalVideoViews }) => {
-        const subscribers = Number(node.metric_value || 0);
-        const score = totalVideoViews + subscribers * 1000;
-        if (score > topScore) {
-          topScore = score;
+      let topVideoCount = -1;
+      channelStats.forEach(({ node, videoIds }) => {
+        if (videoIds.size > topVideoCount) {
+          topVideoCount = videoIds.size;
           topChannel = node;
         }
       });
@@ -952,10 +841,10 @@
 
     function updateNetwork() {
       if (!fullData) return;
-      const topChannel = getTopPopularChannel(fullData);
+      const topChannel = getTopVideoCountChannel(fullData);
       if (topChannel) {
-        const filtered = selectTopChannelVideos(fullData, topChannel.id, 20);
-        renderGraph(filtered, `人気チャンネル動画: ${topChannel.label || topChannel.id}`);
+        const filtered = selectTopChannelVideos(fullData, topChannel.id);
+        renderGraph(filtered, `投稿動画数最多: ${topChannel.label || topChannel.id}`);
         return;
       }
 
