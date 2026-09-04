@@ -434,12 +434,6 @@ class PlaylistFetcher:
                     )
 
                     # アニメ作品ノードを追加（サムネを渡して画像ノード化）
-                    anime_search_text = ' '.join(filter(None, [
-                        anime_title,
-                        video_info.get('description', ''),
-                        video_info.get('series_name', ''),
-                        video_info.get('channel_name', ''),
-                    ]))
                     anime_node_id = self._add_node_if_not_exists(
                         anime_title,
                         'anime',
@@ -456,8 +450,6 @@ class PlaylistFetcher:
                             'tag': video_info.get('tag'),
                             'segment_label': video_info.get('segment_label'),
                             'priority_order': video_info.get('priority_order'),
-                            'description': video_info.get('description', ''),
-                            'search_text': anime_search_text,
                         },
                     )
 
