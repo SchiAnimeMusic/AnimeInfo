@@ -1,0 +1,135 @@
+[
+  {
+    "id": "explicit-tv-anime-brackets",
+    "title": "TVアニメ『作品A』第2期 ノンクレジットOP",
+    "expected": {
+      "series_name": "作品A",
+      "series_key": "作品a",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
+  },
+  {
+    "id": "pipe-separated-ed",
+    "title": "作品C｜ノンクレジットエンディング映像",
+    "expected": {
+      "series_name": "作品C",
+      "series_key": "作品c",
+      "tag": "ed",
+      "segment_label": "ED",
+      "priority_order": 1
+    }
+  },
+  {
+    "id": "season-number-removal",
+    "title": "作品D Season 3 ED",
+    "expected": {
+      "series_name": "作品D",
+      "series_key": "作品d",
+      "tag": "ed",
+      "segment_label": "ED",
+      "priority_order": 1
+    }
+  },
+  {
+    "id": "episode-number-removal",
+    "title": "作品F 第12話OP",
+    "expected": {
+      "series_name": "作品F",
+      "series_key": "作品f",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
+  },
+  {
+    "id": "description-only-series",
+    "title": "ノンクレジットOP映像",
+    "description": "TVアニメ『作品D』のオープニング映像",
+    "expected": {
+      "series_name": "作品D",
+      "series_key": "作品d",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
+  },
+  {
+    "id": "insert-song",
+    "title": "作品E 第3話 挿入歌",
+    "expected": {
+      "series_name": "作品E",
+      "series_key": "作品e",
+      "tag": "insert",
+      "segment_label": "挿入歌",
+      "priority_order": 3
+    }
+  },
+  {
+    "id": "music-video",
+    "title": "作品G MV",
+    "expected": {
+      "series_name": "作品G",
+      "series_key": "作品g",
+      "tag": "mv",
+      "segment_label": "MV",
+      "priority_order": 2
+    }
+  },
+  {
+    "id": "special-video",
+    "title": "作品H スペシャル映像",
+    "expected": {
+      "series_name": "作品H スペシャル",
+      "series_key": "作品hスペシャル",
+      "tag": "special",
+      "segment_label": "SP",
+      "priority_order": 4
+    }
+  },
+  {
+    "id": "my-hero-academia-song-suffix",
+    "title": "『僕のヒーローアカデミア』7期第20話 特殊ED／EDテーマ：曲名 歌手名",
+    "expected": {
+      "series_name": "僕のヒーローアカデミア",
+      "series_key": "僕のヒーローアカデミア",
+      "tag": "ed",
+      "segment_label": "ED",
+      "priority_order": 1
+    }
+  },
+  {
+    "id": "frieren-song-suffix",
+    "title": "『葬送のフリーレン』第2期ノンクレジットOP／OPテーマ：曲名 歌手名",
+    "expected": {
+      "series_name": "葬送のフリーレン",
+      "series_key": "葬送のフリーレン",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
+  },
+  {
+    "id": "mushoku-tensei-season-suffix",
+    "title": "『無職転生III』第8話ノンクレジットOP／OPテーマ：光の唄 大原ゆい子",
+    "expected": {
+      "series_name": "無職転生",
+      "series_key": "無職転生",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
+  },
+  {
+    "id": "chainsaw-man-movie",
+    "title": "劇場版『チェンソーマン レゼ篇』オープニングムービー 主題歌：米津玄師「IRIS OUT」",
+    "expected": {
+      "series_name": "チェンソーマン",
+      "series_key": "チェンソーマン",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
+  }
+]
