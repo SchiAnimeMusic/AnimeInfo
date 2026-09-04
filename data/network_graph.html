@@ -117,20 +117,6 @@
       color: #445;
       font-size: 14px;
     }
-    .series-hover-tooltip {
-      position: absolute;
-      z-index: 10;
-      display: none;
-      max-width: min(360px, calc(100% - 20px));
-      padding: 8px 10px;
-      border: 1px solid #c4b5fd;
-      border-radius: 4px;
-      background: rgba(255, 255, 255, 0.96);
-      color: #4c1d95;
-      font-size: 14px;
-      pointer-events: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-    }
   </style>
 </head>
 <body>
@@ -151,7 +137,7 @@
       <button id="clearSearchBtn" type="button">クリア</button>
     </div>
     <div id="searchSuggestions" class="search-suggestions" aria-live="polite"></div>
-    <div id="network"><div id="seriesHoverTooltip" class="series-hover-tooltip"></div></div>
+    <div id="network"></div>
     <div id="status" class="status">データを読み込んでいます...</div>
   </div>
 
@@ -167,11 +153,9 @@
     const searchBtn = document.getElementById('searchBtn');
     const clearSearchBtn = document.getElementById('clearSearchBtn');
     const searchSuggestions = document.getElementById('searchSuggestions');
-    const seriesHoverTooltip = document.getElementById('seriesHoverTooltip');
 
     let fullData = null;
     let network = null;
-    let seriesAnnotations = [];
 
     async function loadGraphData() {
       try {
@@ -450,111 +434,6 @@
       return { nodes, edges };
     }
 
-    function updateSeriesAnnotations(data) {
-      const groups = new Map();
-      (data.nodes || []).forEach(node => {
-        if (node.type !== 'anime') return;
-        const key = getSeriesKey(node);
-        if (!groups.has(key)) groups.set(key, []);
-        groups.get(key).push(node.id);
-      });
-      seriesAnnotations = Array.from(groups.entries())
-        .filter(([, nodeIds]) => nodeIds.length > 1)
-        .map(([, nodeIds]) => {
-          const firstNode = (data.nodes || []).find(node => node.id === nodeIds[0]);
-          return {
-            label: firstNode?.series_name || firstNode?.label || 'シリーズ',
-            nodeIds,
-          };
-        });
-    }
-
-    function getSeriesAnnotationBounds() {
-      if (!network) return [];
-      const positions = network.getPositions();
-      return seriesAnnotations.map(annotation => {
-        const points = annotation.nodeIds.map(nodeId => positions[nodeId]).filter(Boolean);
-        if (points.length < 2) return null;
-        const padding = 120;
-        const minX = Math.min(...points.map(point => point.x)) - padding;
-        const maxX = Math.max(...points.map(point => point.x)) + padding;
-        const minY = Math.min(...points.map(point => point.y)) - padding;
-        const maxY = Math.max(...points.map(point => point.y)) + padding;
-        const centerX = (minX + maxX) / 2;
-        const centerY = (minY + maxY) / 2;
-        const radius = Math.max(maxX - minX, maxY - minY) / 2;
-        const labelWidth = Array.from(annotation.label).reduce((width, character) =>
-          width + (character.charCodeAt(0) > 255 ? 18 : 9), 0) + 24;
-        return {
-          label: annotation.label,
-          minX,
-          maxX,
-          minY,
-          maxY,
-          labelMinX: centerX - labelWidth / 2,
-          labelMaxX: centerX + labelWidth / 2,
-          labelMinY: centerY - 14,
-          labelMaxY: centerY + 14,
-        };
-      }).filter(Boolean);
-    }
-
-    function drawSeriesAnnotations(ctx) {
-      if (!network) return;
-      ctx.save();
-      ctx.font = '500 18px "Segoe UI", "Yu Gothic UI", sans-serif';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-
-      getSeriesAnnotationBounds().forEach(({ label, minX, maxX, minY, maxY }) => {
-        const centerX = (minX + maxX) / 2;
-        const centerY = (minY + maxY) / 2;
-        const radius = Math.max(maxX - minX, maxY - minY) / 2;
-        const labelY = centerY;
-        const labelWidth = ctx.measureText(label).width + 24;
-
-        ctx.fillStyle = 'rgba(124, 58, 237, 0.06)';
-        ctx.strokeStyle = 'rgba(124, 58, 237, 0.8)';
-        ctx.lineWidth = 2;
-        ctx.setLineDash([8, 5]);
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.stroke();
-        ctx.setLineDash([]);
-
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.88)';
-        ctx.fillRect(centerX - labelWidth / 2, labelY - 14, labelWidth, 28);
-        ctx.fillStyle = 'rgba(76, 29, 149, 0.86)';
-        ctx.fillText(label, centerX, labelY);
-      });
-      ctx.restore();
-    }
-
-    function updateSeriesHover(event) {
-      if (!network) return;
-      const point = network.DOMtoCanvas({ x: event.clientX, y: event.clientY });
-      const annotation = getSeriesAnnotationBounds().find(bounds =>
-        point.x >= bounds.labelMinX && point.x <= bounds.labelMaxX &&
-        point.y >= bounds.labelMinY && point.y <= bounds.labelMaxY
-      );
-      if (!annotation) {
-        seriesHoverTooltip.style.display = 'none';
-        return;
-      }
-
-      const rect = container.getBoundingClientRect();
-      seriesHoverTooltip.textContent = annotation.label;
-      seriesHoverTooltip.style.display = 'block';
-      seriesHoverTooltip.style.left = `${Math.min(event.clientX - rect.left + 12, rect.width - seriesHoverTooltip.offsetWidth - 10)}px`;
-      seriesHoverTooltip.style.top = `${Math.min(event.clientY - rect.top + 12, rect.height - seriesHoverTooltip.offsetHeight - 10)}px`;
-    }
-
-    container.addEventListener('mousemove', updateSeriesHover);
-    container.addEventListener('mouseleave', () => {
-      seriesHoverTooltip.style.display = 'none';
-    });
-
     function normalizeSeriesTitle(title) {
       return title
         .replace(/[〜～].*?[〜～]/g, ' ')
@@ -745,7 +624,6 @@
       const radialData = applyRadialLayout(data);
       const sequenceData = buildSeriesSequenceData(radialData);
       applyAnimeSeriesOrdering(sequenceData);
-      updateSeriesAnnotations(sequenceData);
 
       const graph = buildGraphData(sequenceData);
       const options = {
@@ -803,9 +681,7 @@
         network.setData(graph);
       } else {
         network = new vis.Network(container, graph, options);
-        network.on('afterDrawing', ctx => drawSeriesAnnotations(ctx));
       }
-      if (!container.contains(seriesHoverTooltip)) container.appendChild(seriesHoverTooltip);
       network.fit({ animation: false, minZoomLevel: 0.1, maxZoomLevel: 2 });
 
       network.on('click', function (params) {
