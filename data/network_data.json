@@ -4129,12 +4129,12 @@
             "size": 48,
             "anime_key": "drstone",
             "series_key": "drstone",
-            "series_name": "Dr STONE",
-            "season_order": 3,
+            "series_name": "Dr.STONE",
+            "season_order": "14",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 217,
@@ -8420,14 +8420,14 @@
             "url": "https://www.youtube.com/watch?v=ycH4Twoq83I",
             "metric_value": 1794198,
             "size": 48,
-            "anime_key": "drstonesciencefuture",
-            "series_key": "drstonesciencefuture",
-            "series_name": "Dr STONE SCIENCE FUTURE",
-            "season_order": 6,
+            "anime_key": "drstone",
+            "series_key": "drstone",
+            "series_name": "Dr.STONE",
+            "season_order": "13",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 434,
@@ -8441,14 +8441,14 @@
             "url": "https://www.youtube.com/watch?v=HXvZ7Y7uYbo",
             "metric_value": 1192976,
             "size": 48,
-            "anime_key": "drstonesciencefuture",
-            "series_key": "drstonesciencefuture",
-            "series_name": "Dr STONE SCIENCE FUTURE",
-            "season_order": 5,
+            "anime_key": "drstone",
+            "series_key": "drstone",
+            "series_name": "Dr.STONE",
+            "season_order": "12",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 435,
@@ -19466,14 +19466,14 @@
             "url": "https://www.youtube.com/watch?v=slJjDE64mFY",
             "metric_value": 997942,
             "size": 48,
-            "anime_key": "drstonesciencefuture",
-            "series_key": "drstonesciencefuture",
-            "series_name": "Dr STONE SCIENCE FUTURE",
-            "season_order": 4,
+            "anime_key": "drstone",
+            "series_key": "drstone",
+            "series_name": "Dr.STONE",
+            "season_order": "11",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 984,
@@ -19487,14 +19487,14 @@
             "url": "https://www.youtube.com/watch?v=HNYp4T0kMNU",
             "metric_value": 3096695,
             "size": 48,
-            "anime_key": "drstonesciencefuture",
-            "series_key": "drstonesciencefuture",
-            "series_name": "Dr STONE SCIENCE FUTURE",
-            "season_order": 3,
+            "anime_key": "drstone",
+            "series_key": "drstone",
+            "series_name": "Dr.STONE",
+            "season_order": "10",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 985,
@@ -27173,14 +27173,14 @@
             "url": "https://www.youtube.com/watch?v=dMexB5n52EQ",
             "metric_value": 1771057,
             "size": 48,
-            "anime_key": "drstonesciencefuture",
-            "series_key": "drstonesciencefuture",
-            "series_name": "Dr STONE SCIENCE FUTURE",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "drstone",
+            "series_key": "drstone",
+            "series_name": "Dr.STONE",
+            "season_order": "8",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 1367,
@@ -27194,14 +27194,14 @@
             "url": "https://www.youtube.com/watch?v=fG07I9UlnoI",
             "metric_value": 6762478,
             "size": 48,
-            "anime_key": "drstonesciencefuture",
-            "series_key": "drstonesciencefuture",
-            "series_name": "Dr STONE SCIENCE FUTURE",
-            "season_order": 2,
+            "anime_key": "drstone",
+            "series_key": "drstone",
+            "series_name": "Dr.STONE",
+            "season_order": "9",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 1368,
@@ -29361,14 +29361,14 @@
             "url": "https://www.youtube.com/watch?v=ol9fxFO0IfI",
             "metric_value": 40924,
             "size": 48,
-            "anime_key": "オリジナルーションネガポジアングラー96猫承認欲求",
-            "series_key": "オリジナルーションネガポジアングラー96猫承認欲求",
-            "series_name": "オリジナル ーション ネガポジアングラー 96猫 承認欲求",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "ネガポジアングラー",
+            "series_key": "ネガポジアングラー",
+            "series_name": "ネガポジアングラー",
+            "season_order": "2",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 1475,
@@ -30463,14 +30463,14 @@
             "url": "https://www.youtube.com/watch?v=4cTV5fWkqew",
             "metric_value": 160868,
             "size": 48,
-            "anime_key": "オリジナルーションネガポジアングラーvandeshopイト",
-            "series_key": "オリジナルーションネガポジアングラーvandeshopイト",
-            "series_name": "オリジナル ーション ネガポジアングラー Van de Shop イト",
-            "season_order": 1,
+            "anime_key": "ネガポジアングラー",
+            "series_key": "ネガポジアングラー",
+            "series_name": "ネガポジアングラー",
+            "season_order": "1",
             "season_label": "初投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 1529,
@@ -39508,14 +39508,14 @@
             "url": "https://www.youtube.com/watch?v=q0Vosn_q0yY",
             "metric_value": 100374,
             "size": 48,
-            "anime_key": "オリジナルーションhighcardraon白昼夢",
-            "series_key": "オリジナルーションhighcardraon白昼夢",
-            "series_name": "オリジナル ーション HIGH CARD Raon 白昼夢",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "highcard",
+            "series_key": "highcard",
+            "series_name": "HIGH CARD",
+            "season_order": "4",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 1970,
@@ -40413,14 +40413,14 @@
             "url": "https://www.youtube.com/watch?v=H3XB4JRzM9U",
             "metric_value": 966705,
             "size": 48,
-            "anime_key": "オリジナルーションhighcardfivenewoldshowdown",
-            "series_key": "オリジナルーションhighcardfivenewoldshowdown",
-            "series_name": "オリジナル ーション HIGH CARD FIVE NEW OLD Showdown",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "highcard",
+            "series_key": "highcard",
+            "series_name": "HIGH CARD",
+            "season_order": "3",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2015,
@@ -42145,14 +42145,14 @@
             "url": "https://www.youtube.com/watch?v=qIZuOxMosgw",
             "metric_value": 411207,
             "size": 48,
-            "anime_key": "七陰ver陰の実力者になりたくて2ndseasondarlinginthenight",
-            "series_key": "七陰ver陰の実力者になりたくて2ndseasondarlinginthenight",
-            "series_name": "七陰 Ver 陰の実力者になりたくて 2nd season Darling in the Night",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "陰の実力者になりたくて",
+            "series_key": "陰の実力者になりたくて",
+            "series_name": "陰の実力者になりたくて",
+            "season_order": "14",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2099,
@@ -42481,14 +42481,14 @@
             "url": "https://www.youtube.com/watch?v=kLkE3ComU5A",
             "metric_value": 131866,
             "size": 48,
-            "anime_key": "陰の実力者になりたくて2ndseason",
-            "series_key": "陰の実力者になりたくて2ndseason",
-            "series_name": "陰の実力者になりたくて 2nd season",
-            "season_order": 5,
+            "anime_key": "陰の実力者になりたくて",
+            "series_key": "陰の実力者になりたくて",
+            "series_name": "陰の実力者になりたくて",
+            "season_order": "13",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2115,
@@ -42843,14 +42843,14 @@
             "url": "https://www.youtube.com/watch?v=WULPu2Dk1HY",
             "metric_value": 117627,
             "size": 48,
-            "anime_key": "陰の実力者になりたくて2ndseason",
-            "series_key": "陰の実力者になりたくて2ndseason",
-            "series_name": "陰の実力者になりたくて 2nd season",
-            "season_order": 4,
+            "anime_key": "陰の実力者になりたくて",
+            "series_key": "陰の実力者になりたくて",
+            "series_name": "陰の実力者になりたくて",
+            "season_order": "12",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2133,
@@ -43179,14 +43179,14 @@
             "url": "https://www.youtube.com/watch?v=KJm6UYLxp_Y",
             "metric_value": 336212,
             "size": 48,
-            "anime_key": "陰の実力者になりたくて2ndseason",
-            "series_key": "陰の実力者になりたくて2ndseason",
-            "series_name": "陰の実力者になりたくて 2nd season",
-            "season_order": 3,
+            "anime_key": "陰の実力者になりたくて",
+            "series_key": "陰の実力者になりたくて",
+            "series_name": "陰の実力者になりたくて",
+            "season_order": "11",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2149,
@@ -43767,14 +43767,14 @@
             "url": "https://www.youtube.com/watch?v=uOlDbKkvmhk",
             "metric_value": 1521369,
             "size": 48,
-            "anime_key": "drstonenewworld",
-            "series_key": "drstonenewworld",
-            "series_name": "Dr STONE NEW WORLD",
-            "season_order": 4,
+            "anime_key": "drstone",
+            "series_key": "drstone",
+            "series_name": "Dr.STONE",
+            "season_order": "7",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2177,
@@ -43927,14 +43927,14 @@
             "url": "https://www.youtube.com/watch?v=VrDZWSjY8kg",
             "metric_value": 499573,
             "size": 48,
-            "anime_key": "陰の実力者になりたくて2ndseason",
-            "series_key": "陰の実力者になりたくて2ndseason",
-            "series_name": "陰の実力者になりたくて 2nd season",
-            "season_order": 2,
+            "anime_key": "陰の実力者になりたくて",
+            "series_key": "陰の実力者になりたくて",
+            "series_name": "陰の実力者になりたくて",
+            "season_order": "10",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2185,
@@ -45108,14 +45108,14 @@
             "url": "https://www.youtube.com/watch?v=TzZB-BOcpZY",
             "metric_value": 3573284,
             "size": 48,
-            "anime_key": "drstonenewworld",
-            "series_key": "drstonenewworld",
-            "series_name": "Dr STONE NEW WORLD",
-            "season_order": 3,
+            "anime_key": "drstone",
+            "series_key": "drstone",
+            "series_name": "Dr.STONE",
+            "season_order": "6",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2242,
@@ -45192,14 +45192,14 @@
             "url": "https://www.youtube.com/watch?v=LQRbFCAHDUU",
             "metric_value": 4857714,
             "size": 48,
-            "anime_key": "陰の実力者になりたくて2ndseason",
-            "series_key": "陰の実力者になりたくて2ndseason",
-            "series_name": "陰の実力者になりたくて 2nd season",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "陰の実力者になりたくて",
+            "series_key": "陰の実力者になりたくて",
+            "series_name": "陰の実力者になりたくて",
+            "season_order": "9",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2246,
@@ -51064,14 +51064,14 @@
             "url": "https://www.youtube.com/watch?v=9B7TpqDgyE4",
             "metric_value": 1610204,
             "size": 48,
-            "anime_key": "drstonenewworld",
-            "series_key": "drstonenewworld",
-            "series_name": "Dr STONE NEW WORLD",
-            "season_order": 2,
+            "anime_key": "drstone",
+            "series_key": "drstone",
+            "series_name": "Dr.STONE",
+            "season_order": "5",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2534,
@@ -51085,14 +51085,14 @@
             "url": "https://www.youtube.com/watch?v=81H41vp96ag",
             "metric_value": 6627896,
             "size": 48,
-            "anime_key": "drstonenewworld",
-            "series_key": "drstonenewworld",
-            "series_name": "Dr STONE NEW WORLD",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "drstone",
+            "series_key": "drstone",
+            "series_name": "Dr.STONE",
+            "season_order": "4",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2535,
@@ -53108,11 +53108,11 @@
             "anime_key": "highcard",
             "series_key": "highcard",
             "series_name": "HIGH CARD",
-            "season_order": 2,
+            "season_order": "2",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2635,
@@ -53520,11 +53520,11 @@
             "anime_key": "highcard",
             "series_key": "highcard",
             "series_name": "HIGH CARD",
-            "season_order": 1,
+            "season_order": "1",
             "season_label": "初投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2655,
@@ -55433,11 +55433,11 @@
             "anime_key": "陰の実力者になりたくて",
             "series_key": "陰の実力者になりたくて",
             "series_name": "陰の実力者になりたくて",
-            "season_order": 8,
+            "season_order": "8",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2748,
@@ -55622,11 +55622,11 @@
             "anime_key": "陰の実力者になりたくて",
             "series_key": "陰の実力者になりたくて",
             "series_name": "陰の実力者になりたくて",
-            "season_order": 7,
+            "season_order": "7",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2757,
@@ -55748,11 +55748,11 @@
             "anime_key": "陰の実力者になりたくて",
             "series_key": "陰の実力者になりたくて",
             "series_name": "陰の実力者になりたくて",
-            "season_order": 6,
+            "season_order": "6",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2763,
@@ -55958,11 +55958,11 @@
             "anime_key": "陰の実力者になりたくて",
             "series_key": "陰の実力者になりたくて",
             "series_name": "陰の実力者になりたくて",
-            "season_order": 5,
+            "season_order": "5",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2773,
@@ -56231,11 +56231,11 @@
             "anime_key": "陰の実力者になりたくて",
             "series_key": "陰の実力者になりたくて",
             "series_name": "陰の実力者になりたくて",
-            "season_order": 4,
+            "season_order": "4",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2786,
@@ -56475,11 +56475,11 @@
             "anime_key": "陰の実力者になりたくて",
             "series_key": "陰の実力者になりたくて",
             "series_name": "陰の実力者になりたくて",
-            "season_order": 3,
+            "season_order": "3",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2798,
@@ -56908,11 +56908,11 @@
             "anime_key": "陰の実力者になりたくて",
             "series_key": "陰の実力者になりたくて",
             "series_name": "陰の実力者になりたくて",
-            "season_order": 2,
+            "season_order": "2",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2819,
@@ -57538,11 +57538,11 @@
             "anime_key": "陰の実力者になりたくて",
             "series_key": "陰の実力者になりたくて",
             "series_name": "陰の実力者になりたくて",
-            "season_order": 1,
+            "season_order": "1",
             "season_label": "初投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2849,
@@ -60035,14 +60035,14 @@
             "url": "https://www.youtube.com/watch?v=MEGBF9stDy0",
             "metric_value": 4860760,
             "size": 48,
-            "anime_key": "drstone龍水",
-            "series_key": "drstone龍水",
-            "series_name": "Dr STONE 龍水",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "drstone",
+            "series_key": "drstone",
+            "series_name": "Dr.STONE",
+            "season_order": "3",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2973,
@@ -69402,14 +69402,14 @@
             "url": "https://www.youtube.com/watch?v=MBfEYXwqrnA",
             "metric_value": 520221,
             "size": 48,
-            "anime_key": "ゴジラspシンギュラポイント青いポルカドットスティングレイ毎週木曜テレビ放送中",
-            "series_key": "ゴジラspシンギュラポイント青いポルカドットスティングレイ毎週木曜テレビ放送中",
-            "series_name": "ゴジラ S P シンギュラポイント 青い ポルカドットスティングレイ 毎週木曜テレビ放送中",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "ゴジラsp",
+            "series_key": "ゴジラsp",
+            "series_name": "ゴジラ S.P",
+            "season_order": "2",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 3432,
@@ -69423,14 +69423,14 @@
             "url": "https://www.youtube.com/watch?v=mBlPuHK7W-4",
             "metric_value": 1525557,
             "size": 48,
-            "anime_key": "ゴジラspシンギュラポイントincasebish毎週木曜テレビ放送中",
-            "series_key": "ゴジラspシンギュラポイントincasebish毎週木曜テレビ放送中",
-            "series_name": "ゴジラ S P シンギュラポイント in case BiSH 毎週木曜テレビ放送中",
-            "season_order": 1,
+            "anime_key": "ゴジラsp",
+            "series_key": "ゴジラsp",
+            "series_name": "ゴジラ S.P",
+            "season_order": "1",
             "season_label": "初投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3433,
@@ -70668,12 +70668,12 @@
             "size": 48,
             "anime_key": "drstone",
             "series_key": "drstone",
-            "series_name": "Dr STONE",
-            "season_order": 2,
+            "series_name": "Dr.STONE",
+            "season_order": "2",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 3496,
@@ -70786,12 +70786,12 @@
             "size": 48,
             "anime_key": "drstone",
             "series_key": "drstone",
-            "series_name": "Dr STONE",
-            "season_order": 1,
+            "series_name": "Dr.STONE",
+            "season_order": "1",
             "season_label": "初投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3502,
@@ -79411,8 +79411,8 @@
             "series_key": "drstone",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 3,
-            "priority_order": 1
+            "season_order": "14",
+            "priority_order": "1"
         },
         {
             "from": 29,
@@ -82243,11 +82243,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "drstonesciencefuture",
+            "series_key": "drstone",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 6,
-            "priority_order": 0
+            "season_order": "13",
+            "priority_order": "0"
         },
         {
             "from": 5,
@@ -82258,11 +82258,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "drstonesciencefuture",
+            "series_key": "drstone",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 5,
-            "priority_order": 1
+            "season_order": "12",
+            "priority_order": "1"
         },
         {
             "from": 1,
@@ -89683,11 +89683,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "drstonesciencefuture",
+            "series_key": "drstone",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 4,
-            "priority_order": 1
+            "season_order": "11",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -89698,11 +89698,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "drstonesciencefuture",
+            "series_key": "drstone",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 3,
-            "priority_order": 0
+            "season_order": "10",
+            "priority_order": "0"
         },
         {
             "from": 18,
@@ -94828,11 +94828,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "drstonesciencefuture",
+            "series_key": "drstone",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "8",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -94843,11 +94843,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "drstonesciencefuture",
+            "series_key": "drstone",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 2,
-            "priority_order": 0
+            "season_order": "9",
+            "priority_order": "0"
         },
         {
             "from": 1302,
@@ -96298,11 +96298,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "オリジナルーションネガポジアングラー96猫承認欲求",
+            "series_key": "ネガポジアングラー",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "2",
+            "priority_order": "1"
         },
         {
             "from": 65,
@@ -97048,11 +97048,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "オリジナルーションネガポジアングラーvandeshopイト",
+            "series_key": "ネガポジアングラー",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "1",
+            "priority_order": "0"
         },
         {
             "from": 275,
@@ -103273,11 +103273,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "オリジナルーションhighcardraon白昼夢",
+            "series_key": "highcard",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "4",
+            "priority_order": "1"
         },
         {
             "from": 96,
@@ -103873,11 +103873,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "オリジナルーションhighcardfivenewoldshowdown",
+            "series_key": "highcard",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "3",
+            "priority_order": "0"
         },
         {
             "from": 132,
@@ -105073,11 +105073,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "七陰ver陰の実力者になりたくて2ndseasondarlinginthenight",
+            "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "14",
+            "priority_order": "1"
         },
         {
             "from": 2087,
@@ -105313,11 +105313,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "陰の実力者になりたくて2ndseason",
+            "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 5,
-            "priority_order": 1
+            "season_order": "13",
+            "priority_order": "1"
         },
         {
             "from": 2115,
@@ -105553,11 +105553,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "陰の実力者になりたくて2ndseason",
+            "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 4,
-            "priority_order": 1
+            "season_order": "12",
+            "priority_order": "1"
         },
         {
             "from": 1,
@@ -105793,11 +105793,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "陰の実力者になりたくて2ndseason",
+            "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 3,
-            "priority_order": 1
+            "season_order": "11",
+            "priority_order": "1"
         },
         {
             "from": 2115,
@@ -106213,11 +106213,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "drstonenewworld",
+            "series_key": "drstone",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 4,
-            "priority_order": 1
+            "season_order": "7",
+            "priority_order": "1"
         },
         {
             "from": 2177,
@@ -106318,11 +106318,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "陰の実力者になりたくて2ndseason",
+            "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 2,
-            "priority_order": 1
+            "season_order": "10",
+            "priority_order": "1"
         },
         {
             "from": 1,
@@ -107173,11 +107173,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "drstonenewworld",
+            "series_key": "drstone",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 3,
-            "priority_order": 0
+            "season_order": "6",
+            "priority_order": "0"
         },
         {
             "from": 329,
@@ -107233,11 +107233,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "陰の実力者になりたくて2ndseason",
+            "series_key": "陰の実力者になりたくて",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "9",
+            "priority_order": "0"
         },
         {
             "from": 5,
@@ -111298,11 +111298,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "drstonenewworld",
+            "series_key": "drstone",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 2,
-            "priority_order": 1
+            "season_order": "5",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -111313,11 +111313,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "drstonenewworld",
+            "series_key": "drstone",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "4",
+            "priority_order": "0"
         },
         {
             "from": 329,
@@ -112726,8 +112726,8 @@
             "series_key": "highcard",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 2,
-            "priority_order": 1
+            "season_order": "2",
+            "priority_order": "1"
         },
         {
             "from": 38,
@@ -113011,8 +113011,8 @@
             "series_key": "highcard",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "1",
+            "priority_order": "0"
         },
         {
             "from": 2655,
@@ -114346,8 +114346,8 @@
             "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 8,
-            "priority_order": 1
+            "season_order": "8",
+            "priority_order": "1"
         },
         {
             "from": 653,
@@ -114481,8 +114481,8 @@
             "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 7,
-            "priority_order": 1
+            "season_order": "7",
+            "priority_order": "1"
         },
         {
             "from": 358,
@@ -114571,8 +114571,8 @@
             "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 6,
-            "priority_order": 1
+            "season_order": "6",
+            "priority_order": "1"
         },
         {
             "from": 653,
@@ -114721,8 +114721,8 @@
             "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 5,
-            "priority_order": 1
+            "season_order": "5",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -114916,8 +114916,8 @@
             "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 4,
-            "priority_order": 1
+            "season_order": "4",
+            "priority_order": "1"
         },
         {
             "from": 653,
@@ -115081,8 +115081,8 @@
             "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 3,
-            "priority_order": 1
+            "season_order": "3",
+            "priority_order": "1"
         },
         {
             "from": 653,
@@ -115381,8 +115381,8 @@
             "series_key": "陰の実力者になりたくて",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 2,
-            "priority_order": 1
+            "season_order": "2",
+            "priority_order": "1"
         },
         {
             "from": 101,
@@ -115846,8 +115846,8 @@
             "series_key": "陰の実力者になりたくて",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "1",
+            "priority_order": "0"
         },
         {
             "from": 174,
@@ -117643,11 +117643,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "drstone龍水",
+            "series_key": "drstone",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "3",
+            "priority_order": "0"
         },
         {
             "from": 62,
@@ -124078,11 +124078,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "ゴジラspシンギュラポイント青いポルカドットスティングレイ毎週木曜テレビ放送中",
+            "series_key": "ゴジラsp",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "2",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -124093,11 +124093,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "ゴジラspシンギュラポイントincasebish毎週木曜テレビ放送中",
+            "series_key": "ゴジラsp",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "1",
+            "priority_order": "0"
         },
         {
             "from": 96,
@@ -124891,8 +124891,8 @@
             "series_key": "drstone",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 2,
-            "priority_order": 1
+            "season_order": "2",
+            "priority_order": "1"
         },
         {
             "from": 3465,
@@ -124966,8 +124966,8 @@
             "series_key": "drstone",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "1",
+            "priority_order": "0"
         },
         {
             "from": 3,

@@ -154,5 +154,71 @@
       "segment_label": "OP",
       "priority_order": 0
     }
+  },
+  {
+    "id": "negapozi-angler-song-suffix",
+    "title": "オリジナルTVアニメーション『ネガポジアングラー』ノンクレジットオープニング／Van de Shop「イト」",
+    "expected": {
+      "series_name": "ネガポジアングラー",
+      "series_key": "ネガポジアングラー",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
+  },
+  {
+    "id": "high-card-season-two-song-suffix",
+    "title": "オリジナルTVアニメーション『HIGH CARD season 2』ノンクレジットOP映像【FIVE NEW OLD「Showdown」】",
+    "expected": {
+      "series_name": "HIGH CARD",
+      "series_key": "highcard",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
+  },
+  {
+    "id": "eminence-in-shadow-season-two-character-ed",
+    "title": "【七陰 Ver.】「陰の実力者になりたくて！ 2nd season」 第8話ノンクレジットエンディング：「Darling in the Night」",
+    "expected": {
+      "series_name": "陰の実力者になりたくて",
+      "series_key": "陰の実力者になりたくて",
+      "tag": "ed",
+      "segment_label": "ED",
+      "priority_order": 1
+    }
+  },
+  {
+    "id": "eminence-in-shadow-season-two-op",
+    "title": "TVアニメ「陰の実力者になりたくて！ 2nd season」ノンクレジットオープニング：OxT「grayscale dominator」",
+    "expected": {
+      "series_name": "陰の実力者になりたくて",
+      "series_key": "陰の実力者になりたくて",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
+  },
+  {
+    "id": "godzilla-sp-song-suffix",
+    "title": "『ゴジラ S.P＜シンギュラポイント＞』オープニング映像／OPテーマ：「in case...」BiSH／毎週木曜テレビ放送中",
+    "expected": {
+      "series_name": "ゴジラ S.P",
+      "series_key": "ゴジラsp",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
+  },
+  {
+    "id": "dr-stone-science-future-song-suffix",
+    "title": "アニメ『Dr.STONE SCIENCE FUTURE』第3クールノンクレジットOP映像／「スキンズ」ASIAN KUNG-FU GENERATION",
+    "expected": {
+      "series_name": "Dr.STONE",
+      "series_key": "drstone",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
   }
 ]

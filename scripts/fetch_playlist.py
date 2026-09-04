@@ -291,6 +291,16 @@ class PlaylistFetcher:
             candidate = 'キミと僕の最後の戦場、あるいは世界が始まる聖戦'
         if 'クレバテス' in title_text:
             candidate = 'クレバテス'
+        if 'ネガポジアングラー' in title_text:
+            candidate = 'ネガポジアングラー'
+        if 'HIGH CARD' in title_text:
+            candidate = 'HIGH CARD'
+        if '陰の実力者になりたくて' in title_text:
+            candidate = '陰の実力者になりたくて'
+        if 'ゴジラ S.P' in title_text:
+            candidate = 'ゴジラ S.P'
+        if 'Dr.STONE' in title_text or 'Dr STONE' in title_text:
+            candidate = 'Dr.STONE'
 
         series_name = candidate or (title_text or description_text or 'Unknown')
         series_key = self._normalize_series_key(series_name) or self._normalize_series_key(
