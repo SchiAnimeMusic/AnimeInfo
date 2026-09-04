@@ -460,7 +460,13 @@
       });
       seriesAnnotations = Array.from(groups.entries())
         .filter(([, nodeIds]) => nodeIds.length > 1)
-        .map(([label, nodeIds]) => ({ label, nodeIds }));
+        .map(([, nodeIds]) => {
+          const firstNode = (data.nodes || []).find(node => node.id === nodeIds[0]);
+          return {
+            label: firstNode?.series_name || firstNode?.label || 'シリーズ',
+            nodeIds,
+          };
+        });
     }
 
     function getSeriesAnnotationBounds() {
@@ -557,22 +563,31 @@
         .trim();
     }
 
+    function normalizeSeriesKey(value) {
+      return String(value || '')
+        .normalize('NFKC')
+        .toLocaleLowerCase()
+        .replace(/[^\p{L}\p{N}]+/gu, '');
+    }
+
     function getSeriesKey(node) {
-      let key = node.label || node.series_name || node.series_key || node.anime_key || '';
+      const metadataKey = node.series_key || node.anime_key;
+      if (metadataKey) return normalizeSeriesKey(metadataKey);
+      let key = node.series_name || node.label || '';
       const titleMatches = Array.from(key.matchAll(/[『「]([^』」]+)[』」]/g));
       const animeTitleMatch = titleMatches.reverse().find(match => /(?:TV\s*)?アニメ\s*$/.test(key.slice(0, match.index)));
-      if (animeTitleMatch) return normalizeSeriesTitle(animeTitleMatch[1]);
+      if (animeTitleMatch) return normalizeSeriesKey(normalizeSeriesTitle(animeTitleMatch[1]));
       const pipeParts = key.split(/[|｜]/).map(part => part.trim()).filter(Boolean);
       const seriesPart = pipeParts.find(part => /アニメ|EXCEEDS|シリーズ/i.test(part) && !/ノンクレジット|\b(?:OP|ED)\b/i.test(part));
-      if (seriesPart) return normalizeSeriesTitle(seriesPart.replace(/^TV\s*アニメ\s*/i, ''));
-      if (titleMatches.length === 1) return normalizeSeriesTitle(titleMatches[0][1]);
+      if (seriesPart) return normalizeSeriesKey(normalizeSeriesTitle(seriesPart.replace(/^TV\s*アニメ\s*/i, '')));
+      if (titleMatches.length === 1) return normalizeSeriesKey(normalizeSeriesTitle(titleMatches[0][1]));
       const leadingTitleMatch = key.split(/[／/|｜]/)[0].match(/[『「]([^』」]+)[』」]/);
-      if (leadingTitleMatch) return normalizeSeriesTitle(leadingTitleMatch[1]);
+      if (leadingTitleMatch) return normalizeSeriesKey(normalizeSeriesTitle(leadingTitleMatch[1]));
       key = key.replace(/\([^)]*\)|\[[^\]]*\]/g, ' ');
       key = key.replace(/#\s*\d+\s*[「『][^」』]+[」』]/g, ' ');
       key = key.replace(/TV\s*アニメ|ノンクレジット|ノンテロップ|TV放送版|歌詞付き|オープニング|エンディング|主題歌|テーマ|ミュージックビデオ|挿入歌|スペシャル|映像|ムービー|\b(?:OP|ED|MV)\b/gi, ' ');
       key = key.replace(/第\s*\d+\s*(?:クール|シーズン|期)|(?:前期|後期)|\bSeason\s*\d+\b/gi, ' ');
-      return key.replace(/[『』「」【】|｜]/g, ' ').replace(/\s+/g, ' ').trim() || key;
+      return normalizeSeriesKey(key.replace(/[『』「」【】|｜]/g, ' ').replace(/\s+/g, ' ').trim() || key);
     }
 
     function compareSeriesOrder(left, right) {

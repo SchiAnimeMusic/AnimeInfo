@@ -9,6 +9,7 @@ import sys
 import csv
 import math
 import re
+import unicodedata
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
@@ -207,6 +208,12 @@ class PlaylistFetcher:
     def _normalize_space(value):
         return re.sub(r'\s+', '', str(value or '').strip())
 
+    @staticmethod
+    def _normalize_series_key(value):
+        """表記ゆれを吸収する比較用のシリーズキーを作る"""
+        normalized = unicodedata.normalize('NFKC', str(value or '')).casefold()
+        return re.sub(r'[^\w]+', '', normalized)
+
     def _extract_series_metadata(self, title, description=''):
         """タイトルと説明からアニメシリーズ名・シーズン・曲種を抽出する"""
         source = ' '.join(part for part in [title or '', description or ''] if part)
@@ -239,6 +246,7 @@ class PlaylistFetcher:
             (r'(?:第\s*4|4th|第四)\s*(?:クール|シーズン|期)', '第4クール', 4),
             (r'(?:前期)', '前期', 1),
             (r'(?:後期)', '後期', 2),
+            (r'(?:1st|2nd|3rd|4th)\s*season', 'Season', 0),
             (r'(?:Season|season)\s*(\d+)', 'Season', 0),
             (r'(?:第\s*(\d+)\s*(?:クール|シーズン|期))', 'クール/シーズン', 0),
         ]
@@ -253,7 +261,12 @@ class PlaylistFetcher:
                 season_order = 2
             elif 'Season' in pattern or 'season' in pattern:
                 # Season パターンはグループ1を持つ
-                season_order = int(match.group(1)) if match.lastindex and match.lastindex >= 1 else 0
+                if match.lastindex and match.lastindex >= 1:
+                    season_order = int(match.group(1))
+                else:
+                    season_order = {'1st': 1, '2nd': 2, '3rd': 3, '4th': 4}.get(
+                        match.group(0).split()[0].lower(), 0
+                    )
             elif match.lastindex and match.lastindex >= 1:
                 # クール/シーズン パターンはグループ1を持つ
                 season_order = int(match.group(1))
@@ -262,6 +275,17 @@ class PlaylistFetcher:
             break
 
         candidate = title or description or ''
+        explicit_series_match = re.search(
+            r'(?:TV\s*)?アニメ\s*[『「"]([^』」"]+)[』」"]',
+            title or '',
+            re.IGNORECASE,
+        ) or re.search(
+            r'(?:TV\s*)?アニメ\s*[『「"]([^』」"]+)[』」"]',
+            description or '',
+            re.IGNORECASE,
+        )
+        if explicit_series_match:
+            candidate = explicit_series_match.group(1)
         title_matches = list(re.finditer(r'[『「]([^』」]+)[』」]', candidate))
         anime_title_matches = [
             match for match in title_matches
@@ -306,11 +330,14 @@ class PlaylistFetcher:
             fallback = re.sub(r'\s+', ' ', fallback).strip(' -_')
             candidate = fallback
 
-        series_key = candidate or (title or description or 'Unknown')
+        series_name = candidate or (title or description or 'Unknown')
+        series_key = self._normalize_series_key(series_name) or self._normalize_series_key(
+            title or description or 'unknown'
+        )
         return {
             'anime_key': series_key,
             'series_key': series_key,
-            'series_name': series_key,
+            'series_name': series_name,
             'season_order': season_order,
             'season_label': season_label,
             'tag': kind,
