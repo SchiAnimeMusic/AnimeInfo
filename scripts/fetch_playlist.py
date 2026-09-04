@@ -215,135 +215,133 @@ class PlaylistFetcher:
         return re.sub(r'[^\w]+', '', normalized)
 
     def _extract_series_metadata(self, title, description=''):
-        """タイトルと説明からアニメシリーズ名・シーズン・曲種を抽出する"""
-        source = ' '.join(part for part in [title or '', description or ''] if part)
-        searchable = re.sub(r'\s+', '', source)
+        """タイトルを優先し、説明を補助にしてシリーズ名と動画種別を抽出する"""
+        title_text = unicodedata.normalize('NFKC', str(title or ''))
+        description_text = unicodedata.normalize('NFKC', str(description or ''))
 
-        kind = 'related'
-        kind_label = '関連動画'
-        if re.search(r'(?:オープニング|OP|opening|ＯＰ)', searchable, re.IGNORECASE):
-            kind = 'op'
-            kind_label = 'OP'
-        elif re.search(r'(?:エンディング|ED|ending|ＥＤ)', searchable, re.IGNORECASE):
-            kind = 'ed'
-            kind_label = 'ED'
-        elif re.search(r'(?:挿入歌|insert song|インサート)', searchable, re.IGNORECASE):
-            kind = 'insert'
-            kind_label = '挿入歌'
-        elif re.search(r'(?:MV|music video|ミュージックビデオ)', searchable, re.IGNORECASE):
-            kind = 'mv'
-            kind_label = 'MV'
-        elif re.search(r'(?:スペシャル|special)', searchable, re.IGNORECASE):
-            kind = 'special'
-            kind_label = 'SP'
-
-        season_order = 99
-        season_label = '未分類'
-        season_patterns = [
-            (r'(?:第\s*1|1st|第一)\s*(?:クール|シーズン|期)', '第1クール', 1),
-            (r'(?:第\s*2|2nd|第二)\s*(?:クール|シーズン|期)', '第2クール', 2),
-            (r'(?:第\s*3|3rd|第三)\s*(?:クール|シーズン|期)', '第3クール', 3),
-            (r'(?:第\s*4|4th|第四)\s*(?:クール|シーズン|期)', '第4クール', 4),
-            (r'(?:前期)', '前期', 1),
-            (r'(?:後期)', '後期', 2),
-            (r'(?:1st|2nd|3rd|4th)\s*season', 'Season', 0),
-            (r'(?:Season|season)\s*(\d+)', 'Season', 0),
-            (r'(?:第\s*(\d+)\s*(?:クール|シーズン|期))', 'クール/シーズン', 0),
+        kind_patterns = [
+            ('op', 'OP', r'(?:オープニング|opening|(?<![A-Za-z0-9])OP(?![A-Za-z0-9]))'),
+            ('ed', 'ED', r'(?:エンディング|ending|(?<![A-Za-z0-9])ED(?![A-Za-z0-9]))'),
+            ('insert', '挿入歌', r'(?:挿入歌|insert\s+song|インサート)'),
+            ('mv', 'MV', r'(?:MV|music\s+video|ミュージックビデオ)'),
+            ('special', 'SP', r'(?:スペシャル|special)'),
         ]
-        for pattern, label, default_value in season_patterns:
-            match = re.search(pattern, source, re.IGNORECASE)
-            if not match:
-                continue
-            season_label = label
-            if '前期' in pattern:
-                season_order = 1
-            elif '後期' in pattern:
-                season_order = 2
-            elif 'Season' in pattern or 'season' in pattern:
-                # Season パターンはグループ1を持つ
-                if match.lastindex and match.lastindex >= 1:
-                    season_order = int(match.group(1))
-                else:
-                    season_order = {'1st': 1, '2nd': 2, '3rd': 3, '4th': 4}.get(
-                        match.group(0).split()[0].lower(), 0
-                    )
-            elif match.lastindex and match.lastindex >= 1:
-                # クール/シーズン パターンはグループ1を持つ
-                season_order = int(match.group(1))
-            else:
-                season_order = default_value
-            break
 
-        candidate = title or description or ''
-        explicit_series_match = re.search(
-            r'(?:TV\s*)?アニメ\s*[『「"]([^』」"]+)[』」"]',
-            title or '',
-            re.IGNORECASE,
-        ) or re.search(
-            r'(?:TV\s*)?アニメ\s*[『「"]([^』」"]+)[』」"]',
-            description or '',
-            re.IGNORECASE,
-        )
+        def detect_kind(text):
+            searchable = text
+            for tag, label, pattern in kind_patterns:
+                if re.search(pattern, searchable, re.IGNORECASE):
+                    return tag, label
+            return 'related', '関連動画'
+
+        kind, kind_label = detect_kind(title_text)
+        if kind == 'related':
+            kind, kind_label = detect_kind(description_text)
+
+        candidate = title_text or description_text
+        explicit_pattern = r'(?:TV\s*)?アニメ\s*[『「【"]([^』」】"]+)[』」】"]'
+        explicit_series_match = re.search(explicit_pattern, title_text, re.IGNORECASE)
+        if not explicit_series_match:
+            explicit_series_match = re.search(explicit_pattern, description_text, re.IGNORECASE)
         if explicit_series_match:
             candidate = explicit_series_match.group(1)
-        title_matches = list(re.finditer(r'[『「]([^』」]+)[』」]', candidate))
-        anime_title_matches = [
-            match for match in title_matches
-            if re.search(r'(?:TV\s*)?アニメ\s*$', candidate[:match.start()])
-        ]
-        if anime_title_matches:
-            candidate = anime_title_matches[-1].group(1)
-        pipe_parts = [part.strip() for part in re.split(r'[|｜]', candidate) if part.strip()]
-        series_part = next(
-            (part for part in pipe_parts if re.search(r'アニメ|EXCEEDS|シリーズ', part, re.IGNORECASE)
-             and not re.search(r'ノンクレジット|\b(?:OP|ED)\b', part, re.IGNORECASE)),
-            None,
-        )
-        if series_part:
-            candidate = re.sub(r'^TV\s*アニメ\s*', '', series_part, flags=re.IGNORECASE).strip()
-        elif len(title_matches) == 1 and not anime_title_matches:
-            candidate = title_matches[0].group(1)
-        elif len(title_matches) > 1:
-            leading_title_match = re.search(r'[『「]([^』」]+)[』」]', re.split(r'[／/|｜]', title)[0])
-            if leading_title_match:
-                candidate = leading_title_match.group(1)
+        else:
+            bracket_matches = list(re.finditer(r'[『「【]([^』」】]+)[』」】]', candidate))
+            anime_title_matches = [
+                match for match in bracket_matches
+                if re.search(r'(?:TV\s*)?アニメ\s*$', candidate[:match.start()], re.IGNORECASE)
+            ]
+            if anime_title_matches:
+                candidate = anime_title_matches[-1].group(1)
+            elif len(bracket_matches) == 1:
+                candidate = bracket_matches[0].group(1)
+            else:
+                pipe_parts = [part.strip() for part in re.split(r'[|｜]', candidate) if part.strip()]
+                if pipe_parts:
+                    candidate = pipe_parts[0]
+
         candidate = re.sub(r'[〜～].*?[〜～]', ' ', candidate)
-        candidate = re.sub(r'\s*第\s*\d+\s*話.*$', '', candidate)
-        candidate = re.sub(r'\s*[／/|].*$', '', candidate)
-        candidate = re.sub(r'\s+', ' ', candidate).strip()
-        candidate = candidate.replace('【', ' ').replace('】', ' ')
-        candidate = candidate.replace('「', ' ').replace('」', ' ').replace('『', ' ').replace('』', ' ')
-        candidate = candidate.replace('|', ' ').replace('｜', ' ').replace('／', ' ')
-        candidate = re.sub(r'\([^)]*\)', ' ', candidate)
-        candidate = re.sub(r'\[[^\]]*\]', ' ', candidate)
-        candidate = re.sub(r'#\s*\d+\s*[「『][^」』]+[」』]', ' ', candidate)
-        candidate = re.sub(r'(?i)\b(?:TV\s*Anime|TVアニメ|Anime|アニメ|Official|official)\b', ' ', candidate)
-        candidate = re.sub(r'(?i)\b(?:ノンクレジット|ノンテロップ|TV放送版|歌詞有|歌詞付き|ver|VER|映像|ムービー|主題歌|テーマ|ミュージックビデオ|オープニング|エンディング|挿入歌)\b', ' ', candidate)
-        candidate = re.sub(r'(?i)\b(?:Season|season)\s*\d+\b', ' ', candidate)
-        candidate = re.sub(r'(?i)(?:第\s*\d+\s*(?:クール|シーズン|期)|前期|後期)', ' ', candidate)
-        candidate = re.sub(r'[^0-9A-Za-zぁ-んァ-ン一-龥ー〜\s\-]', '', candidate)
+        candidate = re.sub(r'#\s*\d+', ' ', candidate)
+        candidate = re.sub(r'第\s*\d+\s*話', ' ', candidate)
+        candidate = re.sub(r'(?:第\s*\d+\s*(?:クール|シーズン|期)|前期|後期)', ' ', candidate, flags=re.IGNORECASE)
+        candidate = re.sub(r'(?:Season|シーズン)\s*\d+', ' ', candidate, flags=re.IGNORECASE)
+        candidate = re.sub(r'\([^)]*\)|\[[^\]]*\]', ' ', candidate)
+        candidate = re.sub(
+            r'(?:TV\s*Anime|TVアニメ|Anime|アニメ|Official|ノンクレジット|ノンテロップ|TV放送版|歌詞有|歌詞付き|映像|ムービー|主題歌|テーマ|ミュージックビデオ|オープニング|エンディング|挿入歌)',
+            ' ', candidate, flags=re.IGNORECASE,
+        )
+        candidate = re.sub(r'(?<![A-Za-z0-9])(?:OP|ED|MV)(?![A-Za-z0-9])', ' ', candidate, flags=re.IGNORECASE)
+        candidate = re.sub(r'[^0-9A-Za-zぁ-んァ-ン一-龥ー〜\s\-]', ' ', candidate)
         candidate = re.sub(r'\s+', ' ', candidate).strip(' -_')
 
-        if len(candidate) < 2:
-            fallback = title or description or ''
-            fallback = re.sub(r'(?i)\b(?:OP|ED|MV|オープニング|エンディング|ノンクレジット|ノンテロップ|映像|ムービー)\b', ' ', fallback)
-            fallback = re.sub(r'\s+', ' ', fallback).strip(' -_')
-            candidate = fallback
+        if len(candidate) < 2 and description_text and candidate != description_text:
+            candidate = re.sub(r'第\s*\d+\s*話|#\s*\d+', ' ', description_text)
+            candidate = re.sub(r'\s+', ' ', candidate).strip(' -_')
 
-        series_name = candidate or (title or description or 'Unknown')
+        series_name = candidate or (title_text or description_text or 'Unknown')
         series_key = self._normalize_series_key(series_name) or self._normalize_series_key(
-            title or description or 'unknown'
+            title_text or description_text or 'unknown'
         )
         return {
             'anime_key': series_key,
             'series_key': series_key,
             'series_name': series_name,
-            'season_order': season_order,
-            'season_label': season_label,
+            'season_order': 99,
+            'season_label': '未分類',
             'tag': kind,
             'segment_label': kind_label,
             'priority_order': {'op': 0, 'ed': 1, 'mv': 2, 'insert': 3, 'special': 4, 'related': 99}.get(kind, 99),
         }
+
+    def _assign_publication_order(self, videos):
+        """シリーズごとに公開日時の早い順で並び順を付与する"""
+        groups = defaultdict(list)
+        for video in videos:
+            groups[video.get('series_key') or video.get('anime_key')].append(video)
+
+        for series_videos in groups.values():
+            series_videos.sort(key=lambda video: (
+                self._publication_datetime(video),
+                str(video.get('video_id') or ''),
+            ))
+            index = 0
+            for video in series_videos:
+                if self._publication_datetime(video) == datetime.max:
+                    video['season_order'] = 99
+                    video['season_label'] = '未分類'
+                    continue
+                index += 1
+                video['season_order'] = index
+                video['season_label'] = '初投稿' if index == 1 else '後続投稿'
+
+    @staticmethod
+    def _publication_datetime(video):
+        published_at = str(video.get('published_at') or '')
+        try:
+            return datetime.fromisoformat(published_at.replace('Z', '+00:00')).replace(tzinfo=None)
+        except ValueError:
+            return datetime.max
+
+    def _sync_video_metadata(self, videos):
+        """公開順を動画ノードと動画エッジへ反映する"""
+        by_video_id = {video.get('video_id'): video for video in videos}
+        metadata_fields = (
+            'anime_key', 'series_key', 'series_name', 'season_order',
+            'season_label', 'tag', 'segment_label', 'priority_order',
+        )
+        for node in self.nodes.values():
+            video = by_video_id.get(node.get('external_id'))
+            if node.get('type') != 'anime' or not video:
+                continue
+            for field in metadata_fields:
+                node[field] = video.get(field)
+
+        for edge in self.edges:
+            video = by_video_id.get(edge.get('video_id'))
+            if not video:
+                continue
+            for field in ('series_key', 'tag', 'segment_label', 'season_order', 'priority_order'):
+                edge[field] = video.get(field)
 
     def _build_series_sequence_edges(self):
         """同一アニメシリーズ内の動画を優先度順に接続し、同列に並ぶようにする"""
@@ -369,6 +367,11 @@ class PlaylistFetcher:
                     'arrows': 'to',
                     'dashes': True,
                     'series_link': True,
+                    'series_key': previous.get('series_key'),
+                    'tag': current.get('tag'),
+                    'segment_label': current.get('segment_label'),
+                    'season_order': current.get('season_order'),
+                    'priority_order': current.get('priority_order'),
                     'color': {'color': '#7c3aed', 'highlight': '#6d28d9'},
                     'font': {'align': 'middle', 'color': '#4c1d95'},
                     'width': 2,
@@ -481,7 +484,7 @@ class PlaylistFetcher:
                     )
 
                     # エッジを追加
-                    edge_label = self._extract_edge_label(anime_title)
+                    edge_label = video_info.get('segment_label', '関連動画')
                     self.edges.append({
                         'from': channel_node_id,
                         'to': anime_node_id,
@@ -491,12 +494,17 @@ class PlaylistFetcher:
                         'font': {'align': 'middle'},
                         'series_key': video_info.get('series_key'),
                         'tag': video_info.get('tag'),
+                        'segment_label': video_info.get('segment_label'),
+                        'season_order': video_info.get('season_order'),
                         'priority_order': video_info.get('priority_order'),
                     })
 
             except HttpError as e:
                 logger.error(f'APIエラー: {e}')
                 sys.exit(1)
+
+        self._assign_publication_order(videos)
+        self._sync_video_metadata(videos)
 
         # 取得したチャンネルIDに対してアイコンを取得し、チャネルノードに画像をセット
         if channel_ids_set:
