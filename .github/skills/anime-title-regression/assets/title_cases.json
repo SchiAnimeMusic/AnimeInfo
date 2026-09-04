@@ -131,5 +131,28 @@
       "segment_label": "OP",
       "priority_order": 0
     }
+  },
+  {
+    "id": "kimisen-season-two-english-suffix",
+    "title": "「キミと僕の最後の戦場、あるいは世界が始まる聖戦 Season Ⅱ」ノンクレジットOP | 「セナカアワセ」AliA",
+    "description": "TVアニメ「キミと僕の最後の戦場、あるいは世界が始まる聖戦 Season Ⅱ」\nOur Last Crusade or the Rise of a New World Season II\n放送情報 TOKYO MX 7月10日より毎週水曜",
+    "expected": {
+      "series_name": "キミと僕の最後の戦場、あるいは世界が始まる聖戦",
+      "series_key": "キミと僕の最後の戦場あるいは世界が始まる聖戦",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
+  },
+  {
+    "id": "clevatess-season-two-song-suffix",
+    "title": "「クレバテスⅡ-魔獣の王と偽りの勇者伝承-」ノンクレジットオープニング映像「Foreshadow」｜ClevatessⅡ",
+    "expected": {
+      "series_name": "クレバテス",
+      "series_key": "クレバテス",
+      "tag": "op",
+      "segment_label": "OP",
+      "priority_order": 0
+    }
   }
 ]

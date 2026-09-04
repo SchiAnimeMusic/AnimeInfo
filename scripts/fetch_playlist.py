@@ -287,6 +287,10 @@ class PlaylistFetcher:
             candidate = '無職転生'
         if 'チェンソーマン' in candidate:
             candidate = 'チェンソーマン'
+        if 'キミと僕の最後の戦場、あるいは世界が始まる聖戦' in title_text:
+            candidate = 'キミと僕の最後の戦場、あるいは世界が始まる聖戦'
+        if 'クレバテス' in title_text:
+            candidate = 'クレバテス'
 
         series_name = candidate or (title_text or description_text or 'Unknown')
         series_key = self._normalize_series_key(series_name) or self._normalize_series_key(
