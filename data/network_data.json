@@ -93,14 +93,14 @@
             "url": "https://www.youtube.com/watch?v=-gGuKY_4V2U",
             "metric_value": 260531,
             "size": 48,
-            "anime_key": "無職転生iii光の唄大原ゆい子",
-            "series_key": "無職転生iii光の唄大原ゆい子",
-            "series_name": "無職転生III 光の唄 大原ゆい子",
-            "season_order": 2,
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "26",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 7,
@@ -300,14 +300,14 @@
             "url": "https://www.youtube.com/watch?v=t_VzPD5NznA",
             "metric_value": 80205,
             "size": 48,
-            "anime_key": "無職転生iii光の唄大原ゆい子",
-            "series_key": "無職転生iii光の唄大原ゆい子",
-            "series_name": "無職転生III 光の唄 大原ゆい子",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "25",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 18,
@@ -423,14 +423,14 @@
             "url": "https://www.youtube.com/watch?v=FXO4KFzLwfk",
             "metric_value": 28119,
             "size": 48,
-            "anime_key": "無職転生iii芽吹の唄大原ゆい子",
-            "series_key": "無職転生iii芽吹の唄大原ゆい子",
-            "series_name": "無職転生III 芽吹の唄 大原ゆい子",
-            "season_order": 4,
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "24",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 25,
@@ -583,14 +583,14 @@
             "url": "https://www.youtube.com/watch?v=24_Q2ND4vEo",
             "metric_value": 87286,
             "size": 48,
-            "anime_key": "無職転生iii芽吹の唄大原ゆい子",
-            "series_key": "無職転生iii芽吹の唄大原ゆい子",
-            "series_name": "無職転生III 芽吹の唄 大原ゆい子",
-            "season_order": 3,
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "23",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 33,
@@ -816,14 +816,14 @@
             "url": "https://www.youtube.com/watch?v=7ClAoZKbuhA",
             "metric_value": 96740,
             "size": 48,
-            "anime_key": "無職転生iii芽吹の唄大原ゆい子",
-            "series_key": "無職転生iii芽吹の唄大原ゆい子",
-            "series_name": "無職転生III 芽吹の唄 大原ゆい子",
-            "season_order": 2,
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "22",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 46,
@@ -1010,14 +1010,14 @@
             "url": "https://www.youtube.com/watch?v=Es0mqcdYw9Q",
             "metric_value": 80326,
             "size": 48,
-            "anime_key": "無職転生iii芽吹の唄大原ゆい子",
-            "series_key": "無職転生iii芽吹の唄大原ゆい子",
-            "series_name": "無職転生III 芽吹の唄 大原ゆい子",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "21",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 56,
@@ -1739,14 +1739,14 @@
             "url": "https://www.youtube.com/watch?v=UKcJqQqiXq0",
             "metric_value": 616391,
             "size": 48,
-            "anime_key": "無職転生iii異世界行ったら本気だす祈り終われば中島美嘉",
-            "series_key": "無職転生iii異世界行ったら本気だす祈り終われば中島美嘉",
-            "series_name": "無職転生III 異世界行ったら本気だす 祈り 終われば 中島美嘉",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "20",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 93,
@@ -3199,14 +3199,14 @@
             "url": "https://www.youtube.com/watch?v=3F8-KF40VhI",
             "metric_value": 280230,
             "size": 48,
-            "anime_key": "無職転生iii決意の唄大原ゆい子",
-            "series_key": "無職転生iii決意の唄大原ゆい子",
-            "series_name": "無職転生III 決意の唄 大原ゆい子",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "19",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 169,
@@ -5195,11 +5195,11 @@
             "anime_key": "僕のヒーローアカデミア",
             "series_key": "僕のヒーローアカデミア",
             "series_name": "僕のヒーローアカデミア",
-            "season_order": 7,
+            "season_order": "24",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 270,
@@ -7531,11 +7531,11 @@
             "anime_key": "葬送のフリーレン",
             "series_key": "葬送のフリーレン",
             "series_name": "葬送のフリーレン",
-            "season_order": 6,
+            "season_order": "8",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 390,
@@ -10448,11 +10448,11 @@
             "anime_key": "葬送のフリーレン",
             "series_key": "葬送のフリーレン",
             "series_name": "葬送のフリーレン",
-            "season_order": 5,
+            "season_order": "7",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 535,
@@ -10469,11 +10469,11 @@
             "anime_key": "葬送のフリーレン",
             "series_key": "葬送のフリーレン",
             "series_name": "葬送のフリーレン",
-            "season_order": 4,
+            "season_order": "6",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 536,
@@ -13402,11 +13402,11 @@
             "anime_key": "僕のヒーローアカデミア",
             "series_key": "僕のヒーローアカデミア",
             "series_name": "僕のヒーローアカデミア",
-            "season_order": 6,
+            "season_order": "23",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 681,
@@ -13423,11 +13423,11 @@
             "anime_key": "僕のヒーローアカデミア",
             "series_key": "僕のヒーローアカデミア",
             "series_name": "僕のヒーローアカデミア",
-            "season_order": 5,
+            "season_order": "22",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 682,
@@ -14506,11 +14506,11 @@
             "anime_key": "僕のヒーローアカデミア",
             "series_key": "僕のヒーローアカデミア",
             "series_name": "僕のヒーローアカデミア",
-            "season_order": 4,
+            "season_order": "21",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 737,
@@ -15298,11 +15298,11 @@
             "anime_key": "僕のヒーローアカデミア",
             "series_key": "僕のヒーローアカデミア",
             "series_name": "僕のヒーローアカデミア",
-            "season_order": 3,
+            "season_order": "20",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 777,
@@ -15704,14 +15704,14 @@
             "url": "https://www.youtube.com/watch?v=ux3QETpLcPs",
             "metric_value": 51956244,
             "size": 48,
-            "anime_key": "劇場版チェンソーマンレゼ篇米津玄師irisoutchainsawmanthemovierezearcopeningmovie",
-            "series_key": "劇場版チェンソーマンレゼ篇米津玄師irisoutchainsawmanthemovierezearcopeningmovie",
-            "series_name": "劇場版 チェンソーマン レゼ篇 米津玄師 IRIS OUT Chainsaw Man The Movie Reze Arc Opening Movie",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "14",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 798,
@@ -16410,11 +16410,11 @@
             "anime_key": "僕のヒーローアカデミア",
             "series_key": "僕のヒーローアカデミア",
             "series_name": "僕のヒーローアカデミア",
-            "season_order": 2,
+            "season_order": "19",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 833,
@@ -31001,14 +31001,14 @@
             "url": "https://www.youtube.com/watch?v=j5-yDfToyEc",
             "metric_value": 790933,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア7期少女のエゴ特殊六等星ざらめ",
-            "series_key": "僕のヒーローアカデミア7期少女のエゴ特殊六等星ざらめ",
-            "series_name": "僕のヒーローアカデミア 7期 少女のエゴ 特殊 六等星 ざらめ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "18",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 1555,
@@ -31022,14 +31022,14 @@
             "url": "https://www.youtube.com/watch?v=9iYbzACYrME",
             "metric_value": 989672,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア7期iamhere特殊六等星ざらめ",
-            "series_key": "僕のヒーローアカデミア7期iamhere特殊六等星ざらめ",
-            "series_name": "僕のヒーローアカデミア 7期 I AM HERE 特殊 六等星 ざらめ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "17",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 1556,
@@ -32982,11 +32982,11 @@
             "anime_key": "僕のヒーローアカデミア",
             "series_key": "僕のヒーローアカデミア",
             "series_name": "僕のヒーローアカデミア",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "season_order": "16",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 1653,
@@ -34076,14 +34076,14 @@
             "url": "https://www.youtube.com/watch?v=b3f6Shks9g4",
             "metric_value": 13361554,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミアヒロアカ7期カーテンコール優里",
-            "series_key": "僕のヒーローアカデミアヒロアカ7期カーテンコール優里",
-            "series_name": "僕のヒーローアカデミア ヒロアカ7期 カーテンコール 優里",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "15",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 1706,
@@ -34097,14 +34097,14 @@
             "url": "https://www.youtube.com/watch?v=ULEk2BWoIPI",
             "metric_value": 2377793,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミアヒロアカ7期六等星ざらめ",
-            "series_key": "僕のヒーローアカデミアヒロアカ7期六等星ざらめ",
-            "series_name": "僕のヒーローアカデミア ヒロアカ7期 六等星 ざらめ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "14",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 1707,
@@ -36262,14 +36262,14 @@
             "url": "https://www.youtube.com/watch?v=YEKboKtPx-w",
             "metric_value": 7967702,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミアヒロアカ7期誰我為tkfrom凛として時雨myheroacademia7thseasonopeningmovie",
-            "series_key": "僕のヒーローアカデミアヒロアカ7期誰我為tkfrom凛として時雨myheroacademia7thseasonopeningmovie",
-            "series_name": "僕のヒーローアカデミア ヒロアカ7期 誰我為 TK from 凛として時雨 My Heroacademia 7th season Opening Movie",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "13",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 1812,
@@ -36283,14 +36283,14 @@
             "url": "https://www.youtube.com/watch?v=GlIck9NChlU",
             "metric_value": 2128402,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア7期蕾omoinotakeヒロアカ",
-            "series_key": "僕のヒーローアカデミア7期蕾omoinotakeヒロアカ",
-            "series_name": "僕のヒーローアカデミア 7期 蕾 Omoinotake ヒロアカ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "12",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 1813,
@@ -36897,14 +36897,14 @@
             "url": "https://www.youtube.com/watch?v=kQ5Zfgpirwc",
             "metric_value": 3673922,
             "size": 48,
-            "anime_key": "無職転生2期op2無職転生ii異世界行ったら本気だすオンザフロントラインヒトリエ",
-            "series_key": "無職転生2期op2無職転生ii異世界行ったら本気だすオンザフロントラインヒトリエ",
-            "series_name": "無職転生2期OP2 無職転生II 異世界行ったら本気だす オン ザ フロントライン ヒトリエ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "18",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 1843,
@@ -36918,14 +36918,14 @@
             "url": "https://www.youtube.com/watch?v=1C_cjVx66PE",
             "metric_value": 796076,
             "size": 48,
-            "anime_key": "無職転生2期ed2無職転生ii異世界行ったら本気だす守りたいもの大原ゆい子",
-            "series_key": "無職転生2期ed2無職転生ii異世界行ったら本気だす守りたいもの大原ゆい子",
-            "series_name": "無職転生2期ED2 無職転生II 異世界行ったら本気だす 守りたいもの 大原ゆい子",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "17",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 1844,
@@ -41631,14 +41631,14 @@
             "url": "https://www.youtube.com/watch?v=iqsnJJK8GA4",
             "metric_value": 13145884,
             "size": 48,
-            "anime_key": "葬送のフリーレンヨルシカ晴る",
-            "series_key": "葬送のフリーレンヨルシカ晴る",
-            "series_name": "葬送のフリーレン ヨルシカ 晴る",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "葬送のフリーレン",
+            "series_key": "葬送のフリーレン",
+            "series_name": "葬送のフリーレン",
+            "season_order": "5",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2073,
@@ -41652,14 +41652,14 @@
             "url": "https://www.youtube.com/watch?v=HAOQDCF0jQE",
             "metric_value": 1430813,
             "size": 48,
-            "anime_key": "葬送のフリーレンmiletanytimeanywhere",
-            "series_key": "葬送のフリーレンmiletanytimeanywhere",
-            "series_name": "葬送のフリーレン milet Anytime Anywhere",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "葬送のフリーレン",
+            "series_key": "葬送のフリーレン",
+            "series_name": "葬送のフリーレン",
+            "season_order": "4",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2074,
@@ -42211,11 +42211,11 @@
             "anime_key": "葬送のフリーレン",
             "series_key": "葬送のフリーレン",
             "series_name": "葬送のフリーレン",
-            "season_order": 3,
+            "season_order": "3",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2102,
@@ -44754,11 +44754,11 @@
             "anime_key": "葬送のフリーレン",
             "series_key": "葬送のフリーレン",
             "series_name": "葬送のフリーレン",
-            "season_order": 2,
+            "season_order": "2",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2225,
@@ -45670,11 +45670,11 @@
             "anime_key": "葬送のフリーレン",
             "series_key": "葬送のフリーレン",
             "series_name": "葬送のフリーレン",
-            "season_order": 1,
+            "season_order": "1",
             "season_label": "初投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2269,
@@ -46428,14 +46428,14 @@
             "url": "https://www.youtube.com/watch?v=zr19Xf-tH9o",
             "metric_value": 1299384,
             "size": 48,
-            "anime_key": "無職転生2期無職転生ii異世界行ったら本気だすムスビメ大原ゆい子",
-            "series_key": "無職転生2期無職転生ii異世界行ったら本気だすムスビメ大原ゆい子",
-            "series_name": "無職転生2期 無職転生II 異世界行ったら本気だす ムスビメ 大原ゆい子",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "16",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2306,
@@ -46449,14 +46449,14 @@
             "url": "https://www.youtube.com/watch?v=_NIp8wvNXmM",
             "metric_value": 6965061,
             "size": 48,
-            "anime_key": "無職転生2期無職転生ii異世界行ったら本気だすspirallongman",
-            "series_key": "無職転生2期無職転生ii異世界行ったら本気だすspirallongman",
-            "series_name": "無職転生2期 無職転生II 異世界行ったら本気だす spiral LONGMAN",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "15",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2307,
@@ -52798,14 +52798,14 @@
             "url": "https://www.youtube.com/watch?v=bzNXDsfqfVs",
             "metric_value": 12602665,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア6期ぼくらのeveヒロアカ",
-            "series_key": "僕のヒーローアカデミア6期ぼくらのeveヒロアカ",
-            "series_name": "僕のヒーローアカデミア 6期 ぼくらの Eve ヒロアカ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "11",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2620,
@@ -52819,14 +52819,14 @@
             "url": "https://www.youtube.com/watch?v=8ZMkp5233KU",
             "metric_value": 2993689,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア6期キタカゼsixloungeヒロアカ",
-            "series_key": "僕のヒーローアカデミア6期キタカゼsixloungeヒロアカ",
-            "series_name": "僕のヒーローアカデミア 6期 キタカゼ SIX LOUNGE ヒロアカ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "10",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2621,
@@ -54989,14 +54989,14 @@
             "url": "https://www.youtube.com/watch?v=7jM0fUAR2xg",
             "metric_value": 10491837,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanendingeveファイトソング",
-            "series_key": "チェンソーマンchainsawmanendingeveファイトソング",
-            "series_name": "チェンソーマン CHAINSAW MAN Ending Eve ファイトソング",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "13",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2727,
@@ -55094,14 +55094,14 @@
             "url": "https://www.youtube.com/watch?v=UTwujrP2pFo",
             "metric_value": 4987646,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanending女王蜂バイオレンス",
-            "series_key": "チェンソーマンchainsawmanending女王蜂バイオレンス",
-            "series_name": "チェンソーマン CHAINSAW MAN Ending 女王蜂 バイオレンス",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "12",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2732,
@@ -55157,14 +55157,14 @@
             "url": "https://www.youtube.com/watch?v=Uy-_5Cnehns",
             "metric_value": 7922951,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanendingpeople1dogland",
-            "series_key": "チェンソーマンchainsawmanendingpeople1dogland",
-            "series_name": "チェンソーマン CHAINSAW MAN Ending PEOPLE 1 DOGLAND",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "11",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2735,
@@ -55241,14 +55241,14 @@
             "url": "https://www.youtube.com/watch?v=giJKMtRnD20",
             "metric_value": 6045055,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanendingaimerdeepdown",
-            "series_key": "チェンソーマンchainsawmanendingaimerdeepdown",
-            "series_name": "チェンソーマン CHAINSAW MAN Ending Aimer Deep down",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "10",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2739,
@@ -55325,14 +55325,14 @@
             "url": "https://www.youtube.com/watch?v=6ej4gHhUzek",
             "metric_value": 13081730,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanendingtkfrom凛として時雨firstdeath",
-            "series_key": "チェンソーマンchainsawmanendingtkfrom凛として時雨firstdeath",
-            "series_name": "チェンソーマン CHAINSAW MAN Ending TK from 凛として時雨 first death",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "9",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2743,
@@ -55451,14 +55451,14 @@
             "url": "https://www.youtube.com/watch?v=msZ5b2usBNc",
             "metric_value": 9742876,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanendinganoちゅ多様性",
-            "series_key": "チェンソーマンchainsawmanendinganoちゅ多様性",
-            "series_name": "チェンソーマン CHAINSAW MAN Ending ano ちゅ 多様性",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "8",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2749,
@@ -55661,14 +55661,14 @@
             "url": "https://www.youtube.com/watch?v=ZcdMcoKNtwc",
             "metric_value": 6366454,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanendingkanaria大脳的なランデブー",
-            "series_key": "チェンソーマンchainsawmanendingkanaria大脳的なランデブー",
-            "series_name": "チェンソーマン CHAINSAW MAN Ending Kanaria 大脳的なランデブー",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "7",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2759,
@@ -55766,14 +55766,14 @@
             "url": "https://www.youtube.com/watch?v=ymQ3wEIq84Y",
             "metric_value": 16078734,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanendingsyudouインザバックルーム",
-            "series_key": "チェンソーマンchainsawmanendingsyudouインザバックルーム",
-            "series_name": "チェンソーマン CHAINSAW MAN Ending syudou インザバックルーム",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "6",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2764,
@@ -56018,14 +56018,14 @@
             "url": "https://www.youtube.com/watch?v=xIKW3NKYBWw",
             "metric_value": 32892270,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanendingtooboe錠剤",
-            "series_key": "チェンソーマンchainsawmanendingtooboe錠剤",
-            "series_name": "チェンソーマン CHAINSAW MAN Ending TOOBOE 錠剤",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "5",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2776,
@@ -56249,14 +56249,14 @@
             "url": "https://www.youtube.com/watch?v=HEwAiwttN10",
             "metric_value": 48606753,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanendingマキシマムザホルモン刃渡り2億センチ",
-            "series_key": "チェンソーマンchainsawmanendingマキシマムザホルモン刃渡り2億センチ",
-            "series_name": "チェンソーマン CHAINSAW MAN Ending マキシマム ザ ホルモン 刃渡り2億センチ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "4",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2787,
@@ -56493,14 +56493,14 @@
             "url": "https://www.youtube.com/watch?v=Hw1fy7VF_w8",
             "metric_value": 9259759,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanendingずっと真夜中でいいのに残機",
-            "series_key": "チェンソーマンchainsawmanendingずっと真夜中でいいのに残機",
-            "series_name": "チェンソーマン CHAINSAW MAN Ending ずっと真夜中でいいのに 残機",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "3",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2799,
@@ -56514,14 +56514,14 @@
             "url": "https://www.youtube.com/watch?v=vrCexHE5t60",
             "metric_value": 1754528,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミアヒロアカ6期特殊sketch秋山黄色myheroacademia6thseasonvol116",
-            "series_key": "僕のヒーローアカデミアヒロアカ6期特殊sketch秋山黄色myheroacademia6thseasonvol116",
-            "series_name": "僕のヒーローアカデミア ヒロアカ6期 特殊 SKETCH 秋山黄色 MY HEROACADEMIA 6th season Vol 116",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "9",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2800,
@@ -57010,14 +57010,14 @@
             "url": "https://www.youtube.com/watch?v=xIeYK9w03i4",
             "metric_value": 12954930,
             "size": 48,
-            "anime_key": "チェンソーマンスペシャルchainsawmanendingvaundychainsawblood",
-            "series_key": "チェンソーマンスペシャルchainsawmanendingvaundychainsawblood",
-            "series_name": "チェンソーマン スペシャル CHAINSAW MAN Ending Vaundy CHAINSAW BLOOD",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "2",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2824,
@@ -57031,14 +57031,14 @@
             "url": "https://www.youtube.com/watch?v=dFlDRhvM4L0",
             "metric_value": 179270124,
             "size": 48,
-            "anime_key": "チェンソーマンchainsawmanopening米津玄師kickback",
-            "series_key": "チェンソーマンchainsawmanopening米津玄師kickback",
-            "series_name": "チェンソーマン CHAINSAW MAN Opening 米津玄師 KICK BACK",
-            "season_order": 1,
+            "anime_key": "チェンソーマン",
+            "series_key": "チェンソーマン",
+            "series_name": "チェンソーマン",
+            "season_order": "1",
             "season_label": "初投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2825,
@@ -57955,14 +57955,14 @@
             "url": "https://www.youtube.com/watch?v=IinvpMBoPSo",
             "metric_value": 5117199,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア6期sketch秋山黄色ヒロアカ",
-            "series_key": "僕のヒーローアカデミア6期sketch秋山黄色ヒロアカ",
-            "series_name": "僕のヒーローアカデミア 6期 SKETCH 秋山黄色 ヒロアカ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "8",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 2869,
@@ -57976,14 +57976,14 @@
             "url": "https://www.youtube.com/watch?v=6BrHcmH3Gyk",
             "metric_value": 8863838,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア6期ひたむきsuperbeaverヒロアカ",
-            "series_key": "僕のヒーローアカデミア6期ひたむきsuperbeaverヒロアカ",
-            "series_name": "僕のヒーローアカデミア 6期 ひたむき SUPER BEAVER ヒロアカ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "7",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 2870,
@@ -64575,11 +64575,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 12,
+            "season_order": "14",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3194,
@@ -64617,11 +64617,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 11,
+            "season_order": "13",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3196,
@@ -64680,11 +64680,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 10,
+            "season_order": "12",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3199,
@@ -64743,11 +64743,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 9,
+            "season_order": "11",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3202,
@@ -64840,11 +64840,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 8,
+            "season_order": "10",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3207,
@@ -64903,11 +64903,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 7,
+            "season_order": "9",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3210,
@@ -64987,11 +64987,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 6,
+            "season_order": "8",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3214,
@@ -65029,11 +65029,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 5,
+            "season_order": "7",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3216,
@@ -65168,11 +65168,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 4,
+            "season_order": "6",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3223,
@@ -65252,11 +65252,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 3,
+            "season_order": "5",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3227,
@@ -65622,11 +65622,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 2,
+            "season_order": "4",
             "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3245,
@@ -65916,11 +65916,11 @@
             "anime_key": "無職転生",
             "series_key": "無職転生",
             "series_name": "無職転生",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "season_order": "3",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3259,
@@ -66115,14 +66115,14 @@
             "url": "https://www.youtube.com/watch?v=PINgF6rCuME",
             "metric_value": 2649378,
             "size": 48,
-            "anime_key": "無職転生異世界行ったら本気だす",
-            "series_key": "無職転生異世界行ったら本気だす",
-            "series_name": "無職転生 異世界行ったら本気だす",
-            "season_order": 2,
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "2",
             "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 3269,
@@ -67949,14 +67949,14 @@
             "url": "https://www.youtube.com/watch?v=KI17EkQBEc0",
             "metric_value": 10559538,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア5期merrygoroundmanwithamissionヒロアカ",
-            "series_key": "僕のヒーローアカデミア5期merrygoroundmanwithamissionヒロアカ",
-            "series_name": "僕のヒーローアカデミア 5期 Merry-Go-Round MAN WITH A MISSION ヒロアカ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "6",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3359,
@@ -67970,14 +67970,14 @@
             "url": "https://www.youtube.com/watch?v=UNfXxvS8ZjA",
             "metric_value": 3601579,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア5期嘘じゃない崎山蒼志ヒロアカ",
-            "series_key": "僕のヒーローアカデミア5期嘘じゃない崎山蒼志ヒロアカ",
-            "series_name": "僕のヒーローアカデミア 5期 嘘じゃない 崎山蒼志 ヒロアカ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "5",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 3360,
@@ -69654,14 +69654,14 @@
             "url": "https://www.youtube.com/watch?v=Y9ahFjtZtQI",
             "metric_value": 4450097,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア5期足跡thepeggiesヒロアカ",
-            "series_key": "僕のヒーローアカデミア5期足跡thepeggiesヒロアカ",
-            "series_name": "僕のヒーローアカデミア 5期 足跡 the peggies ヒロアカ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "4",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 3444,
@@ -69675,14 +69675,14 @@
             "url": "https://www.youtube.com/watch?v=jlwOlzVK5kY",
             "metric_value": 11621129,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア5期no1dishヒロアカ",
-            "series_key": "僕のヒーローアカデミア5期no1dishヒロアカ",
-            "series_name": "僕のヒーローアカデミア 5期 No 1 DISH ヒロアカ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "3",
+            "season_label": "後続投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3445,
@@ -70889,14 +70889,14 @@
             "url": "https://www.youtube.com/watch?v=3mLWoJF17U4",
             "metric_value": 2201814,
             "size": 48,
-            "anime_key": "無職転生異世界行ったら本気だす",
-            "series_key": "無職転生異世界行ったら本気だす",
-            "series_name": "無職転生 異世界行ったら本気だす",
-            "season_order": 1,
+            "anime_key": "無職転生",
+            "series_key": "無職転生",
+            "series_name": "無職転生",
+            "season_order": "1",
             "season_label": "初投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 3507,
@@ -76235,14 +76235,14 @@
             "url": "https://www.youtube.com/watch?v=qi1J4Lyl8do",
             "metric_value": 8631830,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア4期文化祭編shoutbaby緑黄色社会ヒロアカ",
-            "series_key": "僕のヒーローアカデミア4期文化祭編shoutbaby緑黄色社会ヒロアカ",
-            "series_name": "僕のヒーローアカデミア 4期 文化祭編 Shout Baby 緑黄色社会 ヒロアカ",
-            "season_order": 1,
-            "season_label": "初投稿",
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "2",
+            "season_label": "後続投稿",
             "tag": "ed",
             "segment_label": "ED",
-            "priority_order": 1
+            "priority_order": "1"
         },
         {
             "id": 3773,
@@ -76256,14 +76256,14 @@
             "url": "https://www.youtube.com/watch?v=MdfFVdFWl1U",
             "metric_value": 17820216,
             "size": 48,
-            "anime_key": "僕のヒーローアカデミア4期第クール文化祭編スターマーカーkanaboonヒロアカ",
-            "series_key": "僕のヒーローアカデミア4期第クール文化祭編スターマーカーkanaboonヒロアカ",
-            "series_name": "僕のヒーローアカデミア 4期第クール 文化祭編 スターマーカー KANA-BOON ヒロアカ",
-            "season_order": 1,
+            "anime_key": "僕のヒーローアカデミア",
+            "series_key": "僕のヒーローアカデミア",
+            "series_name": "僕のヒーローアカデミア",
+            "season_order": "1",
             "season_label": "初投稿",
             "tag": "op",
             "segment_label": "OP",
-            "priority_order": 0
+            "priority_order": "0"
         },
         {
             "id": 3774,
@@ -76933,11 +76933,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生iii光の唄大原ゆい子",
+            "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 2,
-            "priority_order": 0
+            "season_order": "26",
+            "priority_order": "0"
         },
         {
             "from": 3,
@@ -77053,11 +77053,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生iii光の唄大原ゆい子",
+            "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "25",
+            "priority_order": "0"
         },
         {
             "from": 18,
@@ -77113,11 +77113,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生iii芽吹の唄大原ゆい子",
+            "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 4,
-            "priority_order": 0
+            "season_order": "24",
+            "priority_order": "0"
         },
         {
             "from": 18,
@@ -77218,11 +77218,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生iii芽吹の唄大原ゆい子",
+            "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 3,
-            "priority_order": 0
+            "season_order": "23",
+            "priority_order": "0"
         },
         {
             "from": 18,
@@ -77338,11 +77338,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生iii芽吹の唄大原ゆい子",
+            "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 2,
-            "priority_order": 0
+            "season_order": "22",
+            "priority_order": "0"
         },
         {
             "from": 18,
@@ -77458,11 +77458,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生iii芽吹の唄大原ゆい子",
+            "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "21",
+            "priority_order": "0"
         },
         {
             "from": 53,
@@ -77923,11 +77923,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生iii異世界行ったら本気だす祈り終われば中島美嘉",
+            "series_key": "無職転生",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "20",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -78838,11 +78838,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生iii決意の唄大原ゆい子",
+            "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "19",
+            "priority_order": "0"
         },
         {
             "from": 123,
@@ -80116,8 +80116,8 @@
             "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 7,
-            "priority_order": 0
+            "season_order": "24",
+            "priority_order": "0"
         },
         {
             "from": 62,
@@ -81601,8 +81601,8 @@
             "series_key": "葬送のフリーレン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 6,
-            "priority_order": 1
+            "season_order": "8",
+            "priority_order": "1"
         },
         {
             "from": 96,
@@ -83581,8 +83581,8 @@
             "series_key": "葬送のフリーレン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 5,
-            "priority_order": 1
+            "season_order": "7",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -83596,8 +83596,8 @@
             "series_key": "葬送のフリーレン",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 4,
-            "priority_order": 0
+            "season_order": "6",
+            "priority_order": "0"
         },
         {
             "from": 96,
@@ -85591,8 +85591,8 @@
             "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 6,
-            "priority_order": 1
+            "season_order": "23",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -85606,8 +85606,8 @@
             "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 5,
-            "priority_order": 0
+            "season_order": "22",
+            "priority_order": "0"
         },
         {
             "from": 11,
@@ -86341,8 +86341,8 @@
             "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 4,
-            "priority_order": 0
+            "season_order": "21",
+            "priority_order": "0"
         },
         {
             "from": 1,
@@ -86881,8 +86881,8 @@
             "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 3,
-            "priority_order": 1
+            "season_order": "20",
+            "priority_order": "1"
         },
         {
             "from": 703,
@@ -87148,11 +87148,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "劇場版チェンソーマンレゼ篇米津玄師irisoutchainsawmanthemovierezearcopeningmovie",
+            "series_key": "チェンソーマン",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "14",
+            "priority_order": "0"
         },
         {
             "from": 753,
@@ -87631,8 +87631,8 @@
             "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 2,
-            "priority_order": 0
+            "season_order": "19",
+            "priority_order": "0"
         },
         {
             "from": 227,
@@ -97423,11 +97423,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア7期少女のエゴ特殊六等星ざらめ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "18",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -97438,11 +97438,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア7期iamhere特殊六等星ざらめ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "17",
+            "priority_order": "1"
         },
         {
             "from": 1556,
@@ -98746,8 +98746,8 @@
             "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "16",
+            "priority_order": "0"
         },
         {
             "from": 3,
@@ -99508,11 +99508,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミアヒロアカ7期カーテンコール優里",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "15",
+            "priority_order": "0"
         },
         {
             "from": 5,
@@ -99523,11 +99523,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミアヒロアカ7期六等星ざらめ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "14",
+            "priority_order": "1"
         },
         {
             "from": 1020,
@@ -101023,11 +101023,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミアヒロアカ7期誰我為tkfrom凛として時雨myheroacademia7thseasonopeningmovie",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "13",
+            "priority_order": "0"
         },
         {
             "from": 5,
@@ -101038,11 +101038,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア7期蕾omoinotakeヒロアカ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "12",
+            "priority_order": "1"
         },
         {
             "from": 62,
@@ -101458,11 +101458,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生2期op2無職転生ii異世界行ったら本気だすオンザフロントラインヒトリエ",
+            "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "18",
+            "priority_order": "0"
         },
         {
             "from": 5,
@@ -101473,11 +101473,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生2期ed2無職転生ii異世界行ったら本気だす守りたいもの大原ゆい子",
+            "series_key": "無職転生",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "17",
+            "priority_order": "1"
         },
         {
             "from": 1844,
@@ -104743,11 +104743,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "葬送のフリーレンヨルシカ晴る",
+            "series_key": "葬送のフリーレン",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "5",
+            "priority_order": "0"
         },
         {
             "from": 5,
@@ -104758,11 +104758,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "葬送のフリーレンmiletanytimeanywhere",
+            "series_key": "葬送のフリーレン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "4",
+            "priority_order": "1"
         },
         {
             "from": 2074,
@@ -105121,8 +105121,8 @@
             "series_key": "葬送のフリーレン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 3,
-            "priority_order": 1
+            "season_order": "3",
+            "priority_order": "1"
         },
         {
             "from": 2087,
@@ -106921,8 +106921,8 @@
             "series_key": "葬送のフリーレン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 2,
-            "priority_order": 1
+            "season_order": "2",
+            "priority_order": "1"
         },
         {
             "from": 719,
@@ -107566,8 +107566,8 @@
             "series_key": "葬送のフリーレン",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "1",
+            "priority_order": "0"
         },
         {
             "from": 1,
@@ -108088,11 +108088,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生2期無職転生ii異世界行ったら本気だすムスビメ大原ゆい子",
+            "series_key": "無職転生",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "16",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -108103,11 +108103,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生2期無職転生ii異世界行ったら本気だすspirallongman",
+            "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "15",
+            "priority_order": "0"
         },
         {
             "from": 199,
@@ -112513,11 +112513,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア6期ぼくらのeveヒロアカ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "11",
+            "priority_order": "0"
         },
         {
             "from": 5,
@@ -112528,11 +112528,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア6期キタカゼsixloungeヒロアカ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "10",
+            "priority_order": "1"
         },
         {
             "from": 1,
@@ -114028,11 +114028,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanendingeveファイトソング",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "13",
+            "priority_order": "1"
         },
         {
             "from": 62,
@@ -114103,11 +114103,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanending女王蜂バイオレンス",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "12",
+            "priority_order": "1"
         },
         {
             "from": 174,
@@ -114148,11 +114148,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanendingpeople1dogland",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "11",
+            "priority_order": "1"
         },
         {
             "from": 152,
@@ -114208,11 +114208,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanendingaimerdeepdown",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "10",
+            "priority_order": "1"
         },
         {
             "from": 174,
@@ -114268,11 +114268,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanendingtkfrom凛として時雨firstdeath",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "9",
+            "priority_order": "1"
         },
         {
             "from": 53,
@@ -114358,11 +114358,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanendinganoちゅ多様性",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "8",
+            "priority_order": "1"
         },
         {
             "from": 62,
@@ -114508,11 +114508,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanendingkanaria大脳的なランデブー",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "7",
+            "priority_order": "1"
         },
         {
             "from": 174,
@@ -114583,11 +114583,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanendingsyudouインザバックルーム",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "6",
+            "priority_order": "1"
         },
         {
             "from": 43,
@@ -114763,11 +114763,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanendingtooboe錠剤",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "5",
+            "priority_order": "1"
         },
         {
             "from": 766,
@@ -114928,11 +114928,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanendingマキシマムザホルモン刃渡り2億センチ",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "4",
+            "priority_order": "1"
         },
         {
             "from": 1,
@@ -115093,11 +115093,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanendingずっと真夜中でいいのに残機",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "3",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -115108,11 +115108,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミアヒロアカ6期特殊sketch秋山黄色myheroacademia6thseasonvol116",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "9",
+            "priority_order": "1"
         },
         {
             "from": 2614,
@@ -115453,11 +115453,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンスペシャルchainsawmanendingvaundychainsawblood",
+            "series_key": "チェンソーマン",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "2",
+            "priority_order": "1"
         },
         {
             "from": 653,
@@ -115468,11 +115468,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "チェンソーマンchainsawmanopening米津玄師kickback",
+            "series_key": "チェンソーマン",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "1",
+            "priority_order": "0"
         },
         {
             "from": 111,
@@ -116143,11 +116143,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア6期sketch秋山黄色ヒロアカ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "8",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -116158,11 +116158,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア6期ひたむきsuperbeaverヒロアカ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "7",
+            "priority_order": "0"
         },
         {
             "from": 96,
@@ -120796,8 +120796,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 12,
-            "priority_order": 0
+            "season_order": "14",
+            "priority_order": "0"
         },
         {
             "from": 53,
@@ -120826,8 +120826,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 11,
-            "priority_order": 0
+            "season_order": "13",
+            "priority_order": "0"
         },
         {
             "from": 358,
@@ -120871,8 +120871,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 10,
-            "priority_order": 0
+            "season_order": "12",
+            "priority_order": "0"
         },
         {
             "from": 43,
@@ -120916,8 +120916,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 9,
-            "priority_order": 0
+            "season_order": "11",
+            "priority_order": "0"
         },
         {
             "from": 3202,
@@ -120976,8 +120976,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 8,
-            "priority_order": 0
+            "season_order": "10",
+            "priority_order": "0"
         },
         {
             "from": 41,
@@ -121021,8 +121021,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 7,
-            "priority_order": 0
+            "season_order": "9",
+            "priority_order": "0"
         },
         {
             "from": 41,
@@ -121081,8 +121081,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 6,
-            "priority_order": 0
+            "season_order": "8",
+            "priority_order": "0"
         },
         {
             "from": 1,
@@ -121111,8 +121111,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 5,
-            "priority_order": 0
+            "season_order": "7",
+            "priority_order": "0"
         },
         {
             "from": 3216,
@@ -121201,8 +121201,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 4,
-            "priority_order": 0
+            "season_order": "6",
+            "priority_order": "0"
         },
         {
             "from": 96,
@@ -121261,8 +121261,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 3,
-            "priority_order": 0
+            "season_order": "5",
+            "priority_order": "0"
         },
         {
             "from": 174,
@@ -121516,8 +121516,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 2,
-            "priority_order": 0
+            "season_order": "4",
+            "priority_order": "0"
         },
         {
             "from": 1,
@@ -121726,8 +121726,8 @@
             "series_key": "無職転生",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "3",
+            "priority_order": "0"
         },
         {
             "from": 1,
@@ -121858,11 +121858,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生異世界行ったら本気だす",
+            "series_key": "無職転生",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 2,
-            "priority_order": 1
+            "season_order": "2",
+            "priority_order": "1"
         },
         {
             "from": 1,
@@ -123103,11 +123103,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア5期merrygoroundmanwithamissionヒロアカ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "6",
+            "priority_order": "0"
         },
         {
             "from": 5,
@@ -123118,11 +123118,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア5期嘘じゃない崎山蒼志ヒロアカ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "5",
+            "priority_order": "1"
         },
         {
             "from": 62,
@@ -124258,11 +124258,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア5期足跡thepeggiesヒロアカ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "4",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -124273,11 +124273,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア5期no1dishヒロアカ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "3",
+            "priority_order": "0"
         },
         {
             "from": 96,
@@ -125053,11 +125053,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "無職転生異世界行ったら本気だす",
+            "series_key": "無職転生",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "1",
+            "priority_order": "1"
         },
         {
             "from": 3484,
@@ -128593,11 +128593,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア4期文化祭編shoutbaby緑黄色社会ヒロアカ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "ed",
             "segment_label": "ED",
-            "season_order": 1,
-            "priority_order": 1
+            "season_order": "2",
+            "priority_order": "1"
         },
         {
             "from": 5,
@@ -128608,11 +128608,11 @@
             "font": {
                 "align": "middle"
             },
-            "series_key": "僕のヒーローアカデミア4期第クール文化祭編スターマーカーkanaboonヒロアカ",
+            "series_key": "僕のヒーローアカデミア",
             "tag": "op",
             "segment_label": "OP",
-            "season_order": 1,
-            "priority_order": 0
+            "season_order": "1",
+            "priority_order": "0"
         },
         {
             "from": 120,

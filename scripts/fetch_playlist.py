@@ -278,6 +278,16 @@ class PlaylistFetcher:
             candidate = re.sub(r'第\s*\d+\s*話|#\s*\d+', ' ', description_text)
             candidate = re.sub(r'\s+', ' ', candidate).strip(' -_')
 
+        is_vigilante = 'ヴィジランテ' in title_text or 'ヴィジランテ' in description_text
+        if '僕のヒーローアカデミア' in candidate and not is_vigilante:
+            candidate = '僕のヒーローアカデミア'
+        if '葬送のフリーレン' in candidate:
+            candidate = '葬送のフリーレン'
+        if '無職転生' in candidate:
+            candidate = '無職転生'
+        if 'チェンソーマン' in candidate:
+            candidate = 'チェンソーマン'
+
         series_name = candidate or (title_text or description_text or 'Unknown')
         series_key = self._normalize_series_key(series_name) or self._normalize_series_key(
             title_text or description_text or 'unknown'
