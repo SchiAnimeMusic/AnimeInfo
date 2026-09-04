@@ -123,13 +123,7 @@
   <div class="wrap">
     <h1>AnimeInfo ネットワーク可視化</h1>
     <div class="note">
-      生成済みの JSON データを読み込み、Vis.js でノードとエッジを表示します。初期表示は、投稿動画数が最も多いチャンネルとその投稿動画に絞り込みます。
-    </div>
-    <div class="controls">
-      <button id="showTop">上位 100 ノード表示</button>
-      <button id="showAll">全件表示</button>
-      <button id="showChannels">チャンネルのみ</button>
-      <button id="showAnime">アニメ作品のみ</button>
+      生成済みの JSON データを読み込み、Vis.js でノードとエッジを表示します。初期表示または検索クリア後は、投稿動画数が最も多いチャンネルとその投稿動画に絞り込みます。
     </div>
     <div class="search-bar">
       <input id="searchInput" type="search" placeholder="動画タイトル・チャンネル名で検索" aria-label="動画タイトルまたはチャンネル名で検索" />
@@ -145,10 +139,6 @@
   <script>
     const statusEl = document.getElementById('status');
     const container = document.getElementById('network');
-    const showTopBtn = document.getElementById('showTop');
-    const showAllBtn = document.getElementById('showAll');
-    const showChannelsBtn = document.getElementById('showChannels');
-    const showAnimeBtn = document.getElementById('showAnime');
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
     const clearSearchBtn = document.getElementById('clearSearchBtn');
@@ -167,17 +157,10 @@
 
         fullData = await graphResponse.json();
         updateNetwork();
-        enableControls();
       } catch (error) {
         statusEl.textContent = `読み込みに失敗しました: ${error.message}`;
         console.error(error);
       }
-    }
-
-    function enableControls() {
-      [showTopBtn, showAllBtn, showChannelsBtn, showAnimeBtn].forEach(button => {
-        button.disabled = false;
-      });
     }
 
     function computeDegree(data) {
@@ -397,6 +380,8 @@
               x: 0,
               y: 0,
             },
+            borderWidth: node.type === 'channel' ? 2 : 0,
+            borderWidthSelected: node.type === 'channel' ? 4 : 0,
             shapeProperties: imageShape ? {
               useBorderWithImage: true,
               useImageSize: false,
@@ -805,7 +790,7 @@
 
       if (!keyword) {
         clearSearchState();
-        renderTopNodes();
+        updateNetwork();
         return;
       }
 
@@ -821,30 +806,20 @@
       renderGraph(filtered, `検索: ${query.trim()}`);
     }
 
-    showTopBtn.addEventListener('click', renderTopNodes);
-    showAllBtn.addEventListener('click', () => renderGraph(fullData, '全件'));
-    showChannelsBtn.addEventListener('click', () => {
-      const filtered = selectGraph(fullData, node => node.type === 'channel');
-      renderGraph(filtered, 'チャンネルのみ');
-    });
-    showAnimeBtn.addEventListener('click', () => {
-      const filtered = selectGraph(fullData, node => node.type === 'anime');
-      renderGraph(filtered, 'アニメ作品のみ');
-    });
     searchBtn.addEventListener('click', performSearch);
     clearSearchBtn.addEventListener('click', () => {
       clearSearchState();
       searchInput.value = '';
-      renderTopNodes();
+      updateNetwork();
     });
     searchInput.addEventListener('input', () => {
       const keyword = normalizeSearchKeyword(searchInput.value);
       if (!keyword) {
         clearSearchState();
-        renderTopNodes();
+        updateNetwork();
         return;
       }
-      performSearch();
+      renderSearchSuggestions(getSearchCandidates(fullData, keyword, 12));
     });
     searchInput.addEventListener('keydown', event => {
       if (event.key === 'Enter') {
