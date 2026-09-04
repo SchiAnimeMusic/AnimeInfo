@@ -6,7 +6,7 @@ GitHub Actionsを利用して、毎日自動で最新データに更新されま
 ## 機能
 - **YouTube動画情報の自動取得 (GitHub Actions)**
   - 公開中の再生リストから動画のメタデータや指標を定期的に自動取得します。
-  - 対象の再生リストは [サッチー🎧アニソン総合チャンネル](https://www.youtube.com/@SachiAnimeMusic) にて公開の[【アニソン】公式アニメOP/EDまとめ②【人気順】](https://www.youtube.com/playlist?list=PLO8ZpNNZxVSA)です。
+  - 対象の再生リストは [サッチー🎧アニソン総合チャンネル](https://www.youtube.com/@SachiAnimeMusic) にて公開の[【アニソン】公式アニメOP/ED 2020年代](https://www.youtube.com/playlist?list=PLarZd9ydotoiR_D19VIlsX06GhvGo75Jo)です。
 - **統計レポートの自動生成とWeb公開**
   - 収集したデータを集計し、自動でHTMLレポートを出力します。
   - 統計レポートは [統計レポート](https://SchiAnimeMusic.github.io/AnimeInfo/data/statistics_report.html) から確認できます。
@@ -14,7 +14,7 @@ GitHub Actionsを利用して、毎日自動で最新データに更新されま
   - 収集したデータをもとに、自動でネットワークノード/エッジ形式のJSONデータを出力します。
   - Vis.js で可視化したページは[ネットワーク可視化ページ](https://SchiAnimeMusic.github.io/AnimeInfo/data/network_graph.html) から確認できます。
   - ノードは人気度に応じてサイズが変わり、動画は再生回数、チャンネルは登録者数に応じて大きさを調整しています。
-  - サムネ/アイコンにカーソルを合わせると、タイトルに加えて再生回数または登録者数がツールチップで表示されます。
+  - サムネ/アイコンにカーソルを合わせると、タイトルがツールチップで表示されます。
   - クリックすると対応する YouTube ページを新しいタブで開きます。
 
 #### 出力ファイル一覧

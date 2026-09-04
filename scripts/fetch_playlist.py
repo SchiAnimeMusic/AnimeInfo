@@ -63,7 +63,7 @@ class PlaylistFetcher:
         if config_path is None:
             # デフォルト設定を返す
             return {
-                'playlist_id': 'PLO8ZpNNZxVSA',
+                'playlist_id': 'PLarZd9ydotoiR_D19VIlsX06GhvGo75Jo',
                 'output_csv_path': './data/anime_op_ed.csv',
                 'output_network_json_path': './data/network_data.json',
                 'timezone': 'Asia/Tokyo'
@@ -73,7 +73,7 @@ class PlaylistFetcher:
             logger.warning(f'設定ファイルが見つかりません: {config_path}')
             logger.warning('デフォルト設定を使用します')
             return {
-                'playlist_id': 'PLO8ZpNNZxVSA',
+                'playlist_id': 'PLarZd9ydotoiR_D19VIlsX06GhvGo75Jo',
                 'output_csv_path': './data/anime_op_ed.csv',
                 'output_network_json_path': './data/network_data.json',
                 'timezone': 'Asia/Tokyo'
