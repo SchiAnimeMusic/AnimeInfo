@@ -534,7 +534,16 @@
         }
       });
 
-      return { nodes, edges };
+      const connectedNodeIds = new Set();
+      edges.forEach(edge => {
+        connectedNodeIds.add(edge.from);
+        connectedNodeIds.add(edge.to);
+      });
+      const filteredNodes = nodes.filter(node => (
+        node.type !== 'channel' || connectedNodeIds.has(node.id)
+      ));
+
+      return { nodes: filteredNodes, edges };
     }
 
     function applyAnimeSeriesOrdering(data) {
@@ -771,9 +780,8 @@
           const nodeId = Number(button.dataset.nodeId);
           const node = (fullData.nodes || []).find(item => item.id === nodeId);
           if (!node) return;
-          const filtered = selectNodeCluster(fullData, nodeId);
           searchInput.value = node.label || node.displayLabel || node.id;
-          renderGraph(filtered, `候補: ${node.label || node.id}`);
+          clearSearchState();
         });
       });
     }
@@ -816,17 +824,10 @@
       const keyword = normalizeSearchKeyword(searchInput.value);
       if (!keyword) {
         clearSearchState();
-        updateNetwork();
         return;
       }
       renderSearchSuggestions(getSearchCandidates(fullData, keyword, 12));
     });
-    searchInput.addEventListener('keydown', event => {
-      if (event.key === 'Enter') {
-        performSearch();
-      }
-    });
-
     loadGraphData();
   </script>
 </body>
